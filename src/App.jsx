@@ -1,5 +1,10 @@
 import { useState, useRef, useEffect, Suspense } from "react";
 import "./App.css";
+import { Canvas } from "@react-three/fiber"; 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
@@ -21,7 +26,9 @@ function App() {
           </p>
 
           <div  className="h-[100vh] w-[100vw] text-white">
-            
+            <Canvas>
+              
+            </Canvas>
           </div>
         </section>
 
