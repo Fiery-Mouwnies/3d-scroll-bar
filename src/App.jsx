@@ -3,13 +3,46 @@ import "./App.css";
 import { Canvas } from "@react-three/fiber"; 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Scene from "./Scene";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const mainRef=useRef(null)
+  const sceneRef=useRef(null)
+
+  useEffect(()=>{
+    gsap.timeline({
+      scrollTrigger:{
+        trigger: mainRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        scrub:1,
+        onUpdate:(self)=>{
+
+        }
+      }
+    })
+    .to(sceneRef.current,{
+      ease:'none',
+      x:'-25vw',
+      y:'100vh'
+    })
+    .to(sceneRef.current,{
+      ease:'none',
+      x:'25vw',
+      y:'200vh'
+    })
+    .to(sceneRef.current,{
+      ease:'none',
+      x:'-25vw',
+      y:'300vh'
+    })
+
+  },[])
 
   return (
-    <main className="overflow-x-hidden">
+    <main ref={mainRef} className="overflow-x-hidden">
       <Suspense
         fallback={
           <div className="fixed inset-0 grid place-items-center bg-black text-white">
@@ -25,9 +58,9 @@ function App() {
             Ultra 2
           </p>
 
-          <div  className="h-[100vh] w-[100vw] text-white">
+          <div ref={sceneRef} className="h-[100vh] w-[100vw] text-white">
             <Canvas>
-              
+              <Scene />
             </Canvas>
           </div>
         </section>
