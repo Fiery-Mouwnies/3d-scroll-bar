@@ -6,6 +6,8 @@ import * as THREE from "three";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
+import {Energy-bar} from "/Energy-bar"
+
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
