@@ -1,4 +1,9 @@
 import { useState, useRef, useEffect, Suspense } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { OrbitControls, Text, Box, Sphere, useScroll, ScrollControls } from "@react-three/drei";
+import { useSpring, animated } from "@react-spring/three";
+import * as THREE from "three";
+import { gsap } from "gsap";
 import "./App.css";
 
 function App() {
