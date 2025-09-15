@@ -346,7 +346,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Energy-bar(props: JSX.IntrinsicElements['group']) {
+export function Energybar(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/granola_bar_3d.glb') as GLTFResult
   return (
     <group {...props} dispose={null}>
