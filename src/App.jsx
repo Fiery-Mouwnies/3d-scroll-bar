@@ -4,7 +4,11 @@ import { OrbitControls, Text, Box, Sphere, useScroll, ScrollControls } from "@re
 import { useSpring, animated } from "@react-spring/three";
 import * as THREE from "three";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
