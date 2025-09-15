@@ -30,7 +30,9 @@ function App() {
           </p>
 
           <div  className="h-[100vh] w-[100vw] text-white">
+            <Canvas> 
             
+            </Canvas>
           </div>
         </section>
 
