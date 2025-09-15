@@ -6,15 +6,337 @@ Source: https://sketchfab.com/3d-models/granola-bar-9efbda4311a64782a73b5ce382a6
 Title: Granola Bar
 */
 
-import *d THREE from 'three'
-import React, { useRef, forwardRef } from 'react'
+import * as THREE from 'three'
+import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
     pCube3_aiStandardSurface1_0: THREE.Mesh
-    // ... all your other nodes here ...
+    pCube6_aiStandardSurface2_0: THREE.Mesh
+    pCube7_aiStandardSurface2_0: THREE.Mesh
+    pCube8_aiStandardSurface2_0: THREE.Mesh
+    pCube9_aiStandardSurface2_0: THREE.Mesh
+    pCube10_aiStandardSurface2_0: THREE.Mesh
+    pCube11_aiStandardSurface2_0: THREE.Mesh
+    pCube12_aiStandardSurface2_0: THREE.Mesh
+    pCube13_aiStandardSurface2_0: THREE.Mesh
+    pCube14_aiStandardSurface2_0: THREE.Mesh
+    pCube15_aiStandardSurface2_0: THREE.Mesh
+    pCube16_aiStandardSurface2_0: THREE.Mesh
+    pCube17_aiStandardSurface2_0: THREE.Mesh
+    pCube18_aiStandardSurface2_0: THREE.Mesh
+    pCube19_aiStandardSurface2_0: THREE.Mesh
+    pCube20_aiStandardSurface2_0: THREE.Mesh
+    pCube21_aiStandardSurface2_0: THREE.Mesh
+    pCube22_aiStandardSurface2_0: THREE.Mesh
+    pCube23_aiStandardSurface2_0: THREE.Mesh
+    pCube24_aiStandardSurface2_0: THREE.Mesh
+    pCube25_aiStandardSurface2_0: THREE.Mesh
+    pCube26_aiStandardSurface2_0: THREE.Mesh
+    pCube27_aiStandardSurface2_0: THREE.Mesh
+    pCube28_aiStandardSurface2_0: THREE.Mesh
+    pCube29_aiStandardSurface2_0: THREE.Mesh
+    pCube30_aiStandardSurface2_0: THREE.Mesh
+    pCube31_aiStandardSurface2_0: THREE.Mesh
+    pCube32_aiStandardSurface2_0: THREE.Mesh
+    pCube33_aiStandardSurface2_0: THREE.Mesh
+    pCube34_aiStandardSurface2_0: THREE.Mesh
+    pCube35_aiStandardSurface2_0: THREE.Mesh
+    pCube36_aiStandardSurface2_0: THREE.Mesh
+    pCube37_aiStandardSurface2_0: THREE.Mesh
+    pCube38_aiStandardSurface2_0: THREE.Mesh
+    pCube39_aiStandardSurface2_0: THREE.Mesh
+    pCube40_aiStandardSurface2_0: THREE.Mesh
+    pCube41_aiStandardSurface2_0: THREE.Mesh
+    pCube42_aiStandardSurface2_0: THREE.Mesh
+    pCube43_aiStandardSurface2_0: THREE.Mesh
+    pCube44_aiStandardSurface2_0: THREE.Mesh
+    pCube45_aiStandardSurface2_0: THREE.Mesh
+    pCube46_aiStandardSurface2_0: THREE.Mesh
+    pCube47_aiStandardSurface2_0: THREE.Mesh
+    pCube48_aiStandardSurface2_0: THREE.Mesh
+    pCube49_aiStandardSurface2_0: THREE.Mesh
+    pCube50_aiStandardSurface2_0: THREE.Mesh
+    pCube51_aiStandardSurface2_0: THREE.Mesh
+    pCube52_aiStandardSurface2_0: THREE.Mesh
+    pCube53_aiStandardSurface2_0: THREE.Mesh
+    pCube54_aiStandardSurface2_0: THREE.Mesh
+    pCube55_aiStandardSurface2_0: THREE.Mesh
+    pCube56_aiStandardSurface2_0: THREE.Mesh
+    pCube57_aiStandardSurface2_0: THREE.Mesh
+    pCube58_aiStandardSurface2_0: THREE.Mesh
+    pCube59_aiStandardSurface2_0: THREE.Mesh
+    pCube60_aiStandardSurface2_0: THREE.Mesh
+    pCube61_aiStandardSurface2_0: THREE.Mesh
+    pCube62_aiStandardSurface2_0: THREE.Mesh
+    pCube63_aiStandardSurface2_0: THREE.Mesh
+    pCube64_aiStandardSurface2_0: THREE.Mesh
+    pCube65_aiStandardSurface2_0: THREE.Mesh
+    pCube66_aiStandardSurface2_0: THREE.Mesh
+    pCube67_aiStandardSurface2_0: THREE.Mesh
+    pCube68_aiStandardSurface2_0: THREE.Mesh
+    pCube69_aiStandardSurface2_0: THREE.Mesh
+    pCube70_aiStandardSurface2_0: THREE.Mesh
+    pCube71_aiStandardSurface2_0: THREE.Mesh
+    pCube72_aiStandardSurface2_0: THREE.Mesh
+    pCube73_aiStandardSurface2_0: THREE.Mesh
+    pCube74_aiStandardSurface2_0: THREE.Mesh
+    pCube75_aiStandardSurface2_0: THREE.Mesh
+    pCube76_aiStandardSurface2_0: THREE.Mesh
+    pCube77_aiStandardSurface2_0: THREE.Mesh
+    pCube78_aiStandardSurface2_0: THREE.Mesh
+    pCube79_aiStandardSurface2_0: THREE.Mesh
+    pCube80_aiStandardSurface2_0: THREE.Mesh
+    pCube81_aiStandardSurface2_0: THREE.Mesh
+    pCube82_aiStandardSurface2_0: THREE.Mesh
+    pCube83_aiStandardSurface2_0: THREE.Mesh
+    pCube84_aiStandardSurface2_0: THREE.Mesh
+    pCube85_aiStandardSurface2_0: THREE.Mesh
+    pCube86_aiStandardSurface2_0: THREE.Mesh
+    pCube87_aiStandardSurface2_0: THREE.Mesh
+    pCube88_aiStandardSurface2_0: THREE.Mesh
+    pCube89_aiStandardSurface2_0: THREE.Mesh
+    pCube90_aiStandardSurface2_0: THREE.Mesh
+    pCube91_aiStandardSurface2_0: THREE.Mesh
+    pCube92_aiStandardSurface2_0: THREE.Mesh
+    pCube93_aiStandardSurface2_0: THREE.Mesh
+    pCube94_aiStandardSurface2_0: THREE.Mesh
+    pCube95_aiStandardSurface2_0: THREE.Mesh
+    pCube96_aiStandardSurface2_0: THREE.Mesh
+    pCube97_aiStandardSurface2_0: THREE.Mesh
+    pCube98_aiStandardSurface2_0: THREE.Mesh
+    pCube99_aiStandardSurface2_0: THREE.Mesh
+    pCube100_aiStandardSurface2_0: THREE.Mesh
+    pCube101_aiStandardSurface2_0: THREE.Mesh
+    pCube102_aiStandardSurface2_0: THREE.Mesh
+    pCube103_aiStandardSurface2_0: THREE.Mesh
+    pCube104_aiStandardSurface2_0: THREE.Mesh
+    pCube105_aiStandardSurface2_0: THREE.Mesh
+    pCube106_aiStandardSurface2_0: THREE.Mesh
+    pCube107_aiStandardSurface2_0: THREE.Mesh
+    pCube108_aiStandardSurface2_0: THREE.Mesh
+    pCube109_aiStandardSurface2_0: THREE.Mesh
+    pCube110_aiStandardSurface2_0: THREE.Mesh
+    pCube111_aiStandardSurface2_0: THREE.Mesh
+    pCube112_aiStandardSurface2_0: THREE.Mesh
+    pCube113_aiStandardSurface2_0: THREE.Mesh
+    pCube114_aiStandardSurface2_0: THREE.Mesh
+    pCube115_aiStandardSurface2_0: THREE.Mesh
+    pCube116_aiStandardSurface2_0: THREE.Mesh
+    pCube117_aiStandardSurface2_0: THREE.Mesh
+    pCube118_aiStandardSurface2_0: THREE.Mesh
+    pCube119_aiStandardSurface2_0: THREE.Mesh
+    pCube120_aiStandardSurface2_0: THREE.Mesh
+    pCube121_aiStandardSurface2_0: THREE.Mesh
+    pCube122_aiStandardSurface2_0: THREE.Mesh
+    pCube123_aiStandardSurface2_0: THREE.Mesh
+    pCube124_aiStandardSurface2_0: THREE.Mesh
+    pCube125_aiStandardSurface2_0: THREE.Mesh
+    pCube126_aiStandardSurface2_0: THREE.Mesh
+    pCube127_aiStandardSurface2_0: THREE.Mesh
+    pCube128_aiStandardSurface2_0: THREE.Mesh
+    pCube129_aiStandardSurface2_0: THREE.Mesh
+    pCube130_aiStandardSurface2_0: THREE.Mesh
+    pCube131_aiStandardSurface2_0: THREE.Mesh
+    pCube132_aiStandardSurface2_0: THREE.Mesh
+    pCube133_aiStandardSurface2_0: THREE.Mesh
+    pCube134_aiStandardSurface2_0: THREE.Mesh
+    pCube135_aiStandardSurface2_0: THREE.Mesh
+    pCube136_aiStandardSurface2_0: THREE.Mesh
+    pCube137_aiStandardSurface2_0: THREE.Mesh
+    pCube138_aiStandardSurface2_0: THREE.Mesh
+    pCube139_aiStandardSurface2_0: THREE.Mesh
+    pCube140_aiStandardSurface2_0: THREE.Mesh
+    pCube141_aiStandardSurface2_0: THREE.Mesh
+    pCube142_aiStandardSurface2_0: THREE.Mesh
+    pCube143_aiStandardSurface2_0: THREE.Mesh
+    pCube144_aiStandardSurface2_0: THREE.Mesh
+    pCube145_aiStandardSurface2_0: THREE.Mesh
+    pCube146_aiStandardSurface2_0: THREE.Mesh
+    pCube147_aiStandardSurface2_0: THREE.Mesh
+    pCube148_aiStandardSurface2_0: THREE.Mesh
+    pCube149_aiStandardSurface2_0: THREE.Mesh
+    pCube150_aiStandardSurface2_0: THREE.Mesh
+    pCube151_aiStandardSurface2_0: THREE.Mesh
+    pCube152_aiStandardSurface2_0: THREE.Mesh
+    pCube153_aiStandardSurface2_0: THREE.Mesh
+    pCube154_aiStandardSurface2_0: THREE.Mesh
+    pCube155_aiStandardSurface2_0: THREE.Mesh
+    pCube156_aiStandardSurface2_0: THREE.Mesh
+    pCube157_aiStandardSurface2_0: THREE.Mesh
+    pCube158_aiStandardSurface2_0: THREE.Mesh
+    pCube159_aiStandardSurface2_0: THREE.Mesh
+    pCube160_aiStandardSurface2_0: THREE.Mesh
+    pCube161_aiStandardSurface2_0: THREE.Mesh
+    pCube162_aiStandardSurface2_0: THREE.Mesh
+    pCube163_aiStandardSurface2_0: THREE.Mesh
+    pCube164_aiStandardSurface2_0: THREE.Mesh
+    pCube165_aiStandardSurface2_0: THREE.Mesh
+    pCube166_aiStandardSurface2_0: THREE.Mesh
+    pCube167_aiStandardSurface2_0: THREE.Mesh
+    pCube168_aiStandardSurface2_0: THREE.Mesh
+    pCube169_aiStandardSurface2_0: THREE.Mesh
+    pCube170_aiStandardSurface3_0: THREE.Mesh
+    pCube171_aiStandardSurface3_0: THREE.Mesh
+    pCube172_aiStandardSurface3_0: THREE.Mesh
+    pCube173_aiStandardSurface3_0: THREE.Mesh
+    pCube174_aiStandardSurface3_0: THREE.Mesh
+    pCube175_aiStandardSurface3_0: THREE.Mesh
+    pCube176_aiStandardSurface3_0: THREE.Mesh
+    pCube177_aiStandardSurface3_0: THREE.Mesh
+    pCube178_aiStandardSurface3_0: THREE.Mesh
+    pCube179_aiStandardSurface3_0: THREE.Mesh
+    pCube180_aiStandardSurface3_0: THREE.Mesh
+    pCube181_aiStandardSurface3_0: THREE.Mesh
+    pCube182_aiStandardSurface3_0: THREE.Mesh
+    pCube183_aiStandardSurface3_0: THREE.Mesh
+    pCube184_aiStandardSurface3_0: THREE.Mesh
+    pCube185_aiStandardSurface3_0: THREE.Mesh
+    pCube186_aiStandardSurface3_0: THREE.Mesh
+    pCube187_aiStandardSurface3_0: THREE.Mesh
+    pCube188_aiStandardSurface3_0: THREE.Mesh
+    pCube189_aiStandardSurface3_0: THREE.Mesh
+    pCube190_aiStandardSurface3_0: THREE.Mesh
+    pCube191_aiStandardSurface3_0: THREE.Mesh
+    pCube192_aiStandardSurface3_0: THREE.Mesh
+    pCube193_aiStandardSurface3_0: THREE.Mesh
+    pCube194_aiStandardSurface3_0: THREE.Mesh
+    pCube195_aiStandardSurface3_0: THREE.Mesh
+    pCube196_aiStandardSurface3_0: THREE.Mesh
+    pCube197_aiStandardSurface3_0: THREE.Mesh
+    pCube198_aiStandardSurface3_0: THREE.Mesh
+    pCube199_aiStandardSurface3_0: THREE.Mesh
+    pCube200_aiStandardSurface3_0: THREE.Mesh
+    pCube201_aiStandardSurface3_0: THREE.Mesh
+    pCube202_aiStandardSurface3_0: THREE.Mesh
+    pCube203_aiStandardSurface3_0: THREE.Mesh
+    pCube204_aiStandardSurface3_0: THREE.Mesh
+    pCube205_aiStandardSurface3_0: THREE.Mesh
+    pCube206_aiStandardSurface3_0: THREE.Mesh
+    pCube207_aiStandardSurface3_0: THREE.Mesh
+    pCube208_aiStandardSurface3_0: THREE.Mesh
+    pCube209_aiStandardSurface3_0: THREE.Mesh
+    pCube210_aiStandardSurface3_0: THREE.Mesh
+    pCube211_aiStandardSurface3_0: THREE.Mesh
+    pCube212_aiStandardSurface3_0: THREE.Mesh
+    pCube213_aiStandardSurface3_0: THREE.Mesh
+    pCube214_aiStandardSurface3_0: THREE.Mesh
+    pCube215_aiStandardSurface3_0: THREE.Mesh
+    pCube216_aiStandardSurface3_0: THREE.Mesh
+    pCube217_aiStandardSurface3_0: THREE.Mesh
+    pCube218_aiStandardSurface3_0: THREE.Mesh
+    pCube219_aiStandardSurface3_0: THREE.Mesh
+    pCube220_aiStandardSurface3_0: THREE.Mesh
+    pCube221_aiStandardSurface3_0: THREE.Mesh
+    pCube222_aiStandardSurface3_0: THREE.Mesh
+    pCube223_aiStandardSurface3_0: THREE.Mesh
+    pCube224_aiStandardSurface3_0: THREE.Mesh
+    pCube225_aiStandardSurface3_0: THREE.Mesh
+    pCube226_aiStandardSurface3_0: THREE.Mesh
+    pCube227_aiStandardSurface3_0: THREE.Mesh
+    pCube228_aiStandardSurface3_0: THREE.Mesh
+    pCube229_aiStandardSurface3_0: THREE.Mesh
+    pCube230_aiStandardSurface3_0: THREE.Mesh
+    pCube231_aiStandardSurface3_0: THREE.Mesh
+    pCube232_aiStandardSurface3_0: THREE.Mesh
+    pCube233_aiStandardSurface3_0: THREE.Mesh
+    pCube234_aiStandardSurface3_0: THREE.Mesh
+    pCube235_aiStandardSurface3_0: THREE.Mesh
+    pCube236_aiStandardSurface3_0: THREE.Mesh
+    pCube237_aiStandardSurface3_0: THREE.Mesh
+    pCube238_aiStandardSurface3_0: THREE.Mesh
+    pCube239_aiStandardSurface3_0: THREE.Mesh
+    pCube240_aiStandardSurface3_0: THREE.Mesh
+    pCube241_aiStandardSurface3_0: THREE.Mesh
+    pCube242_aiStandardSurface3_0: THREE.Mesh
+    pCube243_aiStandardSurface3_0: THREE.Mesh
+    pCube244_aiStandardSurface3_0: THREE.Mesh
+    pCube245_aiStandardSurface3_0: THREE.Mesh
+    pCube246_aiStandardSurface3_0: THREE.Mesh
+    pCube247_aiStandardSurface3_0: THREE.Mesh
+    pCube248_aiStandardSurface3_0: THREE.Mesh
+    pCube249_aiStandardSurface3_0: THREE.Mesh
+    pCube250_aiStandardSurface3_0: THREE.Mesh
+    pCube251_aiStandardSurface3_0: THREE.Mesh
+    pCube252_aiStandardSurface3_0: THREE.Mesh
+    pCube253_aiStandardSurface3_0: THREE.Mesh
+    pCube254_aiStandardSurface3_0: THREE.Mesh
+    pCube255_aiStandardSurface3_0: THREE.Mesh
+    pCube256_aiStandardSurface3_0: THREE.Mesh
+    pCube257_aiStandardSurface3_0: THREE.Mesh
+    pCube258_aiStandardSurface3_0: THREE.Mesh
+    pCube259_aiStandardSurface3_0: THREE.Mesh
+    pCube260_aiStandardSurface3_0: THREE.Mesh
+    pCube261_aiStandardSurface3_0: THREE.Mesh
+    pCube262_aiStandardSurface3_0: THREE.Mesh
+    pCube263_aiStandardSurface3_0: THREE.Mesh
+    pCube264_aiStandardSurface3_0: THREE.Mesh
+    pCube265_aiStandardSurface3_0: THREE.Mesh
+    pCube266_aiStandardSurface3_0: THREE.Mesh
+    pCube267_aiStandardSurface3_0: THREE.Mesh
+    pCube268_aiStandardSurface3_0: THREE.Mesh
+    pCube269_aiStandardSurface3_0: THREE.Mesh
+    pCube270_aiStandardSurface3_0: THREE.Mesh
+    pCube271_aiStandardSurface3_0: THREE.Mesh
+    pCube272_aiStandardSurface3_0: THREE.Mesh
+    pCube273_aiStandardSurface3_0: THREE.Mesh
+    pCube274_aiStandardSurface3_0: THREE.Mesh
+    pCube275_aiStandardSurface3_0: THREE.Mesh
+    pCube276_aiStandardSurface3_0: THREE.Mesh
+    pCube277_aiStandardSurface3_0: THREE.Mesh
+    pCube278_aiStandardSurface3_0: THREE.Mesh
+    pCube279_aiStandardSurface3_0: THREE.Mesh
+    pCube280_aiStandardSurface3_0: THREE.Mesh
+    pCube281_aiStandardSurface3_0: THREE.Mesh
+    pCube282_aiStandardSurface3_0: THREE.Mesh
+    pCube283_aiStandardSurface3_0: THREE.Mesh
+    pCube284_aiStandardSurface3_0: THREE.Mesh
+    pCube285_aiStandardSurface3_0: THREE.Mesh
+    pCube286_aiStandardSurface3_0: THREE.Mesh
+    pCube287_aiStandardSurface3_0: THREE.Mesh
+    pCube288_aiStandardSurface3_0: THREE.Mesh
+    pCube289_aiStandardSurface3_0: THREE.Mesh
+    pCube290_aiStandardSurface3_0: THREE.Mesh
+    pCube291_aiStandardSurface3_0: THREE.Mesh
+    pCube292_aiStandardSurface3_0: THREE.Mesh
+    pCube293_aiStandardSurface3_0: THREE.Mesh
+    pCube294_aiStandardSurface3_0: THREE.Mesh
+    pCube295_aiStandardSurface3_0: THREE.Mesh
+    pCube296_aiStandardSurface3_0: THREE.Mesh
+    pCube297_aiStandardSurface3_0: THREE.Mesh
+    pCube298_aiStandardSurface3_0: THREE.Mesh
+    pCube299_aiStandardSurface3_0: THREE.Mesh
+    pCube300_aiStandardSurface3_0: THREE.Mesh
+    pCube301_aiStandardSurface3_0: THREE.Mesh
+    pCube302_aiStandardSurface3_0: THREE.Mesh
+    pCube303_aiStandardSurface3_0: THREE.Mesh
+    pCube304_aiStandardSurface3_0: THREE.Mesh
+    pCube305_aiStandardSurface3_0: THREE.Mesh
+    pCube306_aiStandardSurface3_0: THREE.Mesh
+    pCube307_aiStandardSurface3_0: THREE.Mesh
+    pCube308_aiStandardSurface3_0: THREE.Mesh
+    pCube309_aiStandardSurface3_0: THREE.Mesh
+    pCube310_aiStandardSurface3_0: THREE.Mesh
+    pCube311_aiStandardSurface3_0: THREE.Mesh
+    pCube312_aiStandardSurface3_0: THREE.Mesh
+    pCube313_aiStandardSurface3_0: THREE.Mesh
+    pCube314_aiStandardSurface3_0: THREE.Mesh
+    pCube315_aiStandardSurface3_0: THREE.Mesh
+    pCube316_aiStandardSurface3_0: THREE.Mesh
+    pCube317_aiStandardSurface3_0: THREE.Mesh
+    pCube318_aiStandardSurface3_0: THREE.Mesh
+    pCube319_aiStandardSurface3_0: THREE.Mesh
+    pCube320_aiStandardSurface3_0: THREE.Mesh
+    pCube321_aiStandardSurface3_0: THREE.Mesh
+    pCube322_aiStandardSurface3_0: THREE.Mesh
+    pCube323_aiStandardSurface3_0: THREE.Mesh
+    pCube324_aiStandardSurface3_0: THREE.Mesh
+    pCube325_aiStandardSurface3_0: THREE.Mesh
+    pCube326_aiStandardSurface3_0: THREE.Mesh
+    pCube327_aiStandardSurface3_0: THREE.Mesh
+    pCube328_aiStandardSurface3_0: THREE.Mesh
     pCube329_aiStandardSurface3_0: THREE.Mesh
   }
   materials: {
@@ -24,15 +346,11 @@ type GLTFResult = GLTF & {
   }
 }
 
-// Wrap your component in forwardRef
-export const Energybar = forwardRef<THREE.Group>((props, ref) => {
+export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/granola_bar_3d.glb') as GLTFResult
-  
-  // Assign the ref to the main group
   return (
-    <group {...props} dispose={null} ref={ref}>
+    <group {...props} dispose={null}>
       <group rotation={[-0.0479383, 0.0251902, 0.1388813]}>
-        {/* All your <mesh> elements remain unchanged inside this group */}
         <mesh
           geometry={nodes.pCube3_aiStandardSurface1_0.geometry}
           material={materials.aiStandardSurface1}
@@ -45,7 +363,2260 @@ export const Energybar = forwardRef<THREE.Group>((props, ref) => {
           rotation={[-1.5738335, 0.0750538, -0.0030963]}
           scale={[0.5357696, 0.0215652, 0.0344057]}
         />
-        {/* ... truncated for brevity ... all other meshes go here ... */}
+        <mesh
+          geometry={nodes.pCube7_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2666874, 4.0254493, -0.0150969]}
+          rotation={[2.9424335, -0.0781709, 0.0130191]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube8_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2559471, 3.947355, -0.0026016]}
+          rotation={[2.9427405, -0.1016298, 0.0130467]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube9_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2618446, 3.8553391, 0.0127896]}
+          rotation={[3.0327358, -0.1000545, 0.0221127]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube10_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2653694, 3.757504, 0.0200517]}
+          rotation={[3.0327358, -0.1000545, 0.0221127]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube11_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2830467, 3.6686685, 0.0262083]}
+          rotation={[3.0327358, -0.1000545, 0.0221127]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube12_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2874203, 3.5720792, 0.0315292]}
+          rotation={[3.0327358, -0.1000545, 0.0221127]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube13_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2940302, 3.4756186, 0.0381755]}
+          rotation={[3.0869375, -0.0954735, 0.0274921]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube14_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.312602, 3.3766942, 0.0472119]}
+          rotation={[3.0869375, -0.0954735, 0.0274921]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube15_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3206472, 3.2828743, 0.0498661]}
+          rotation={[-3.1250357, -0.0932848, 0.0342059]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube16_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3279295, 3.1846004, 0.0471016]}
+          rotation={[-3.1250357, -0.0932848, 0.0342059]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube17_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3385868, 3.082341, 0.0432256]}
+          rotation={[-3.1250357, -0.0932848, 0.0342059]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube18_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3450718, 2.9815061, 0.0409532]}
+          rotation={[-3.1250357, -0.0932848, 0.0342059]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube19_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3617229, 2.8789415, 0.0383811]}
+          rotation={[-3.1250357, -0.0932848, 0.0342059]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube20_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3574839, 2.7778523, 0.0346597]}
+          rotation={[-3.1250357, -0.0932848, 0.0342059]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube21_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.360054, 2.6821601, 0.0310406]}
+          rotation={[-3.1250357, -0.0932848, 0.0342059]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube22_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3606672, 2.5841169, 0.0268258]}
+          rotation={[-3.0784054, -0.0805946, 0.0385134]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube23_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3476315, 2.4823279, 0.0189619]}
+          rotation={[-3.0784054, -0.0805946, 0.0385134]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube24_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3466845, 2.3835747, 0.0146563]}
+          rotation={[-3.0784054, -0.0805946, 0.0385134]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube25_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3363943, 2.2840493, 0.0070837]}
+          rotation={[-3.0784054, -0.0805946, 0.0385134]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube26_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3284435, 2.1839843, 0.0010635]}
+          rotation={[-3.0784054, -0.0805946, 0.0385134]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube27_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3307314, 2.0877163, -0.0040233]}
+          rotation={[-3.0781668, -0.0867629, 0.0385333]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube28_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3242607, 1.9869288, -0.0111163]}
+          rotation={[-3.0781668, -0.0867629, 0.0385333]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube29_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3151073, 1.8851684, -0.0173546]}
+          rotation={[-3.0781668, -0.0867629, 0.0385333]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube30_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3096752, 1.7768749, -0.0225968]}
+          rotation={[-3.0781668, -0.0867629, -0.0007885]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube31_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2999563, 1.6769969, -0.0281111]}
+          rotation={[-3.0781668, -0.0867629, -0.0007885]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube32_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2888269, 1.5761162, -0.0339709]}
+          rotation={[-3.0781668, -0.0867629, -0.0007885]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube33_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2816639, 1.4731492, -0.0375478]}
+          rotation={[-3.0781668, -0.0867629, -0.0007885]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube34_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2700443, 1.3676378, -0.0420422]}
+          rotation={[-3.0781668, -0.0867629, -0.0007885]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube35_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2630577, 1.2687542, -0.0488003]}
+          rotation={[-3.0781668, -0.0867629, -0.0007885]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube36_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2417736, 1.1626512, -0.0570277]}
+          rotation={[-3.0781668, -0.0867629, -0.042099]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube37_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2232027, 1.0612499, -0.0593778]}
+          rotation={[-3.0781668, -0.0867629, -0.042099]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube38_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.198411, 0.9622005, -0.0636802]}
+          rotation={[-3.0781668, -0.0867629, -0.0732012]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube39_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1724091, 0.8659056, -0.0714642]}
+          rotation={[-3.0781668, -0.0867629, -0.0547147]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube40_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1531029, 0.7649736, -0.0801796]}
+          rotation={[-3.0781668, -0.0867629, -0.0547147]}
+          scale={[0.5357696, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube41_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1347075, 0.6661486, -0.0860629]}
+          rotation={[-3.0781668, -0.0867629, -0.0547147]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube42_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1023016, 0.5679318, -0.0925865]}
+          rotation={[-3.0781668, -0.0867629, -0.0547147]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube43_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0757008, 0.4740009, -0.0941546]}
+          rotation={[-3.0781668, -0.0867629, -0.0547147]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube44_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0481777, 0.3761577, -0.1008955]}
+          rotation={[-3.0781668, -0.0867629, -0.0547147]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube45_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0252094, 0.2780607, -0.1045754]}
+          rotation={[-3.078267, -0.088585, -0.0547234]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube46_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9995775, 0.182899, -0.1067484]}
+          rotation={[-3.078267, -0.088585, -0.0547234]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube47_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9839306, 0.0864835, -0.1103256]}
+          rotation={[-3.078267, -0.088585, -0.0547234]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube48_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9648981, -0.0130548, -0.1133355]}
+          rotation={[-3.078267, -0.088585, -0.0547234]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube49_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.95014, -0.1123273, -0.1164997]}
+          rotation={[-3.078267, -0.088585, -0.0547234]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube50_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9346094, -0.2089439, -0.1193923]}
+          rotation={[-3.078267, -0.088585, -0.0547234]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube51_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9183407, -0.3103905, -0.1201748]}
+          rotation={[-3.078267, -0.088585, -0.0547234]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube52_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9189329, -0.4127137, -0.1197478]}
+          rotation={[3.1243554, -0.0839062, -0.0616668]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube53_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9143915, -0.5118545, -0.1212216]}
+          rotation={[3.1243554, -0.0839062, -0.0616668]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube54_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9085121, -0.6117954, -0.1182221]}
+          rotation={[3.1243554, -0.0839062, -0.0616668]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube55_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9073992, -0.7103321, -0.1201541]}
+          rotation={[3.1243554, -0.0839062, -0.0616668]}
+          scale={[0.51168, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube56_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9070444, -0.8047858, -0.1196967]}
+          rotation={[3.1243554, -0.0839062, -0.0319954]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube57_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9170008, -0.8988737, -0.1152696]}
+          rotation={[3.1243554, -0.0839062, -0.0114969]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube58_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9255381, -1.0007823, -0.1131064]}
+          rotation={[3.1243554, -0.0839062, -0.0114969]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube59_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9358416, -1.1001594, -0.1074161]}
+          rotation={[3.1243554, -0.0839062, -0.0114969]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube60_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.946619, -1.1999537, -0.1049885]}
+          rotation={[3.1243554, -0.0839062, -0.0006145]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube61_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9568481, -1.2994429, -0.102165]}
+          rotation={[3.1243554, -0.0839062, 0.016873]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube62_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9603662, -1.4000582, -0.0994052]}
+          rotation={[3.1243554, -0.0839062, 0.0289422]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube63_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9763927, -1.5040016, -0.0944448]}
+          rotation={[3.1243554, -0.0839062, 0.0408081]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube64_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9807148, -1.6010644, -0.0885931]}
+          rotation={[3.1243554, -0.0839062, 0.051848]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube65_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9951458, -1.701013, -0.084352]}
+          rotation={[3.1243554, -0.0839062, 0.051848]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube66_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0054064, -1.7992492, -0.0804549]}
+          rotation={[3.1243554, -0.0839062, 0.051848]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube67_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0122852, -1.8968604, -0.0764658]}
+          rotation={[3.1243554, -0.0839062, 0.051848]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube68_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0180368, -1.9907551, -0.0719625]}
+          rotation={[3.1243554, -0.0839062, 0.051848]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube69_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0189009, -2.0955596, -0.0678105]}
+          rotation={[3.1243554, -0.0839062, 0.0238292]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube70_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0125694, -2.2035093, -0.0669364]}
+          rotation={[3.1243554, -0.0839062, 0.002969]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube71_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0120354, -2.3031123, -0.0632173]}
+          rotation={[3.1243554, -0.0839062, 0.002969]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube72_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0116739, -2.4060853, -0.0591753]}
+          rotation={[3.1243554, -0.0839062, 0.002969]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube73_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0103626, -2.5098913, -0.0560812]}
+          rotation={[3.1243554, -0.0839062, -0.0093756]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube74_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0087795, -2.6203468, -0.0518242]}
+          rotation={[3.1020599, -0.0776115, -0.0373253]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube75_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9997711, -2.7218747, -0.050662]}
+          rotation={[3.1020599, -0.0776115, -0.0527634]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube76_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9944296, -2.8330328, -0.0467756]}
+          rotation={[3.1020599, -0.0776115, -0.0660133]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube77_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9847355, -2.9325497, -0.0447245]}
+          rotation={[3.1020599, -0.0776115, -0.0660133]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube78_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9722261, -3.0289054, -0.0449567]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube79_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9698067, -3.1269448, -0.0441839]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube80_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.963932, -3.2328274, -0.0388254]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube81_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9518433, -3.333056, -0.039323]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube82_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9497747, -3.4296236, -0.0381653]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube83_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9407177, -3.5325317, -0.0363018]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube84_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9296169, -3.63381, -0.035374]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube85_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9246807, -3.7392299, -0.0348558]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube86_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9088478, -3.8450422, -0.0357922]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube87_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9134617, -3.9544151, -0.0280597]}
+          rotation={[3.101348, -0.0883369, -0.0660723]}
+          scale={[0.5231315, 0.0474428, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube88_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9267969, -4.0592318, -0.0035681]}
+          rotation={[1.619675, 0.0582151, -0.0180814]}
+          scale={[0.5056892, 0.0128161, 0.0344057]}
+        />
+        <mesh
+          geometry={nodes.pCube89_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2641449, 4.0254493, 0.0299201]}
+          rotation={[-0.2601946, -0.0440013, 3.0783938]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube90_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2645311, 3.947355, 0.0540563]}
+          rotation={[-0.3054988, -0.0520941, 3.1230555]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube91_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2704287, 3.8553391, 0.0749208]}
+          rotation={[-0.1850323, -0.0636622, 3.1155967]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube92_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2739544, 3.757504, 0.0912952]}
+          rotation={[-0.1127652, -0.0770636, 3.1195251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube93_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2916317, 3.6686685, 0.0983112]}
+          rotation={[-0.1127652, -0.0770636, 3.1195251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube94_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2960052, 3.5720792, 0.1054817]}
+          rotation={[-0.1127652, -0.0770636, 3.1195251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube95_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3026152, 3.4756186, 0.1139979]}
+          rotation={[-0.0595158, -0.0816212, 3.1141343]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube96_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3153124, 3.3766942, 0.1171292]}
+          rotation={[-0.0595158, -0.0816212, 3.1141343]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube97_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.319972, 3.2828743, 0.1199937]}
+          rotation={[0.0105085, -0.0837734, 3.1074156]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube98_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3276892, 3.1846004, 0.1196719]}
+          rotation={[0.0105085, -0.0837734, 3.1074156]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube99_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3361483, 3.082341, 0.1189034]}
+          rotation={[0.0105085, -0.0837734, 3.1074156]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube100_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3424816, 2.9815061, 0.1137398]}
+          rotation={[0.0105085, -0.0837734, 3.1074156]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube101_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3387136, 2.8789415, 0.1093681]}
+          rotation={[0.0105085, -0.0837734, 3.1074156]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube102_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3414307, 2.7778523, 0.1038554]}
+          rotation={[0.0105085, -0.0837734, 3.1074156]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube103_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3427267, 2.6821601, 0.0994074]}
+          rotation={[0.0105085, -0.0837734, 3.1074156]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube104_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3528833, 2.5841169, 0.0933775]}
+          rotation={[0.0563698, -0.0964357, 3.1030251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube105_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3404732, 2.4823279, 0.0891701]}
+          rotation={[0.0563698, -0.0964357, 3.1030251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube106_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3389149, 2.3835747, 0.0811755]}
+          rotation={[0.0563698, -0.0964357, 3.1030251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube107_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.33706, 2.2840493, 0.0759352]}
+          rotation={[0.0563698, -0.0964357, 3.1030251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube108_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3279343, 2.1839843, 0.0701776]}
+          rotation={[0.0563698, -0.0964357, 3.1030251]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube109_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3276396, 2.0877163, 0.0610866]}
+          rotation={[0.0566087, -0.0902674, 3.1030473]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube110_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3216639, 1.9869288, 0.0554818]}
+          rotation={[0.0566087, -0.0902674, 3.1030473]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube111_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3114367, 1.8851684, 0.0486091]}
+          rotation={[0.0566087, -0.0902674, 3.1030473]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube112_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.3016882, 1.7768749, 0.0379427]}
+          rotation={[0.0635654, -0.0903982, -3.1408039]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube113_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2917662, 1.6769969, 0.0356184]}
+          rotation={[0.0635654, -0.0903982, -3.1408039]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube114_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2790289, 1.5761162, 0.0286313]}
+          rotation={[0.0635654, -0.0903982, -3.1408039]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube115_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2692862, 1.4731492, 0.0240859]}
+          rotation={[0.0635654, -0.0903982, -3.1408039]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube116_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2518396, 1.3676378, 0.0172972]}
+          rotation={[0.0635654, -0.0903982, -3.1408039]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube117_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2481766, 1.2687542, 0.0098297]}
+          rotation={[0.0635654, -0.0903982, -3.1408039]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube118_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2361364, 1.1626512, 0.0022104]}
+          rotation={[0.0708734, -0.090242, -3.0994807]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube119_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.2161818, 1.0612499, -0.0030047]}
+          rotation={[0.0708734, -0.090242, -3.0994807]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube120_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1959372, 0.9622005, -0.0107543]}
+          rotation={[0.0763676, -0.0899261, -3.0683709]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube121_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1723919, 0.8659056, -0.0151327]}
+          rotation={[0.0731031, -0.0901344, -3.0868616]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube122_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1548882, 0.7649736, -0.0235003]}
+          rotation={[0.0731031, -0.0901344, -3.0868616]}
+          scale={[-0.5357696, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube123_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1283798, 0.6661486, -0.0292023]}
+          rotation={[0.0731031, -0.0901344, -3.0868616]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube124_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.1030569, 0.5679318, -0.0323943]}
+          rotation={[0.0731031, -0.0901344, -3.0868616]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube125_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0799608, 0.4740009, -0.0368213]}
+          rotation={[0.0725479, -0.0800313, -3.0869088]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube126_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0525675, 0.3761577, -0.0424617]}
+          rotation={[0.0725576, -0.080209, -3.086908]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube127_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.025569, 0.2780607, -0.0451118]}
+          rotation={[0.0730029, -0.0883124, -3.0868705]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube128_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.00284, 0.182899, -0.0510678]}
+          rotation={[0.0724438, -0.0781368, -3.086917]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube129_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9829121, 0.0864835, -0.0535481]}
+          rotation={[0.0724631, -0.0784884, -3.0869155]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube130_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9715405, -0.0130548, -0.0569072]}
+          rotation={[0.0723944, -0.077236, -3.0869209]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube131_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9548674, -0.1123273, -0.0592152]}
+          rotation={[0.072469, -0.0785943, -3.086915]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube132_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9392033, -0.2089439, -0.0621323]}
+          rotation={[0.0724679, -0.0785751, -3.0869151]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube133_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9241133, -0.3103905, -0.0628621]}
+          rotation={[0.0724227, -0.0777518, -3.0869187]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube134_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.917573, -0.4127137, -0.0599446]}
+          rotation={[-0.0069516, -0.0828776, -3.0799312]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube135_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9141445, -0.5118545, -0.0601568]}
+          rotation={[-0.0068975, -0.0837516, -3.0799267]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube136_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9133644, -0.6117954, -0.0602619]}
+          rotation={[-0.0069991, -0.082111, -3.0799351]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube137_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9105816, -0.7103321, -0.0611347]}
+          rotation={[-0.0069911, -0.0822402, -3.0799344]}
+          scale={[-0.51168, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube138_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.911685, -0.8047858, -0.0583571]}
+          rotation={[-0.0118878, -0.0834307, -3.1095985]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube139_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.917448, -0.8988737, -0.0548693]}
+          rotation={[-0.0153167, -0.0833305, -3.1300963]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube140_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.929368, -1.0007823, -0.053056]}
+          rotation={[-0.0153265, -0.0824801, -3.1300971]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube141_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9354801, -1.1001594, -0.0482929]}
+          rotation={[-0.0153144, -0.083534, -3.1300961]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube142_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9478626, -1.1999537, -0.0433239]}
+          rotation={[-0.0171347, -0.0831031, -3.1409782]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube143_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9571524, -1.2994429, -0.0381615]}
+          rotation={[-0.0200545, -0.0832443, 3.1247206]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube144_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9665022, -1.4000582, -0.0337783]}
+          rotation={[-0.022038, -0.0821255, 3.1126547]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube145_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9748898, -1.5040016, -0.029378]}
+          rotation={[-0.0240277, -0.0826031, 3.100789]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube146_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9808645, -1.6010644, -0.0228024]}
+          rotation={[-0.0258866, -0.0829677, 3.0897488]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube147_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9936056, -1.701013, -0.0192947]}
+          rotation={[-0.0258806, -0.0828528, 3.0897493]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube148_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0012951, -1.7992492, -0.0155834]}
+          rotation={[-0.0258774, -0.0827903, 3.0897495]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube149_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0115652, -1.8968604, -0.0101271]}
+          rotation={[-0.0258952, -0.0831314, 3.0897481]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube150_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0207405, -1.9907551, -0.0059881]}
+          rotation={[-0.0258643, -0.0825391, 3.0897506]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube151_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.022522, -2.0955596, -0.0023623]}
+          rotation={[-0.0212129, -0.0831005, 3.1177651]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube152_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0186005, -2.2035093, 0.0022822]}
+          rotation={[-0.0177628, -0.0932542, 3.1386212]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube153_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0160666, -2.3031123, 0.0055298]}
+          rotation={[-0.0177628, -0.0932542, 3.1386212]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube154_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0135555, -2.4060853, 0.0091559]}
+          rotation={[-0.0177628, -0.0932542, 3.1386212]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube155_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0122004, -2.5098913, 0.0140332]}
+          rotation={[-0.0155777, -0.0932472, -3.1322093]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube156_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0106926, -2.6203468, 0.0165036]}
+          rotation={[-0.0329236, -0.0994267, -3.1041949]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube157_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-11.0041304, -2.7218747, 0.0196095]}
+          rotation={[-0.0301922, -0.0993039, -3.0887275]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube158_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9957495, -2.8330328, 0.0219512]}
+          rotation={[-0.0278497, -0.0991651, -3.075453]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube159_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9883175, -2.9325497, 0.024306]}
+          rotation={[-0.0284411, -0.0902718, -3.0755089]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube160_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9702082, -3.0289054, 0.0265901]}
+          rotation={[-0.029148, -0.0796245, -3.0755689]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube161_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9691229, -3.1269448, 0.0292632]}
+          rotation={[-0.0285629, -0.0884397, -3.0755198]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube162_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9625006, -3.2328274, 0.0316282]}
+          rotation={[-0.0285629, -0.0884397, -3.0755198]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube163_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9520521, -3.333056, 0.0318327]}
+          rotation={[-0.0285629, -0.0884397, -3.0755198]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube164_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9458065, -3.4296236, 0.0338858]}
+          rotation={[-0.0285629, -0.0884397, -3.0755198]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube165_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9300499, -3.5325317, 0.0364807]}
+          rotation={[-0.0285629, -0.0884397, -3.0755198]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube166_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9306698, -3.63381, 0.0352501]}
+          rotation={[-0.0285629, -0.0884397, -3.0755198]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube167_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9179983, -3.7392299, 0.0351218]}
+          rotation={[0.031791, -0.0843025, -3.0703118]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube168_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9140615, -3.8450422, 0.0339405]}
+          rotation={[0.0166073, -0.0853729, -3.0715985]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube169_aiStandardSurface2_0.geometry}
+          material={materials.aiStandardSurface2}
+          position={[-10.9087534, -3.9544151, 0.0300402]}
+          rotation={[0.0679551, -0.0844854, -3.0673135]}
+          scale={[-0.5231315, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube170_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7951622, 3.45785, 0.0331762]}
+          rotation={[-0.1073011, 0.0748372, -3.1335393]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube171_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8096247, 3.3820333, 0.0407735]}
+          rotation={[-0.107382, 0.0848488, -3.1335328]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube172_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8140821, 3.3007703, 0.0420182]}
+          rotation={[-0.0093164, 0.0852293, 3.1413165]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube173_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8253202, 3.2115955, 0.0404729]}
+          rotation={[0.0189885, 0.0962329, 3.138596]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube174_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8345585, 3.1083519, 0.0404729]}
+          rotation={[0.0198349, 0.0960625, 3.1396899]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube175_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8470163, 3.0052052, 0.0323064]}
+          rotation={[0.0198349, 0.0960625, 3.1396899]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube176_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.858017, 2.9064741, 0.0303511]}
+          rotation={[0.0198349, 0.0960625, 3.1396899]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube177_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.864852, 2.8083904, 0.0251671]}
+          rotation={[0.0198349, 0.0960625, 3.1396899]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube178_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8642426, 2.7103617, 0.019658]}
+          rotation={[0.0198349, 0.0960625, 3.1396899]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube179_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8810368, 2.6052201, 0.0101062]}
+          rotation={[0.0198008, 0.078224, 3.1396929]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube180_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8893576, 2.5135176, 0.0101062]}
+          rotation={[0.0198221, 0.0893631, 3.1396911]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube181_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.4189467, 0.0101062]}
+          rotation={[0.0198221, 0.0893631, 3.1396911]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube182_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.3214118, 0.0102757]}
+          rotation={[0.0198221, 0.0893631, 3.1396911]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube183_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.2270768, 0.0081427]}
+          rotation={[0.0198221, 0.0893631, 3.1396911]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube184_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.1223485, 0.0063852]}
+          rotation={[0.0198221, 0.0893631, 3.1396911]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube185_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.884387, 2.0246537, 0.0082887]}
+          rotation={[0.0197993, 0.077417, 3.139693]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube186_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8779821, 1.9238298, 0.0083473]}
+          rotation={[0.0197947, 0.0750023, 3.1396934]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube187_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8716545, 1.8205918, 0.011404]}
+          rotation={[-0.0620058, 0.0749072, -3.1373629]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube188_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8662891, 1.7288314, 0.0151438]}
+          rotation={[-0.0620058, 0.0749072, -3.1373629]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube189_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8619146, 1.6272789, 0.0182268]}
+          rotation={[0.0111253, 0.075016, 3.1403431]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube190_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8556938, 1.5349622, 0.0195481]}
+          rotation={[0.0111253, 0.075016, 3.1403431]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube191_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.848567, 1.4348449, 0.0238864]}
+          rotation={[-0.0176457, 0.0750209, -3.1406858]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube192_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8363256, 1.336727, 0.0265587]}
+          rotation={[-0.017636, 0.0643104, -3.1406864]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube193_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8363256, 1.2427641, 0.0282586]}
+          rotation={[-0.017636, 0.0643104, -3.1406864]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube194_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8172703, 1.1438788, 0.0361051]}
+          rotation={[-0.0176452, 0.0745054, -3.1406858]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube195_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8154993, 1.0446156, 0.0378576]}
+          rotation={[-0.0176418, 0.0698051, -3.1405199]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube196_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8154993, 0.9444359, 0.0395996]}
+          rotation={[-0.0176418, 0.0698051, -3.1405199]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube197_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8070488, 0.8511233, 0.0446283]}
+          rotation={[-0.0176418, 0.0698051, -3.1405199]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube198_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8026104, 0.7634005, 0.0450964]}
+          rotation={[-0.0176331, 0.0610798, -3.1406741]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube199_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8026104, 0.6723036, 0.0476998]}
+          rotation={[-0.0176381, 0.066315, -3.1405816]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube200_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7986174, 0.5803103, 0.0499337]}
+          rotation={[-0.0176331, 0.0610798, -3.1406741]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube201_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7899952, 0.4776348, 0.0512896]}
+          rotation={[-0.0176285, 0.0558447, -3.1407666]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube202_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7847872, 0.3690004, 0.0552898]}
+          rotation={[-0.0305552, 0.0610629, -3.1398854]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube203_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7825356, 0.256975, 0.0582587]}
+          rotation={[-0.0305552, 0.0610629, -3.1398854]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube204_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7750235, 0.1551919, 0.0611675]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube205_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7750235, 0.057144, 0.0629799]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube206_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7750235, -0.0430944, 0.0629799]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube207_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7708845, -0.1481322, 0.064999]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube208_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7679062, -0.2508295, 0.064999]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube209_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7679062, -0.3447978, 0.064999]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube210_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7633991, -0.4491577, 0.064999]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube211_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7633991, -0.542915, 0.064999]}
+          rotation={[-0.0546904, 0.061004, -3.1384132]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube212_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.644309, 0.064999]}
+          rotation={[-0.0546745, 0.0557759, -3.1386999]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube213_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.7497845, 0.064999]}
+          rotation={[-0.0546745, 0.0557759, -3.1386999]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube214_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.8503364, 0.064999]}
+          rotation={[-0.0091361, 0.0558497, -3.1412406]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube215_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.9528876, 0.064999]}
+          rotation={[-0.0340686, 0.0575679, -3.1397898]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube216_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.0592769, 0.064999]}
+          rotation={[0.0060639, 0.0575939, 3.1410857]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube217_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.158227, 0.064999]}
+          rotation={[0.030123, 0.057565, 3.139701]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube218_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.2627082, 0.064999]}
+          rotation={[0.0244576, 0.0575748, 3.140027]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube219_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.3617218, 0.0651335]}
+          rotation={[0.0244604, 0.0593196, 3.1399843]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube220_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.4572005, 0.0651335]}
+          rotation={[0.0244604, 0.0593196, 3.1399843]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube221_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.5505183, 0.0651335]}
+          rotation={[0.0244604, 0.0593196, 3.1399843]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube222_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.6362965, 0.0651335]}
+          rotation={[0.0244604, 0.0593196, 3.1399843]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube223_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.7202839, 0.0651335]}
+          rotation={[0.0244604, 0.0593196, 3.1399843]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube224_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.8000453, 0.0625433]}
+          rotation={[0.0244604, 0.0593196, 3.1399843]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube225_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.8901803, 0.0625433]}
+          rotation={[0.0244604, 0.0593196, 3.1399843]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube226_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7766037, -1.9774779, 0.06153]}
+          rotation={[0.0244788, 0.0707425, 3.1399831]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube227_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.772624, -2.0679765, 0.06153]}
+          rotation={[0.0244788, 0.0707425, 3.1399831]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube228_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7833357, -2.1606264, 0.0607931]}
+          rotation={[0.0244921, 0.0785193, 3.1397921]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube229_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7852068, -2.2531707, 0.0607931]}
+          rotation={[0.0245019, 0.0837537, 3.1396634]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube230_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7956991, -2.3533971, 0.0535836]}
+          rotation={[0.0488665, 0.0906553, 3.1372861]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube231_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.801755, -2.4511979, 0.0447047]}
+          rotation={[0.0488665, 0.0906553, 3.1372861]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube232_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8209028, -2.5457726, 0.038781]}
+          rotation={[0.0488665, 0.0906553, 3.1372861]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube233_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8327074, -2.6467235, 0.031008]}
+          rotation={[0.0488665, 0.0906553, 3.1372861]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube234_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8432932, -2.7483251, 0.0243428]}
+          rotation={[0.0488898, 0.095885, 3.1370292]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube235_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.859374, -2.8483562, 0.0142844]}
+          rotation={[0.0488898, 0.095885, 3.1370292]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube236_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8694773, -2.9446933, 0.0058217]}
+          rotation={[0.0488898, 0.095885, 3.1370292]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube237_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.887763, -3.0435166, -0.0071365]}
+          rotation={[0.0488898, 0.095885, 3.1370292]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube238_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8982735, -3.1387832, -0.0147023]}
+          rotation={[0.0488898, 0.095885, 3.1370292]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube239_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9154806, -3.2446675, -0.0253493]}
+          rotation={[0.0488898, 0.095885, 3.1370292]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube240_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9300585, -3.3462167, -0.0336454]}
+          rotation={[0.0489145, 0.1011147, 3.136772]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube241_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9406624, -3.4422941, -0.0445344]}
+          rotation={[0.0489145, 0.1011147, 3.136772]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube242_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9564877, -3.533042, -0.0525545]}
+          rotation={[0.0489317, 0.1046012, 3.1366004]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube243_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9666119, -3.6219368, -0.059233]}
+          rotation={[0.0489317, 0.1046012, 3.1366004]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube244_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9823503, -3.7261791, -0.0682644]}
+          rotation={[0.0489317, 0.1046012, 3.1366004]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube245_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9946785, -3.8283639, -0.0769724]}
+          rotation={[0.0489317, 0.1046012, 3.1366004]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube246_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[12.0126114, -3.9284942, -0.0900383]}
+          rotation={[0.0489317, 0.1046012, 3.1366004]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube247_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[12.0249538, -4.0318818, -0.0969204]}
+          rotation={[0.0488518, 0.0871688, 3.1374573]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube248_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[12.0249538, -4.1324067, -0.1082145]}
+          rotation={[0.1766887, 0.0859357, 3.1263916]}
+          scale={[-0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube249_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7951622, 3.45785, -0.0358312]}
+          rotation={[-3.0396272, 0.0877036, -0.0185173]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube250_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8096247, 3.3820333, -0.0386734]}
+          rotation={[-3.0811369, 0.0869688, -0.0227655]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube251_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8140821, 3.3007703, -0.0430956]}
+          rotation={[-3.1176766, 0.0891155, -0.0026866]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube252_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8253202, 3.2115955, -0.0496313]}
+          rotation={[-3.0950758, 0.0873786, 0.0003721]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube253_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8345585, 3.1115096, -0.0569943]}
+          rotation={[-3.0651464, 0.0923156, -0.0033522]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube254_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8470163, 3.0211885, -0.0630984]}
+          rotation={[-3.0851212, 0.1044659, -0.0019562]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube255_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.858017, 2.9209809, -0.0628861]}
+          rotation={[-3.0798581, 0.0893084, -0.0014053]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube256_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.864852, 2.8244545, -0.0692485]}
+          rotation={[-3.0872831, 0.0999067, -0.0015725]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube257_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8642426, 2.7257116, -0.0696351]}
+          rotation={[-3.0801155, 0.0783327, -0.001385]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube258_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8810368, 2.6370199, -0.077257]}
+          rotation={[-3.0959084, 0.0961773, -0.0006146]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube259_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8893576, 2.5457091, -0.0759395]}
+          rotation={[-3.1221017, 0.0850214, 0.0019008]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube260_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.4475358, -0.0768379]}
+          rotation={[-3.1221017, 0.0850214, 0.0019008]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube261_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.3421984, -0.0742238]}
+          rotation={[-3.1221017, 0.0850214, 0.0019008]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube262_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.2441454, -0.072674]}
+          rotation={[3.1307453, 0.084925, 0.0044758]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube263_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8860359, 2.1462998, -0.0687174]}
+          rotation={[3.0848587, 0.0846314, 0.008362]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube264_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8811827, 2.0530241, -0.0616253]}
+          rotation={[-3.1221245, 0.0969675, 0.0019029]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube265_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8743763, 1.9649631, -0.0606601]}
+          rotation={[3.1124609, 0.0991736, 0.0067208]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube266_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8701553, 1.8593687, -0.0524592]}
+          rotation={[3.0802825, 0.0896405, -0.0042349]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube267_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8662891, 1.7589703, -0.051643]}
+          rotation={[3.0802418, 0.080061, -0.0042314]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube268_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8568602, 1.6563164, -0.0507806]}
+          rotation={[-3.1306607, 0.0798599, 0.0012501]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube269_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8556938, 1.5496103, -0.0429445]}
+          rotation={[-3.1306492, 0.0706435, 0.0012492]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube270_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.848567, 1.4377452, -0.0369743]}
+          rotation={[3.1240786, 0.0702941, -0.0009066]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube271_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8363256, 1.336727, -0.0339007]}
+          rotation={[3.1240786, 0.0702631, -0.0009066]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube272_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8363256, 1.2427641, -0.028571]}
+          rotation={[3.124077, 0.0685948, -0.0009065]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube273_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8172703, 1.1438788, -0.0229678]}
+          rotation={[3.1240785, 0.0701523, -0.0009066]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube274_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8154993, 1.0446156, -0.0172197]}
+          rotation={[3.1241133, 0.0816234, -0.0010737]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube275_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8107052, 0.9444359, -0.0162457]}
+          rotation={[3.1241053, 0.0742482, -0.0010731]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube276_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8070488, 0.8511233, -0.0111291]}
+          rotation={[3.0955471, 0.0632151, 0.0007311]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube277_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8026104, 0.7634005, -0.0080715]}
+          rotation={[3.1240738, 0.0632883, -0.0009187]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube278_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7968187, 0.6723036, -0.0056803]}
+          rotation={[3.1240884, 0.0661511, -0.001011]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube279_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7920237, 0.5803103, -0.0018123]}
+          rotation={[3.1240748, 0.0643927, -0.0009187]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube280_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7899952, 0.4776348, 0.0005552]}
+          rotation={[3.1240667, 0.0683552, -0.0008267]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube281_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7806129, 0.3690004, 0.0033584]}
+          rotation={[3.1112505, 0.0637965, -0.0017075]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube282_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7825356, 0.256975, 0.0069622]}
+          rotation={[3.1112506, 0.0638555, -0.0017075]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube283_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7750235, 0.1551919, 0.0078349]}
+          rotation={[3.0873033, 0.0651899, -0.0031803]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube284_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7750235, 0.057144, 0.0123149]}
+          rotation={[3.0873007, 0.0643979, -0.0031801]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube285_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7750235, -0.0430944, 0.0154948]}
+          rotation={[3.0872989, 0.0638071, -0.00318]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube286_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7708845, -0.1481322, 0.0195489]}
+          rotation={[3.0872673, 0.0539128, -0.0031781]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube287_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7679062, -0.2508295, 0.0164242]}
+          rotation={[3.0872996, 0.0640392, -0.00318]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube288_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7679062, -0.3447978, 0.0164917]}
+          rotation={[3.0872991, 0.0638984, -0.00318]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube289_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7633991, -0.4491577, 0.0147194]}
+          rotation={[-3.1189438, 0.06507, -0.0082024]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube290_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7611341, -0.542915, 0.0149927]}
+          rotation={[-3.1216116, 0.0659224, -0.0115758]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube291_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.644309, 0.0179693]}
+          rotation={[3.1310514, 0.0584821, -0.0054578]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube292_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.7497845, 0.0190547]}
+          rotation={[3.1389388, 0.0552208, -0.009016]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube293_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.8503364, 0.0178828]}
+          rotation={[3.1324956, 0.0551778, -0.000352]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube294_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -0.9528876, 0.0159259]}
+          rotation={[3.1077496, 0.0675428, -0.001804]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube295_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7543802, -1.0592769, 0.0105712]}
+          rotation={[-3.1355919, 0.0669942, 0.0005073]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube296_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7573843, -1.158227, 0.0141792]}
+          rotation={[-3.1116867, 0.0572458, 0.0018916]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube297_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.760685, -1.2627082, 0.0141656]}
+          rotation={[-3.1173106, 0.0546312, 0.0015654]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube298_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7587223, -1.3617218, 0.01175]}
+          rotation={[-3.117329, 0.0630461, 0.0016088]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube299_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7580967, -1.4572005, 0.0085608]}
+          rotation={[-3.1173447, 0.0728045, 0.0016098]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube300_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.5505183, 0.0081321]}
+          rotation={[-3.1173398, 0.0697488, 0.0016095]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube301_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.6362965, 0.0046351]}
+          rotation={[-3.1173494, 0.0756953, 0.0016102]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube302_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.7202839, 0.0033854]}
+          rotation={[-3.1173476, 0.0745826, 0.00161]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube303_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.8000453, -0.0008615]}
+          rotation={[-3.1173445, 0.0726732, 0.0016098]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube304_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7614365, -1.8901803, -0.0027316]}
+          rotation={[-3.117365, 0.0853535, 0.0016114]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube305_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7766037, -1.9774779, -0.0038383]}
+          rotation={[-3.1173463, 0.0737704, 0.0016099]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube306_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.772624, -2.0679765, -0.0135144]}
+          rotation={[-3.1173606, 0.0826217, 0.0016111]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube307_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7833357, -2.1606264, -0.0151029]}
+          rotation={[-3.1173786, 0.0760542, 0.0018002]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube308_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7852068, -2.2531707, -0.0202026]}
+          rotation={[-3.1174268, 0.0906307, 0.0019304]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube309_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.7956991, -2.3533971, -0.0304449]}
+          rotation={[-3.0687772, 0.0838084, 0.0022373]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube310_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8072472, -2.4511979, -0.0415842]}
+          rotation={[-3.0327149, 0.0838346, -0.0007823]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube311_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8209028, -2.5457726, -0.0487668]}
+          rotation={[-2.9826485, 0.083691, -0.004972]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube312_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8327074, -2.6467235, -0.0607746]}
+          rotation={[-3.0146434, 0.0838068, -0.0022954]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube313_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8432932, -2.7483251, -0.0651279]}
+          rotation={[-3.049942, 0.0786216, 0.0011378]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube314_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.854435, -2.8483562, -0.0807562]}
+          rotation={[-3.0420442, 0.0931374, 0.0005176]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube315_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8694773, -2.9446933, -0.0898854]}
+          rotation={[-3.0027609, 0.0893194, -0.0035409]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube316_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8834429, -3.0435166, -0.0986534]}
+          rotation={[-2.9997556, 0.0904868, -0.0039194]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube317_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.8982735, -3.1387832, -0.1118115]}
+          rotation={[-2.9946867, 0.0915985, -0.0044892]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube318_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9082394, -3.2446675, -0.1217086]}
+          rotation={[-3.0271187, 0.1082125, -0.0006551]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube319_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9270229, -3.3462167, -0.1380606]}
+          rotation={[-2.9715531, 0.0930587, -0.0065458]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube320_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9406624, -3.4422941, -0.1491941]}
+          rotation={[-3.0397864, 0.0953029, -0.0003031]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube321_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9564877, -3.533042, -0.1525708]}
+          rotation={[-3.0566344, 0.090032, 0.0016607]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube322_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9666119, -3.6219368, -0.160288]}
+          rotation={[-3.0422367, 0.0802041, 0.0008703]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube323_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9823503, -3.7261791, -0.1687908]}
+          rotation={[-3.0206278, 0.0902143, -0.0001146]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube324_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[11.9946785, -3.8283639, -0.1765826]}
+          rotation={[-3.0453234, 0.0919563, 0.0005516]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube325_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[12.0126114, -3.9284942, -0.1848285]}
+          rotation={[-3.0722527, 0.092269, 0.0030163]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube326_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[12.0214567, -4.0318818, -0.1852943]}
+          rotation={[-3.0934611, 0.0872145, 0.0041354]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube327_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[12.0249538, -4.1324067, -0.1772219]}
+          rotation={[2.9526127, 0.077307, 0.0455854]}
+          scale={[0.7098053, 0.0474428, 0.034]}
+        />
+        <mesh
+          geometry={nodes.pCube328_aiStandardSurface3_0.geometry}
+          material={materials.aiStandardSurface3}
+          position={[12.0249538, -4.2140646, -0.1440112]}
+          rotation={[1.6191304, 0.0455439, 0.0007814]}
+          scale={[0.7098053, 0.0220183, 0.034]}
+        />
         <mesh
           geometry={nodes.pCube329_aiStandardSurface3_0.geometry}
           material={materials.aiStandardSurface3}
@@ -56,6 +2627,13 @@ export const Energybar = forwardRef<THREE.Group>((props, ref) => {
       </group>
     </group>
   )
-})
+}
 
 useGLTF.preload('/granola_bar_3d.glb')
+
+
+rembrandt
+
+city
+Made by @NikkitaFTW & contributors inspired by the gltfjsx cli
+
