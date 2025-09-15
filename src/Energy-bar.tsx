@@ -2635,5 +2635,5 @@ useGLTF.preload('/granola_bar_3d.glb')
 rembrandt
 
 city
-Made by @NikkitaFTW & contributors inspired by the gltfjsx cli
+// Made by @NikkitaFTW & contributors inspired by the gltfjsx cli
 
