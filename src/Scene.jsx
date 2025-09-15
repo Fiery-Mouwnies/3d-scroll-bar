@@ -11,7 +11,7 @@ const Scene = () => {
     <>
       <PerspectiveCamera fov={45} near={.1} far={10000} makeDefault position={[0, 0, 10]} />
       <Environment preset="city" />
-      <Energy-bar/>
+      <energy-bar/>
     </>
   )
 }
