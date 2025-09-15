@@ -6,8 +6,8 @@ Source: https://sketchfab.com/3d-models/granola-bar-9efbda4311a64782a73b5ce382a6
 Title: Granola Bar
 */
 
-import *d THREE from 'three'
-import React, { useRef, forwardRef } from 'react'
+import * as THREE from 'three' // <--- THIS IS THE CORRECTED LINE
+import React, { forwardRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
