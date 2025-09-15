@@ -1,4 +1,4 @@
-import { useRef, useEffect, Suspense } from "react";
+import { useRef, useLayoutEffect, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, PerspectiveCamera } from "@react-three/drei";
 import { gsap } from "gsap";
@@ -6,48 +6,66 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
 import { Energybar } from "./Energy-bar.tsx";
 
-// Register GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const modelRef = useRef(null);
   const sectionRef = useRef(null);
+  const textRef = useRef(null); // <-- Ref for the title text
 
-  useEffect(() => {
-    // We use a gsap.context() for safe cleanup in React
+  // Use useLayoutEffect for animations to avoid "flicker"
+  useLayoutEffect(() => {
+    // A GSAP context allows for safe cleanup
     const ctx = gsap.context(() => {
-      // Add a small delay to ensure everything, including the 3D model, is loaded
-      // before GSAP tries to calculate dimensions.
-      setTimeout(() => {
-        if (modelRef.current && sectionRef.current) {
-          
-          console.log("Setting up GSAP. Refs are:", sectionRef.current, modelRef.current);
+      if (modelRef.current && sectionRef.current && textRef.current) {
+        
+        console.log("GSAP Refs are ready:", { 
+            section: sectionRef.current, 
+            model: modelRef.current,
+            text: textRef.current 
+        });
 
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: sectionRef.current, // Use the section as the trigger
-              start: "top top",            // Start when the top of the section hits the top of the viewport
-              end: "bottom bottom",        // End when the bottom of the section hits the bottom of the viewport
-              scrub: 1,                    // Smooth scrubbing
-              pin: true,                   // Pin the trigger element during the animation
-              markers: true,               // <-- THIS IS THE DEBUGGER!
-            },
-          });
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "+=200%", // Animate over a scroll distance of 200% of the viewport height
+            scrub: 1,
+            pin: true,
+            markers: true, // Keep markers for debugging
+          },
+        });
 
-          // Define the animation sequence
-          tl.fromTo(
-            modelRef.current.rotation,
-            { y: 0, x: 0, z: 0 },
-            { y: Math.PI * 1.5, x: 0.2, z: -0.2, duration: 2 }
-          )
-          .to(modelRef.current.position, { y: 0.5, duration: 2 }, 0) // Animate at the same time as rotation
-          .to(modelRef.current.scale, { x: 1.2, y: 1.2, z: 1.2, duration: 2 }, 0); // Also at the same time
-        } else {
-          console.log("Refs not ready yet.");
-        }
-      }, 100); // 100ms delay
+        // --- TEST ANIMATION ---
+        // Animate the opacity of the title text. If this works, ScrollTrigger is set up correctly.
+        tl.to(textRef.current, {
+          opacity: 0,
+          y: -50, // Move it up slightly as it fades
+          duration: 0.5
+        });
 
-    }, sectionRef); // Scope the context to the main component
+        // --- 3D MODEL ANIMATION ---
+        // This animation will happen after the text fades out.
+        tl.to(modelRef.current.rotation, {
+          y: Math.PI * 1.5,
+          x: 0.2,
+          z: -0.2,
+          duration: 1.5
+        }, ">-0.2"); // Overlap slightly with the end of the previous animation
+
+        tl.to(modelRef.current.position, {
+          y: 0.5,
+          duration: 1.5
+        }, "<"); // The "<" means "start at the same time as the previous animation"
+
+        tl.to(modelRef.current.scale, {
+          x: 1.2,
+          y: 1.2,
+          z: 1.2,
+          duration: 1.5
+        }, "<");
+      }
+    }, sectionRef); // Scope context to the main section
 
     return () => ctx.revert(); // Cleanup on unmount
   }, []);
@@ -56,11 +74,8 @@ function App() {
     <div className="bg-[#191919]">
       <Suspense fallback={<div className="fixed inset-0 grid place-items-center bg-black text-white">Loading...</div>}>
         
-        {/* This section is now the trigger AND the pin target. 
-            It needs a defined height, like h-screen, and a defined scroll length
-            provided by the sections that come after it. */}
         <section ref={sectionRef} className="h-screen w-full relative">
-            <div className="absolute top-[10%] w-full text-center z-10 pointer-events-none">
+            <div ref={textRef} className="absolute top-[10%] w-full text-center z-10 pointer-events-none">
                 <h1 className="text-white text-6xl md:text-8xl font-bold">Your Regular</h1>
                 <h1 className="text-white text-6xl md:text-8xl font-bold">Protein Bar</h1>
             </div>
@@ -74,25 +89,17 @@ function App() {
             </Canvas>
         </section>
 
-        {/* These sections create the scrollable distance that drives the animation */}
+        {/* These sections create the scrollable distance */}
         <section className="h-screen flex items-center justify-center">
           <p className="text-white w-full md:w-1/2 text-center px-4 text-4xl font-semibold">
             Packed with 20g of protein to fuel your adventure.
           </p>
         </section>
-
         <section className="h-screen flex items-center justify-center">
           <p className="text-white w-full md:w-1/2 text-center px-4 text-4xl font-semibold">
             Made with simple, high-quality ingredients you can trust.
           </p>
         </section>
-
-        <section className="h-screen flex items-center justify-center">
-          <p className="text-white w-full md:w-1/2 text-center px-4 text-4xl font-semibold">
-            The perfect on-the-go snack, wherever life takes you.
-          </p>
-        </section>
-
       </Suspense>
     </div>
   );
