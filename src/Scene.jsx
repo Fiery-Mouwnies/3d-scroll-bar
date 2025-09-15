@@ -8,9 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Scene = () => {
   return (
-    
-
-    
+    <>
+      <PerspectiveCamera fov={45} near={.1} far={10000} makeDefault position={[0, 0, 10]} />
+      <Environment preset="city" />
+    </>
   )
 }
 
