@@ -1,14 +1,31 @@
+/* index.css or App.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*
-  This is the most important part.
-  It ensures the root of your app can scroll.
+/* 
+  --- REMOVE THE FOLLOWING RULES ---
+
+  You do not need to force overflow. The browser will create a scrollbar
+  naturally once the total height of your sections is greater than the
+  viewport height. Forcing it with !important can break ScrollTrigger's
+  pinning and measurement logic.
 */
+
+/*
 html, body, #root {
   margin: 0;
   padding: 0;
-  overflow: auto !important; /* Allow scrollbars to appear */
-  overflow-x: hidden !important; /* Prevent horizontal scroll */
+  overflow: auto !important; 
+  overflow-x: hidden !important; 
+}
+*/
+
+/* 
+  If you absolutely need to ensure no horizontal scrollbar, 
+  you can keep just this one rule on the body.
+*/
+body {
+  overflow-x: hidden;
 }
