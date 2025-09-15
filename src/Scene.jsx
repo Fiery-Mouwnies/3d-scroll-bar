@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Scene = () => {
   return (
-    <div>
+    
 
-    </div>
+    
   )
 }
 
