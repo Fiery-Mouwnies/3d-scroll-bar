@@ -1,25 +1,26 @@
 import { useRef } from 'react';
-import { useFrame } from '@react-three/fiber'; // <-- TYPO IS FIXED HERE
+import { useFrame } from '@react-three/fiber';
 import { Environment, PerspectiveCamera } from '@react-three/drei';
-import { Energybar, Instances } from './Energy-bar';
+import { Energybar } from './Energy-bar';
 import { gsap } from 'gsap';
 
+// Camera positions for each animation segment
 const cameraPositions = [
-  [3.5, 2.17, 3.7],
-  [3.7, 0.6, 0.7],
-  [2.3, 0.87, -4.2],
-  [0, 2.5, 3.6]
+  [3.5, 2.17, 8.0],   // Start (moved farther back)
+  [3.7, 0.6, 6.0],    // To the side
+  [2.3, 0.87, -6.0],  // To the back
+  [0, 2.5, 8.0]       // To the front (Final)
 ];
 
 const totalSegments = cameraPositions.length - 1;
 
 export default function Scene({ scrollProgress }) {
   const cameraRef = useRef();
-  const modelRef = useRef();
 
   useFrame(() => {
     const segmentIndex = Math.min(Math.floor(scrollProgress * totalSegments), totalSegments - 1);
     const segmentProgress = (scrollProgress * totalSegments) % 1;
+
     const startPos = cameraPositions[segmentIndex];
     const endPos = cameraPositions[segmentIndex + 1];
 
@@ -42,10 +43,8 @@ export default function Scene({ scrollProgress }) {
       <ambientLight intensity={1.5} />
       <directionalLight position={[10, 10, 5]} intensity={2} />
 
-      <Instances>
-        {/* You can now adjust the scale and position here reliably */}
-        <Energybar ref={modelRef} scale={1.5} position={[0, -2, 0]} />
-      </Instances>
+      {/* Control the size and position here */}
+      <Energybar scale={1.5} position={[0, -2, 0]} />
     </>
   );
 }
