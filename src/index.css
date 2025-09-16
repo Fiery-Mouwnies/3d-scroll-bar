@@ -1,29 +1,19 @@
 @tailwind base;
-@tailwind utilities;
 @tailwind components;
+@tailwind utilities;
 
-/* 
-  !! IMPORTANT !!
-  This rules out the most common cause of ScrollTrigger failure.
-  It ensures that a scrollbar is ALWAYS possible.
+/*
+  IMPORTANT CORRECTION:
+  Do NOT force `overflow: auto !important` on the html or body tags.
+  GSAP's ScrollTrigger `pin: true` functionality relies on the browser's
+  natural scroll behavior to work correctly. Forcing overflow can break
+  its internal calculations.
+
+  The browser will automatically add a scrollbar when the content height
+  (your multiple <section> elements) is greater than the viewport height.
 */
-html, body, #root {
-  overflow: visible !important;
-  overflow-x: hidden !important; /* Allow vertical scroll, hide horizontal */
-}
 
-.arrDown{
-  animation: anime infinite 1.5s linear;
-}
-
-@keyframes anime {
-  0%{
-    transform: translateY(-10px);
-  }
-  50%{
-    transform: translateY(5px);
-  }
-  100%{
-    transform: translateY(-10px);
-  }
+/* You can keep this rule if you want to prevent horizontal scrollbars */
+body {
+  overflow-x: hidden;
 }
