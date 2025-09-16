@@ -7,17 +7,337 @@ Title: Granola Bar
 */
 
 import * as THREE from 'three'
-import React, { forwardRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef, useMemo, useContext, createContext } from 'react'
+import { useGLTF, Merged } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import { GroupProps } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
   nodes: {
     pCube3_aiStandardSurface1_0: THREE.Mesh
     pCube6_aiStandardSurface2_0: THREE.Mesh
+    pCube7_aiStandardSurface2_0: THREE.Mesh
+    pCube8_aiStandardSurface2_0: THREE.Mesh
+    pCube9_aiStandardSurface2_0: THREE.Mesh
+    pCube10_aiStandardSurface2_0: THREE.Mesh
+    pCube11_aiStandardSurface2_0: THREE.Mesh
+    pCube12_aiStandardSurface2_0: THREE.Mesh
+    pCube13_aiStandardSurface2_0: THREE.Mesh
+    pCube14_aiStandardSurface2_0: THREE.Mesh
+    pCube15_aiStandardSurface2_0: THREE.Mesh
+    pCube16_aiStandardSurface2_0: THREE.Mesh
+    pCube17_aiStandardSurface2_0: THREE.Mesh
+    pCube18_aiStandardSurface2_0: THREE.Mesh
+    pCube19_aiStandardSurface2_0: THREE.Mesh
+    pCube20_aiStandardSurface2_0: THREE.Mesh
+    pCube21_aiStandardSurface2_0: THREE.Mesh
+    pCube22_aiStandardSurface2_0: THREE.Mesh
+    pCube23_aiStandardSurface2_0: THREE.Mesh
+    pCube24_aiStandardSurface2_0: THREE.Mesh
+    pCube25_aiStandardSurface2_0: THREE.Mesh
+    pCube26_aiStandardSurface2_0: THREE.Mesh
+    pCube27_aiStandardSurface2_0: THREE.Mesh
+    pCube28_aiStandardSurface2_0: THREE.Mesh
+    pCube29_aiStandardSurface2_0: THREE.Mesh
+    pCube30_aiStandardSurface2_0: THREE.Mesh
+    pCube31_aiStandardSurface2_0: THREE.Mesh
+    pCube32_aiStandardSurface2_0: THREE.Mesh
+    pCube33_aiStandardSurface2_0: THREE.Mesh
+    pCube34_aiStandardSurface2_0: THREE.Mesh
+    pCube35_aiStandardSurface2_0: THREE.Mesh
+    pCube36_aiStandardSurface2_0: THREE.Mesh
+    pCube37_aiStandardSurface2_0: THREE.Mesh
+    pCube38_aiStandardSurface2_0: THREE.Mesh
+    pCube39_aiStandardSurface2_0: THREE.Mesh
+    pCube40_aiStandardSurface2_0: THREE.Mesh
+    pCube41_aiStandardSurface2_0: THREE.Mesh
+    pCube42_aiStandardSurface2_0: THREE.Mesh
+    pCube43_aiStandardSurface2_0: THREE.Mesh
+    pCube44_aiStandardSurface2_0: THREE.Mesh
+    pCube45_aiStandardSurface2_0: THREE.Mesh
+    pCube46_aiStandardSurface2_0: THREE.Mesh
+    pCube47_aiStandardSurface2_0: THREE.Mesh
+    pCube48_aiStandardSurface2_0: THREE.Mesh
+    pCube49_aiStandardSurface2_0: THREE.Mesh
+    pCube50_aiStandardSurface2_0: THREE.Mesh
+    pCube51_aiStandardSurface2_0: THREE.Mesh
+    pCube52_aiStandardSurface2_0: THREE.Mesh
+    pCube53_aiStandardSurface2_0: THREE.Mesh
+    pCube54_aiStandardSurface2_0: THREE.Mesh
+    pCube55_aiStandardSurface2_0: THREE.Mesh
+    pCube56_aiStandardSurface2_0: THREE.Mesh
+    pCube57_aiStandardSurface2_0: THREE.Mesh
+    pCube58_aiStandardSurface2_0: THREE.Mesh
+    pCube59_aiStandardSurface2_0: THREE.Mesh
+    pCube60_aiStandardSurface2_0: THREE.Mesh
+    pCube61_aiStandardSurface2_0: THREE.Mesh
+    pCube62_aiStandardSurface2_0: THREE.Mesh
+    pCube63_aiStandardSurface2_0: THREE.Mesh
+    pCube64_aiStandardSurface2_0: THREE.Mesh
+    pCube65_aiStandardSurface2_0: THREE.Mesh
+    pCube66_aiStandardSurface2_0: THREE.Mesh
+    pCube67_aiStandardSurface2_0: THREE.Mesh
+    pCube68_aiStandardSurface2_0: THREE.Mesh
+    pCube69_aiStandardSurface2_0: THREE.Mesh
+    pCube70_aiStandardSurface2_0: THREE.Mesh
+    pCube71_aiStandardSurface2_0: THREE.Mesh
+    pCube72_aiStandardSurface2_0: THREE.Mesh
+    pCube73_aiStandardSurface2_0: THREE.Mesh
+    pCube74_aiStandardSurface2_0: THREE.Mesh
+    pCube75_aiStandardSurface2_0: THREE.Mesh
+    pCube76_aiStandardSurface2_0: THREE.Mesh
+    pCube77_aiStandardSurface2_0: THREE.Mesh
+    pCube78_aiStandardSurface2_0: THREE.Mesh
+    pCube79_aiStandardSurface2_0: THREE.Mesh
+    pCube80_aiStandardSurface2_0: THREE.Mesh
+    pCube81_aiStandardSurface2_0: THREE.Mesh
+    pCube82_aiStandardSurface2_0: THREE.Mesh
+    pCube83_aiStandardSurface2_0: THREE.Mesh
+    pCube84_aiStandardSurface2_0: THREE.Mesh
+    pCube85_aiStandardSurface2_0: THREE.Mesh
+    pCube86_aiStandardSurface2_0: THREE.Mesh
+    pCube87_aiStandardSurface2_0: THREE.Mesh
+    pCube88_aiStandardSurface2_0: THREE.Mesh
+    pCube89_aiStandardSurface2_0: THREE.Mesh
+    pCube90_aiStandardSurface2_0: THREE.Mesh
+    pCube91_aiStandardSurface2_0: THREE.Mesh
+    pCube92_aiStandardSurface2_0: THREE.Mesh
+    pCube93_aiStandardSurface2_0: THREE.Mesh
+    pCube94_aiStandardSurface2_0: THREE.Mesh
+    pCube95_aiStandardSurface2_0: THREE.Mesh
+    pCube96_aiStandardSurface2_0: THREE.Mesh
+    pCube97_aiStandardSurface2_0: THREE.Mesh
+    pCube98_aiStandardSurface2_0: THREE.Mesh
+    pCube99_aiStandardSurface2_0: THREE.Mesh
+    pCube100_aiStandardSurface2_0: THREE.Mesh
+    pCube101_aiStandardSurface2_0: THREE.Mesh
+    pCube102_aiStandardSurface2_0: THREE.Mesh
+    pCube103_aiStandardSurface2_0: THREE.Mesh
+    pCube104_aiStandardSurface2_0: THREE.Mesh
+    pCube105_aiStandardSurface2_0: THREE.Mesh
+    pCube106_aiStandardSurface2_0: THREE.Mesh
+    pCube107_aiStandardSurface2_0: THREE.Mesh
+    pCube108_aiStandardSurface2_0: THREE.Mesh
+    pCube109_aiStandardSurface2_0: THREE.Mesh
+    pCube110_aiStandardSurface2_0: THREE.Mesh
+    pCube111_aiStandardSurface2_0: THREE.Mesh
+    pCube112_aiStandardSurface2_0: THREE.Mesh
+    pCube113_aiStandardSurface2_0: THREE.Mesh
+    pCube114_aiStandardSurface2_0: THREE.Mesh
+    pCube115_aiStandardSurface2_0: THREE.Mesh
+    pCube116_aiStandardSurface2_0: THREE.Mesh
+    pCube117_aiStandardSurface2_0: THREE.Mesh
+    pCube118_aiStandardSurface2_0: THREE.Mesh
+    pCube119_aiStandardSurface2_0: THREE.Mesh
+    pCube120_aiStandardSurface2_0: THREE.Mesh
+    pCube121_aiStandardSurface2_0: THREE.Mesh
+    pCube122_aiStandardSurface2_0: THREE.Mesh
+    pCube123_aiStandardSurface2_0: THREE.Mesh
+    pCube124_aiStandardSurface2_0: THREE.Mesh
+    pCube125_aiStandardSurface2_0: THREE.Mesh
+    pCube126_aiStandardSurface2_0: THREE.Mesh
+    pCube127_aiStandardSurface2_0: THREE.Mesh
+    pCube128_aiStandardSurface2_0: THREE.Mesh
+    pCube129_aiStandardSurface2_0: THREE.Mesh
+    pCube130_aiStandardSurface2_0: THREE.Mesh
+    pCube131_aiStandardSurface2_0: THREE.Mesh
+    pCube132_aiStandardSurface2_0: THREE.Mesh
+    pCube133_aiStandardSurface2_0: THREE.Mesh
+    pCube134_aiStandardSurface2_0: THREE.Mesh
+    pCube135_aiStandardSurface2_0: THREE.Mesh
+    pCube136_aiStandardSurface2_0: THREE.Mesh
+    pCube137_aiStandardSurface2_0: THREE.Mesh
+    pCube138_aiStandardSurface2_0: THREE.Mesh
+    pCube139_aiStandardSurface2_0: THREE.Mesh
+    pCube140_aiStandardSurface2_0: THREE.Mesh
+    pCube141_aiStandardSurface2_0: THREE.Mesh
+    pCube142_aiStandardSurface2_0: THREE.Mesh
+    pCube143_aiStandardSurface2_0: THREE.Mesh
+    pCube144_aiStandardSurface2_0: THREE.Mesh
+    pCube145_aiStandardSurface2_0: THREE.Mesh
+    pCube146_aiStandardSurface2_0: THREE.Mesh
+    pCube147_aiStandardSurface2_0: THREE.Mesh
+    pCube148_aiStandardSurface2_0: THREE.Mesh
+    pCube149_aiStandardSurface2_0: THREE.Mesh
+    pCube150_aiStandardSurface2_0: THREE.Mesh
+    pCube151_aiStandardSurface2_0: THREE.Mesh
+    pCube152_aiStandardSurface2_0: THREE.Mesh
+    pCube153_aiStandardSurface2_0: THREE.Mesh
+    pCube154_aiStandardSurface2_0: THREE.Mesh
+    pCube155_aiStandardSurface2_0: THREE.Mesh
+    pCube156_aiStandardSurface2_0: THREE.Mesh
+    pCube157_aiStandardSurface2_0: THREE.Mesh
+    pCube158_aiStandardSurface2_0: THREE.Mesh
+    pCube159_aiStandardSurface2_0: THREE.Mesh
+    pCube160_aiStandardSurface2_0: THREE.Mesh
+    pCube161_aiStandardSurface2_0: THREE.Mesh
+    pCube162_aiStandardSurface2_0: THREE.Mesh
+    pCube163_aiStandardSurface2_0: THREE.Mesh
+    pCube164_aiStandardSurface2_0: THREE.Mesh
+    pCube165_aiStandardSurface2_0: THREE.Mesh
+    pCube166_aiStandardSurface2_0: THREE.Mesh
+    pCube167_aiStandardSurface2_0: THREE.Mesh
+    pCube168_aiStandardSurface2_0: THREE.Mesh
+    pCube169_aiStandardSurface2_0: THREE.Mesh
+    pCube170_aiStandardSurface3_0: THREE.Mesh
+    pCube171_aiStandardSurface3_0: THREE.Mesh
+    pCube172_aiStandardSurface3_0: THREE.Mesh
+    pCube173_aiStandardSurface3_0: THREE.Mesh
+    pCube174_aiStandardSurface3_0: THREE.Mesh
+    pCube175_aiStandardSurface3_0: THREE.Mesh
+    pCube176_aiStandardSurface3_0: THREE.Mesh
+    pCube177_aiStandardSurface3_0: THREE.Mesh
+    pCube178_aiStandardSurface3_0: THREE.Mesh
+    pCube179_aiStandardSurface3_0: THREE.Mesh
+    pCube180_aiStandardSurface3_0: THREE.Mesh
+    pCube181_aiStandardSurface3_0: THREE.Mesh
+    pCube182_aiStandardSurface3_0: THREE.Mesh
+    pCube183_aiStandardSurface3_0: THREE.Mesh
+    pCube184_aiStandardSurface3_0: THREE.Mesh
+    pCube185_aiStandardSurface3_0: THREE.Mesh
+    pCube186_aiStandardSurface3_0: THREE.Mesh
+    pCube187_aiStandardSurface3_0: THREE.Mesh
+    pCube188_aiStandardSurface3_0: THREE.Mesh
+    pCube189_aiStandardSurface3_0: THREE.Mesh
+    pCube190_aiStandardSurface3_0: THREE.Mesh
+    pCube191_aiStandardSurface3_0: THREE.Mesh
+    pCube192_aiStandardSurface3_0: THREE.Mesh
+    pCube193_aiStandardSurface3_0: THREE.Mesh
+    pCube194_aiStandardSurface3_0: THREE.Mesh
+    pCube195_aiStandardSurface3_0: THREE.Mesh
+    pCube196_aiStandardSurface3_0: THREE.Mesh
+    pCube197_aiStandardSurface3_0: THREE.Mesh
+    pCube198_aiStandardSurface3_0: THREE.Mesh
+    pCube199_aiStandardSurface3_0: THREE.Mesh
+    pCube200_aiStandardSurface3_0: THREE.Mesh
+    pCube201_aiStandardSurface3_0: THREE.Mesh
+    pCube202_aiStandardSurface3_0: THREE.Mesh
+    pCube203_aiStandardSurface3_0: THREE.Mesh
+    pCube204_aiStandardSurface3_0: THREE.Mesh
+    pCube205_aiStandardSurface3_0: THREE.Mesh
+    pCube206_aiStandardSurface3_0: THREE.Mesh
+    pCube207_aiStandardSurface3_0: THREE.Mesh
+    pCube208_aiStandardSurface3_0: THREE.Mesh
+    pCube209_aiStandardSurface3_0: THREE.Mesh
+    pCube210_aiStandardSurface3_0: THREE.Mesh
+    pCube211_aiStandardSurface3_0: THREE.Mesh
+    pCube212_aiStandardSurface3_0: THREE.Mesh
+    pCube213_aiStandardSurface3_0: THREE.Mesh
+    pCube214_aiStandardSurface3_0: THREE.Mesh
+    pCube215_aiStandardSurface3_0: THREE.Mesh
+    pCube216_aiStandardSurface3_0: THREE.Mesh
+    pCube217_aiStandardSurface3_0: THREE.Mesh
+    pCube218_aiStandardSurface3_0: THREE.Mesh
+    pCube219_aiStandardSurface3_0: THREE.Mesh
+    pCube220_aiStandardSurface3_0: THREE.Mesh
+    pCube221_aiStandardSurface3_0: THREE.Mesh
+    pCube222_aiStandardSurface3_0: THREE.Mesh
+    pCube223_aiStandardSurface3_0: THREE.Mesh
+    pCube224_aiStandardSurface3_0: THREE.Mesh
+    pCube225_aiStandardSurface3_0: THREE.Mesh
+    pCube226_aiStandardSurface3_0: THREE.Mesh
+    pCube227_aiStandardSurface3_0: THREE.Mesh
+    pCube228_aiStandardSurface3_0: THREE.Mesh
+    pCube229_aiStandardSurface3_0: THREE.Mesh
+    pCube230_aiStandardSurface3_0: THREE.Mesh
+    pCube231_aiStandardSurface3_0: THREE.Mesh
+    pCube232_aiStandardSurface3_0: THREE.Mesh
+    pCube233_aiStandardSurface3_0: THREE.Mesh
+    pCube234_aiStandardSurface3_0: THREE.Mesh
+    pCube235_aiStandardSurface3_0: THREE.Mesh
+    pCube236_aiStandardSurface3_0: THREE.Mesh
+    pCube237_aiStandardSurface3_0: THREE.Mesh
+    pCube238_aiStandardSurface3_0: THREE.Mesh
+    pCube239_aiStandardSurface3_0: THREE.Mesh
+    pCube240_aiStandardSurface3_0: THREE.Mesh
+    pCube241_aiStandardSurface3_0: THREE.Mesh
+    pCube242_aiStandardSurface3_0: THREE.Mesh
+    pCube243_aiStandardSurface3_0: THREE.Mesh
+    pCube244_aiStandardSurface3_0: THREE.Mesh
+    pCube245_aiStandardSurface3_0: THREE.Mesh
+    pCube246_aiStandardSurface3_0: THREE.Mesh
+    pCube247_aiStandardSurface3_0: THREE.Mesh
+    pCube248_aiStandardSurface3_0: THREE.Mesh
+    pCube249_aiStandardSurface3_0: THREE.Mesh
+    pCube250_aiStandardSurface3_0: THREE.Mesh
+    pCube251_aiStandardSurface3_0: THREE.Mesh
+    pCube252_aiStandardSurface3_0: THREE.Mesh
+    pCube253_aiStandardSurface3_0: THREE.Mesh
+    pCube254_aiStandardSurface3_0: THREE.Mesh
+    pCube255_aiStandardSurface3_0: THREE.Mesh
+    pCube256_aiStandardSurface3_0: THREE.Mesh
+    pCube257_aiStandardSurface3_0: THREE.Mesh
+    pCube258_aiStandardSurface3_0: THREE.Mesh
+    pCube259_aiStandardSurface3_0: THREE.Mesh
+    pCube260_aiStandardSurface3_0: THREE.Mesh
+    pCube261_aiStandardSurface3_0: THREE.Mesh
+    pCube262_aiStandardSurface3_0: THREE.Mesh
+    pCube263_aiStandardSurface3_0: THREE.Mesh
+    pCube264_aiStandardSurface3_0: THREE.Mesh
+    pCube265_aiStandardSurface3_0: THREE.Mesh
+    pCube266_aiStandardSurface3_0: THREE.Mesh
+    pCube267_aiStandardSurface3_0: THREE.Mesh
+    pCube268_aiStandardSurface3_0: THREE.Mesh
+    pCube269_aiStandardSurface3_0: THREE.Mesh
+    pCube270_aiStandardSurface3_0: THREE.Mesh
+    pCube271_aiStandardSurface3_0: THREE.Mesh
+    pCube272_aiStandardSurface3_0: THREE.Mesh
+    pCube273_aiStandardSurface3_0: THREE.Mesh
+    pCube274_aiStandardSurface3_0: THREE.Mesh
+    pCube275_aiStandardSurface3_0: THREE.Mesh
+    pCube276_aiStandardSurface3_0: THREE.Mesh
+    pCube277_aiStandardSurface3_0: THREE.Mesh
+    pCube278_aiStandardSurface3_0: THREE.Mesh
+    pCube279_aiStandardSurface3_0: THREE.Mesh
+    pCube280_aiStandardSurface3_0: THREE.Mesh
+    pCube281_aiStandardSurface3_0: THREE.Mesh
+    pCube282_aiStandardSurface3_0: THREE.Mesh
+    pCube283_aiStandardSurface3_0: THREE.Mesh
+    pCube284_aiStandardSurface3_0: THREE.Mesh
+    pCube285_aiStandardSurface3_0: THREE.Mesh
+    pCube286_aiStandardSurface3_0: THREE.Mesh
+    pCube287_aiStandardSurface3_0: THREE.Mesh
+    pCube288_aiStandardSurface3_0: THREE.Mesh
+    pCube289_aiStandardSurface3_0: THREE.Mesh
+    pCube290_aiStandardSurface3_0: THREE.Mesh
+    pCube291_aiStandardSurface3_0: THREE.Mesh
+    pCube292_aiStandardSurface3_0: THREE.Mesh
+    pCube293_aiStandardSurface3_0: THREE.Mesh
+    pCube294_aiStandardSurface3_0: THREE.Mesh
+    pCube295_aiStandardSurface3_0: THREE.Mesh
+    pCube296_aiStandardSurface3_0: THREE.Mesh
+    pCube297_aiStandardSurface3_0: THREE.Mesh
+    pCube298_aiStandardSurface3_0: THREE.Mesh
+    pCube299_aiStandardSurface3_0: THREE.Mesh
+    pCube300_aiStandardSurface3_0: THREE.Mesh
+    pCube301_aiStandardSurface3_0: THREE.Mesh
+    pCube302_aiStandardSurface3_0: THREE.Mesh
+    pCube303_aiStandardSurface3_0: THREE.Mesh
+    pCube304_aiStandardSurface3_0: THREE.Mesh
+    pCube305_aiStandardSurface3_0: THREE.Mesh
+    pCube306_aiStandardSurface3_0: THREE.Mesh
+    pCube307_aiStandardSurface3_0: THREE.Mesh
+    pCube308_aiStandardSurface3_0: THREE.Mesh
+    pCube309_aiStandardSurface3_0: THREE.Mesh
+    pCube310_aiStandardSurface3_0: THREE.Mesh
+    pCube311_aiStandardSurface3_0: THREE.Mesh
+    pCube312_aiStandardSurface3_0: THREE.Mesh
+    pCube313_aiStandardSurface3_0: THREE.Mesh
+    pCube314_aiStandardSurface3_0: THREE.Mesh
+    pCube315_aiStandardSurface3_0: THREE.Mesh
+    pCube316_aiStandardSurface3_0: THREE.Mesh
+    pCube317_aiStandardSurface3_0: THREE.Mesh
+    pCube318_aiStandardSurface3_0: THREE.Mesh
+    pCube319_aiStandardSurface3_0: THREE.Mesh
+    pCube320_aiStandardSurface3_0: THREE.Mesh
+    pCube321_aiStandardSurface3_0: THREE.Mesh
+    pCube322_aiStandardSurface3_0: THREE.Mesh
+    pCube323_aiStandardSurface3_0: THREE.Mesh
+    pCube324_aiStandardSurface3_0: THREE.Mesh
+    pCube325_aiStandardSurface3_0: THREE.Mesh
+    pCube326_aiStandardSurface3_0: THREE.Mesh
+    pCube327_aiStandardSurface3_0: THREE.Mesh
+    pCube328_aiStandardSurface3_0: THREE.Mesh
     pCube329_aiStandardSurface3_0: THREE.Mesh
-    // Add any other nodes your model might have here
   }
   materials: {
     aiStandardSurface1: THREE.MeshStandardMaterial
@@ -26,38 +346,3950 @@ type GLTFResult = GLTF & {
   }
 }
 
-// Wrap the component in forwardRef to accept the ref from the App component.
-// We also add GroupProps for better type-safety on props like `position`, `scale`, etc.
-export const Energybar = forwardRef<THREE.Group, GroupProps>((props, ref) => {
-  const { nodes, materials } = useGLTF('/granola_bar_3d.glb') as GLTFResult
-  
+const context = createContext()
+export function Instances({ children, ...props }) {
+  const { nodes } = useGLTF('/granola_bar_3d.glb') as GLTFResult
+  const instances = useMemo(
+    () => ({
+      PCubeaiStandardSurface: nodes.pCube3_aiStandardSurface1_0,
+      PCubeaiStandardSurface1: nodes.pCube6_aiStandardSurface2_0,
+      PCubeaiStandardSurface2: nodes.pCube7_aiStandardSurface2_0,
+      PCubeaiStandardSurface3: nodes.pCube8_aiStandardSurface2_0,
+      PCubeaiStandardSurface4: nodes.pCube9_aiStandardSurface2_0,
+      PCubeaiStandardSurface5: nodes.pCube10_aiStandardSurface2_0,
+      PCubeaiStandardSurface6: nodes.pCube11_aiStandardSurface2_0,
+      PCubeaiStandardSurface7: nodes.pCube12_aiStandardSurface2_0,
+      PCubeaiStandardSurface8: nodes.pCube13_aiStandardSurface2_0,
+      PCubeaiStandardSurface9: nodes.pCube14_aiStandardSurface2_0,
+      PCubeaiStandardSurface10: nodes.pCube15_aiStandardSurface2_0,
+      PCubeaiStandardSurface11: nodes.pCube16_aiStandardSurface2_0,
+      PCubeaiStandardSurface12: nodes.pCube17_aiStandardSurface2_0,
+      PCubeaiStandardSurface13: nodes.pCube18_aiStandardSurface2_0,
+      PCubeaiStandardSurface14: nodes.pCube19_aiStandardSurface2_0,
+      PCubeaiStandardSurface15: nodes.pCube20_aiStandardSurface2_0,
+      PCubeaiStandardSurface16: nodes.pCube21_aiStandardSurface2_0,
+      PCubeaiStandardSurface17: nodes.pCube22_aiStandardSurface2_0,
+      PCubeaiStandardSurface18: nodes.pCube23_aiStandardSurface2_0,
+      PCubeaiStandardSurface19: nodes.pCube24_aiStandardSurface2_0,
+      PCubeaiStandardSurface20: nodes.pCube25_aiStandardSurface2_0,
+      PCubeaiStandardSurface21: nodes.pCube26_aiStandardSurface2_0,
+      PCubeaiStandardSurface22: nodes.pCube27_aiStandardSurface2_0,
+      PCubeaiStandardSurface23: nodes.pCube28_aiStandardSurface2_0,
+      PCubeaiStandardSurface24: nodes.pCube29_aiStandardSurface2_0,
+      PCubeaiStandardSurface25: nodes.pCube30_aiStandardSurface2_0,
+      PCubeaiStandardSurface26: nodes.pCube31_aiStandardSurface2_0,
+      PCubeaiStandardSurface27: nodes.pCube32_aiStandardSurface2_0,
+      PCubeaiStandardSurface28: nodes.pCube33_aiStandardSurface2_0,
+      PCubeaiStandardSurface29: nodes.pCube34_aiStandardSurface2_0,
+      PCubeaiStandardSurface30: nodes.pCube35_aiStandardSurface2_0,
+      PCubeaiStandardSurface31: nodes.pCube36_aiStandardSurface2_0,
+      PCubeaiStandardSurface32: nodes.pCube37_aiStandardSurface2_0,
+      PCubeaiStandardSurface33: nodes.pCube38_aiStandardSurface2_0,
+      PCubeaiStandardSurface34: nodes.pCube39_aiStandardSurface2_0,
+      PCubeaiStandardSurface35: nodes.pCube40_aiStandardSurface2_0,
+      PCubeaiStandardSurface36: nodes.pCube41_aiStandardSurface2_0,
+      PCubeaiStandardSurface37: nodes.pCube42_aiStandardSurface2_0,
+      PCubeaiStandardSurface38: nodes.pCube43_aiStandardSurface2_0,
+      PCubeaiStandardSurface39: nodes.pCube44_aiStandardSurface2_0,
+      PCubeaiStandardSurface40: nodes.pCube45_aiStandardSurface2_0,
+      PCubeaiStandardSurface41: nodes.pCube46_aiStandardSurface2_0,
+      PCubeaiStandardSurface42: nodes.pCube47_aiStandardSurface2_0,
+      PCubeaiStandardSurface43: nodes.pCube48_aiStandardSurface2_0,
+      PCubeaiStandardSurface44: nodes.pCube49_aiStandardSurface2_0,
+      PCubeaiStandardSurface45: nodes.pCube50_aiStandardSurface2_0,
+      PCubeaiStandardSurface46: nodes.pCube51_aiStandardSurface2_0,
+      PCubeaiStandardSurface47: nodes.pCube52_aiStandardSurface2_0,
+      PCubeaiStandardSurface48: nodes.pCube53_aiStandardSurface2_0,
+      PCubeaiStandardSurface49: nodes.pCube54_aiStandardSurface2_0,
+      PCubeaiStandardSurface50: nodes.pCube55_aiStandardSurface2_0,
+      PCubeaiStandardSurface51: nodes.pCube56_aiStandardSurface2_0,
+      PCubeaiStandardSurface52: nodes.pCube57_aiStandardSurface2_0,
+      PCubeaiStandardSurface53: nodes.pCube58_aiStandardSurface2_0,
+      PCubeaiStandardSurface54: nodes.pCube59_aiStandardSurface2_0,
+      PCubeaiStandardSurface55: nodes.pCube60_aiStandardSurface2_0,
+      PCubeaiStandardSurface56: nodes.pCube61_aiStandardSurface2_0,
+      PCubeaiStandardSurface57: nodes.pCube62_aiStandardSurface2_0,
+      PCubeaiStandardSurface58: nodes.pCube63_aiStandardSurface2_0,
+      PCubeaiStandardSurface59: nodes.pCube64_aiStandardSurface2_0,
+      PCubeaiStandardSurface60: nodes.pCube65_aiStandardSurface2_0,
+      PCubeaiStandardSurface61: nodes.pCube66_aiStandardSurface2_0,
+      PCubeaiStandardSurface62: nodes.pCube67_aiStandardSurface2_0,
+      PCubeaiStandardSurface63: nodes.pCube68_aiStandardSurface2_0,
+      PCubeaiStandardSurface64: nodes.pCube69_aiStandardSurface2_0,
+      PCubeaiStandardSurface65: nodes.pCube70_aiStandardSurface2_0,
+      PCubeaiStandardSurface66: nodes.pCube71_aiStandardSurface2_0,
+      PCubeaiStandardSurface67: nodes.pCube72_aiStandardSurface2_0,
+      PCubeaiStandardSurface68: nodes.pCube73_aiStandardSurface2_0,
+      PCubeaiStandardSurface69: nodes.pCube74_aiStandardSurface2_0,
+      PCubeaiStandardSurface70: nodes.pCube75_aiStandardSurface2_0,
+      PCubeaiStandardSurface71: nodes.pCube76_aiStandardSurface2_0,
+      PCubeaiStandardSurface72: nodes.pCube77_aiStandardSurface2_0,
+      PCubeaiStandardSurface73: nodes.pCube78_aiStandardSurface2_0,
+      PCubeaiStandardSurface74: nodes.pCube79_aiStandardSurface2_0,
+      PCubeaiStandardSurface75: nodes.pCube80_aiStandardSurface2_0,
+      PCubeaiStandardSurface76: nodes.pCube81_aiStandardSurface2_0,
+      PCubeaiStandardSurface77: nodes.pCube82_aiStandardSurface2_0,
+      PCubeaiStandardSurface78: nodes.pCube83_aiStandardSurface2_0,
+      PCubeaiStandardSurface79: nodes.pCube84_aiStandardSurface2_0,
+      PCubeaiStandardSurface80: nodes.pCube85_aiStandardSurface2_0,
+      PCubeaiStandardSurface81: nodes.pCube86_aiStandardSurface2_0,
+      PCubeaiStandardSurface82: nodes.pCube87_aiStandardSurface2_0,
+      PCubeaiStandardSurface83: nodes.pCube88_aiStandardSurface2_0,
+      PCubeaiStandardSurface84: nodes.pCube89_aiStandardSurface2_0,
+      PCubeaiStandardSurface85: nodes.pCube90_aiStandardSurface2_0,
+      PCubeaiStandardSurface86: nodes.pCube91_aiStandardSurface2_0,
+      PCubeaiStandardSurface87: nodes.pCube92_aiStandardSurface2_0,
+      PCubeaiStandardSurface88: nodes.pCube93_aiStandardSurface2_0,
+      PCubeaiStandardSurface89: nodes.pCube94_aiStandardSurface2_0,
+      PCubeaiStandardSurface90: nodes.pCube95_aiStandardSurface2_0,
+      PCubeaiStandardSurface91: nodes.pCube96_aiStandardSurface2_0,
+      PCubeaiStandardSurface92: nodes.pCube97_aiStandardSurface2_0,
+      PCubeaiStandardSurface93: nodes.pCube98_aiStandardSurface2_0,
+      PCubeaiStandardSurface94: nodes.pCube99_aiStandardSurface2_0,
+      PCubeaiStandardSurface95: nodes.pCube100_aiStandardSurface2_0,
+      PCubeaiStandardSurface96: nodes.pCube101_aiStandardSurface2_0,
+      PCubeaiStandardSurface97: nodes.pCube102_aiStandardSurface2_0,
+      PCubeaiStandardSurface98: nodes.pCube103_aiStandardSurface2_0,
+      PCubeaiStandardSurface99: nodes.pCube104_aiStandardSurface2_0,
+      PCubeaiStandardSurface100: nodes.pCube105_aiStandardSurface2_0,
+      PCubeaiStandardSurface101: nodes.pCube106_aiStandardSurface2_0,
+      PCubeaiStandardSurface102: nodes.pCube107_aiStandardSurface2_0,
+      PCubeaiStandardSurface103: nodes.pCube108_aiStandardSurface2_0,
+      PCubeaiStandardSurface104: nodes.pCube109_aiStandardSurface2_0,
+      PCubeaiStandardSurface105: nodes.pCube110_aiStandardSurface2_0,
+      PCubeaiStandardSurface106: nodes.pCube111_aiStandardSurface2_0,
+      PCubeaiStandardSurface107: nodes.pCube112_aiStandardSurface2_0,
+      PCubeaiStandardSurface108: nodes.pCube113_aiStandardSurface2_0,
+      PCubeaiStandardSurface109: nodes.pCube114_aiStandardSurface2_0,
+      PCubeaiStandardSurface110: nodes.pCube115_aiStandardSurface2_0,
+      PCubeaiStandardSurface111: nodes.pCube116_aiStandardSurface2_0,
+      PCubeaiStandardSurface112: nodes.pCube117_aiStandardSurface2_0,
+      PCubeaiStandardSurface113: nodes.pCube118_aiStandardSurface2_0,
+      PCubeaiStandardSurface114: nodes.pCube119_aiStandardSurface2_0,
+      PCubeaiStandardSurface115: nodes.pCube120_aiStandardSurface2_0,
+      PCubeaiStandardSurface116: nodes.pCube121_aiStandardSurface2_0,
+      PCubeaiStandardSurface117: nodes.pCube122_aiStandardSurface2_0,
+      PCubeaiStandardSurface118: nodes.pCube123_aiStandardSurface2_0,
+      PCubeaiStandardSurface119: nodes.pCube124_aiStandardSurface2_0,
+      PCubeaiStandardSurface120: nodes.pCube125_aiStandardSurface2_0,
+      PCubeaiStandardSurface121: nodes.pCube126_aiStandardSurface2_0,
+      PCubeaiStandardSurface122: nodes.pCube127_aiStandardSurface2_0,
+      PCubeaiStandardSurface123: nodes.pCube128_aiStandardSurface2_0,
+      PCubeaiStandardSurface124: nodes.pCube129_aiStandardSurface2_0,
+      PCubeaiStandardSurface125: nodes.pCube130_aiStandardSurface2_0,
+      PCubeaiStandardSurface126: nodes.pCube131_aiStandardSurface2_0,
+      PCubeaiStandardSurface127: nodes.pCube132_aiStandardSurface2_0,
+      PCubeaiStandardSurface128: nodes.pCube133_aiStandardSurface2_0,
+      PCubeaiStandardSurface129: nodes.pCube134_aiStandardSurface2_0,
+      PCubeaiStandardSurface130: nodes.pCube135_aiStandardSurface2_0,
+      PCubeaiStandardSurface131: nodes.pCube136_aiStandardSurface2_0,
+      PCubeaiStandardSurface132: nodes.pCube137_aiStandardSurface2_0,
+      PCubeaiStandardSurface133: nodes.pCube138_aiStandardSurface2_0,
+      PCubeaiStandardSurface134: nodes.pCube139_aiStandardSurface2_0,
+      PCubeaiStandardSurface135: nodes.pCube140_aiStandardSurface2_0,
+      PCubeaiStandardSurface136: nodes.pCube141_aiStandardSurface2_0,
+      PCubeaiStandardSurface137: nodes.pCube142_aiStandardSurface2_0,
+      PCubeaiStandardSurface138: nodes.pCube143_aiStandardSurface2_0,
+      PCubeaiStandardSurface139: nodes.pCube144_aiStandardSurface2_0,
+      PCubeaiStandardSurface140: nodes.pCube145_aiStandardSurface2_0,
+      PCubeaiStandardSurface141: nodes.pCube146_aiStandardSurface2_0,
+      PCubeaiStandardSurface142: nodes.pCube147_aiStandardSurface2_0,
+      PCubeaiStandardSurface143: nodes.pCube148_aiStandardSurface2_0,
+      PCubeaiStandardSurface144: nodes.pCube149_aiStandardSurface2_0,
+      PCubeaiStandardSurface145: nodes.pCube150_aiStandardSurface2_0,
+      PCubeaiStandardSurface146: nodes.pCube151_aiStandardSurface2_0,
+      PCubeaiStandardSurface147: nodes.pCube152_aiStandardSurface2_0,
+      PCubeaiStandardSurface148: nodes.pCube153_aiStandardSurface2_0,
+      PCubeaiStandardSurface149: nodes.pCube154_aiStandardSurface2_0,
+      PCubeaiStandardSurface150: nodes.pCube155_aiStandardSurface2_0,
+      PCubeaiStandardSurface151: nodes.pCube156_aiStandardSurface2_0,
+      PCubeaiStandardSurface152: nodes.pCube157_aiStandardSurface2_0,
+      PCubeaiStandardSurface153: nodes.pCube158_aiStandardSurface2_0,
+      PCubeaiStandardSurface154: nodes.pCube159_aiStandardSurface2_0,
+      PCubeaiStandardSurface155: nodes.pCube160_aiStandardSurface2_0,
+      PCubeaiStandardSurface156: nodes.pCube161_aiStandardSurface2_0,
+      PCubeaiStandardSurface157: nodes.pCube162_aiStandardSurface2_0,
+      PCubeaiStandardSurface158: nodes.pCube163_aiStandardSurface2_0,
+      PCubeaiStandardSurface159: nodes.pCube164_aiStandardSurface2_0,
+      PCubeaiStandardSurface160: nodes.pCube165_aiStandardSurface2_0,
+      PCubeaiStandardSurface161: nodes.pCube166_aiStandardSurface2_0,
+      PCubeaiStandardSurface162: nodes.pCube167_aiStandardSurface2_0,
+      PCubeaiStandardSurface163: nodes.pCube168_aiStandardSurface2_0,
+      PCubeaiStandardSurface164: nodes.pCube169_aiStandardSurface2_0,
+      PCubeaiStandardSurface165: nodes.pCube170_aiStandardSurface3_0,
+      PCubeaiStandardSurface166: nodes.pCube171_aiStandardSurface3_0,
+      PCubeaiStandardSurface167: nodes.pCube172_aiStandardSurface3_0,
+      PCubeaiStandardSurface168: nodes.pCube173_aiStandardSurface3_0,
+      PCubeaiStandardSurface169: nodes.pCube174_aiStandardSurface3_0,
+      PCubeaiStandardSurface170: nodes.pCube175_aiStandardSurface3_0,
+      PCubeaiStandardSurface171: nodes.pCube176_aiStandardSurface3_0,
+      PCubeaiStandardSurface172: nodes.pCube177_aiStandardSurface3_0,
+      PCubeaiStandardSurface173: nodes.pCube178_aiStandardSurface3_0,
+      PCubeaiStandardSurface174: nodes.pCube179_aiStandardSurface3_0,
+      PCubeaiStandardSurface175: nodes.pCube180_aiStandardSurface3_0,
+      PCubeaiStandardSurface176: nodes.pCube181_aiStandardSurface3_0,
+      PCubeaiStandardSurface177: nodes.pCube182_aiStandardSurface3_0,
+      PCubeaiStandardSurface178: nodes.pCube183_aiStandardSurface3_0,
+      PCubeaiStandardSurface179: nodes.pCube184_aiStandardSurface3_0,
+      PCubeaiStandardSurface180: nodes.pCube185_aiStandardSurface3_0,
+      PCubeaiStandardSurface181: nodes.pCube186_aiStandardSurface3_0,
+      PCubeaiStandardSurface182: nodes.pCube187_aiStandardSurface3_0,
+      PCubeaiStandardSurface183: nodes.pCube188_aiStandardSurface3_0,
+      PCubeaiStandardSurface184: nodes.pCube189_aiStandardSurface3_0,
+      PCubeaiStandardSurface185: nodes.pCube190_aiStandardSurface3_0,
+      PCubeaiStandardSurface186: nodes.pCube191_aiStandardSurface3_0,
+      PCubeaiStandardSurface187: nodes.pCube192_aiStandardSurface3_0,
+      PCubeaiStandardSurface188: nodes.pCube193_aiStandardSurface3_0,
+      PCubeaiStandardSurface189: nodes.pCube194_aiStandardSurface3_0,
+      PCubeaiStandardSurface190: nodes.pCube195_aiStandardSurface3_0,
+      PCubeaiStandardSurface191: nodes.pCube196_aiStandardSurface3_0,
+      PCubeaiStandardSurface192: nodes.pCube197_aiStandardSurface3_0,
+      PCubeaiStandardSurface193: nodes.pCube198_aiStandardSurface3_0,
+      PCubeaiStandardSurface194: nodes.pCube199_aiStandardSurface3_0,
+      PCubeaiStandardSurface195: nodes.pCube200_aiStandardSurface3_0,
+      PCubeaiStandardSurface196: nodes.pCube201_aiStandardSurface3_0,
+      PCubeaiStandardSurface197: nodes.pCube202_aiStandardSurface3_0,
+      PCubeaiStandardSurface198: nodes.pCube203_aiStandardSurface3_0,
+      PCubeaiStandardSurface199: nodes.pCube204_aiStandardSurface3_0,
+      PCubeaiStandardSurface200: nodes.pCube205_aiStandardSurface3_0,
+      PCubeaiStandardSurface201: nodes.pCube206_aiStandardSurface3_0,
+      PCubeaiStandardSurface202: nodes.pCube207_aiStandardSurface3_0,
+      PCubeaiStandardSurface203: nodes.pCube208_aiStandardSurface3_0,
+      PCubeaiStandardSurface204: nodes.pCube209_aiStandardSurface3_0,
+      PCubeaiStandardSurface205: nodes.pCube210_aiStandardSurface3_0,
+      PCubeaiStandardSurface206: nodes.pCube211_aiStandardSurface3_0,
+      PCubeaiStandardSurface207: nodes.pCube212_aiStandardSurface3_0,
+      PCubeaiStandardSurface208: nodes.pCube213_aiStandardSurface3_0,
+      PCubeaiStandardSurface209: nodes.pCube214_aiStandardSurface3_0,
+      PCubeaiStandardSurface210: nodes.pCube215_aiStandardSurface3_0,
+      PCubeaiStandardSurface211: nodes.pCube216_aiStandardSurface3_0,
+      PCubeaiStandardSurface212: nodes.pCube217_aiStandardSurface3_0,
+      PCubeaiStandardSurface213: nodes.pCube218_aiStandardSurface3_0,
+      PCubeaiStandardSurface214: nodes.pCube219_aiStandardSurface3_0,
+      PCubeaiStandardSurface215: nodes.pCube220_aiStandardSurface3_0,
+      PCubeaiStandardSurface216: nodes.pCube221_aiStandardSurface3_0,
+      PCubeaiStandardSurface217: nodes.pCube222_aiStandardSurface3_0,
+      PCubeaiStandardSurface218: nodes.pCube223_aiStandardSurface3_0,
+      PCubeaiStandardSurface219: nodes.pCube224_aiStandardSurface3_0,
+      PCubeaiStandardSurface220: nodes.pCube225_aiStandardSurface3_0,
+      PCubeaiStandardSurface221: nodes.pCube226_aiStandardSurface3_0,
+      PCubeaiStandardSurface222: nodes.pCube227_aiStandardSurface3_0,
+      PCubeaiStandardSurface223: nodes.pCube228_aiStandardSurface3_0,
+      PCubeaiStandardSurface224: nodes.pCube229_aiStandardSurface3_0,
+      PCubeaiStandardSurface225: nodes.pCube230_aiStandardSurface3_0,
+      PCubeaiStandardSurface226: nodes.pCube231_aiStandardSurface3_0,
+      PCubeaiStandardSurface227: nodes.pCube232_aiStandardSurface3_0,
+      PCubeaiStandardSurface228: nodes.pCube233_aiStandardSurface3_0,
+      PCubeaiStandardSurface229: nodes.pCube234_aiStandardSurface3_0,
+      PCubeaiStandardSurface230: nodes.pCube235_aiStandardSurface3_0,
+      PCubeaiStandardSurface231: nodes.pCube236_aiStandardSurface3_0,
+      PCubeaiStandardSurface232: nodes.pCube237_aiStandardSurface3_0,
+      PCubeaiStandardSurface233: nodes.pCube238_aiStandardSurface3_0,
+      PCubeaiStandardSurface234: nodes.pCube239_aiStandardSurface3_0,
+      PCubeaiStandardSurface235: nodes.pCube240_aiStandardSurface3_0,
+      PCubeaiStandardSurface236: nodes.pCube241_aiStandardSurface3_0,
+      PCubeaiStandardSurface237: nodes.pCube242_aiStandardSurface3_0,
+      PCubeaiStandardSurface238: nodes.pCube243_aiStandardSurface3_0,
+      PCubeaiStandardSurface239: nodes.pCube244_aiStandardSurface3_0,
+      PCubeaiStandardSurface240: nodes.pCube245_aiStandardSurface3_0,
+      PCubeaiStandardSurface241: nodes.pCube246_aiStandardSurface3_0,
+      PCubeaiStandardSurface242: nodes.pCube247_aiStandardSurface3_0,
+      PCubeaiStandardSurface243: nodes.pCube248_aiStandardSurface3_0,
+      PCubeaiStandardSurface244: nodes.pCube249_aiStandardSurface3_0,
+      PCubeaiStandardSurface245: nodes.pCube250_aiStandardSurface3_0,
+      PCubeaiStandardSurface246: nodes.pCube251_aiStandardSurface3_0,
+      PCubeaiStandardSurface247: nodes.pCube252_aiStandardSurface3_0,
+      PCubeaiStandardSurface248: nodes.pCube253_aiStandardSurface3_0,
+      PCubeaiStandardSurface249: nodes.pCube254_aiStandardSurface3_0,
+      PCubeaiStandardSurface250: nodes.pCube255_aiStandardSurface3_0,
+      PCubeaiStandardSurface251: nodes.pCube256_aiStandardSurface3_0,
+      PCubeaiStandardSurface252: nodes.pCube257_aiStandardSurface3_0,
+      PCubeaiStandardSurface253: nodes.pCube258_aiStandardSurface3_0,
+      PCubeaiStandardSurface254: nodes.pCube259_aiStandardSurface3_0,
+      PCubeaiStandardSurface255: nodes.pCube260_aiStandardSurface3_0,
+      PCubeaiStandardSurface256: nodes.pCube261_aiStandardSurface3_0,
+      PCubeaiStandardSurface257: nodes.pCube262_aiStandardSurface3_0,
+      PCubeaiStandardSurface258: nodes.pCube263_aiStandardSurface3_0,
+      PCubeaiStandardSurface259: nodes.pCube264_aiStandardSurface3_0,
+      PCubeaiStandardSurface260: nodes.pCube265_aiStandardSurface3_0,
+      PCubeaiStandardSurface261: nodes.pCube266_aiStandardSurface3_0,
+      PCubeaiStandardSurface262: nodes.pCube267_aiStandardSurface3_0,
+      PCubeaiStandardSurface263: nodes.pCube268_aiStandardSurface3_0,
+      PCubeaiStandardSurface264: nodes.pCube269_aiStandardSurface3_0,
+      PCubeaiStandardSurface265: nodes.pCube270_aiStandardSurface3_0,
+      PCubeaiStandardSurface266: nodes.pCube271_aiStandardSurface3_0,
+      PCubeaiStandardSurface267: nodes.pCube272_aiStandardSurface3_0,
+      PCubeaiStandardSurface268: nodes.pCube273_aiStandardSurface3_0,
+      PCubeaiStandardSurface269: nodes.pCube274_aiStandardSurface3_0,
+      PCubeaiStandardSurface270: nodes.pCube275_aiStandardSurface3_0,
+      PCubeaiStandardSurface271: nodes.pCube276_aiStandardSurface3_0,
+      PCubeaiStandardSurface272: nodes.pCube277_aiStandardSurface3_0,
+      PCubeaiStandardSurface273: nodes.pCube278_aiStandardSurface3_0,
+      PCubeaiStandardSurface274: nodes.pCube279_aiStandardSurface3_0,
+      PCubeaiStandardSurface275: nodes.pCube280_aiStandardSurface3_0,
+      PCubeaiStandardSurface276: nodes.pCube281_aiStandardSurface3_0,
+      PCubeaiStandardSurface277: nodes.pCube282_aiStandardSurface3_0,
+      PCubeaiStandardSurface278: nodes.pCube283_aiStandardSurface3_0,
+      PCubeaiStandardSurface279: nodes.pCube284_aiStandardSurface3_0,
+      PCubeaiStandardSurface280: nodes.pCube285_aiStandardSurface3_0,
+      PCubeaiStandardSurface281: nodes.pCube286_aiStandardSurface3_0,
+      PCubeaiStandardSurface282: nodes.pCube287_aiStandardSurface3_0,
+      PCubeaiStandardSurface283: nodes.pCube288_aiStandardSurface3_0,
+      PCubeaiStandardSurface284: nodes.pCube289_aiStandardSurface3_0,
+      PCubeaiStandardSurface285: nodes.pCube290_aiStandardSurface3_0,
+      PCubeaiStandardSurface286: nodes.pCube291_aiStandardSurface3_0,
+      PCubeaiStandardSurface287: nodes.pCube292_aiStandardSurface3_0,
+      PCubeaiStandardSurface288: nodes.pCube293_aiStandardSurface3_0,
+      PCubeaiStandardSurface289: nodes.pCube294_aiStandardSurface3_0,
+      PCubeaiStandardSurface290: nodes.pCube295_aiStandardSurface3_0,
+      PCubeaiStandardSurface291: nodes.pCube296_aiStandardSurface3_0,
+      PCubeaiStandardSurface292: nodes.pCube297_aiStandardSurface3_0,
+      PCubeaiStandardSurface293: nodes.pCube298_aiStandardSurface3_0,
+      PCubeaiStandardSurface294: nodes.pCube299_aiStandardSurface3_0,
+      PCubeaiStandardSurface295: nodes.pCube300_aiStandardSurface3_0,
+      PCubeaiStandardSurface296: nodes.pCube301_aiStandardSurface3_0,
+      PCubeaiStandardSurface297: nodes.pCube302_aiStandardSurface3_0,
+      PCubeaiStandardSurface298: nodes.pCube303_aiStandardSurface3_0,
+      PCubeaiStandardSurface299: nodes.pCube304_aiStandardSurface3_0,
+      PCubeaiStandardSurface300: nodes.pCube305_aiStandardSurface3_0,
+      PCubeaiStandardSurface301: nodes.pCube306_aiStandardSurface3_0,
+      PCubeaiStandardSurface302: nodes.pCube307_aiStandardSurface3_0,
+      PCubeaiStandardSurface303: nodes.pCube308_aiStandardSurface3_0,
+      PCubeaiStandardSurface304: nodes.pCube309_aiStandardSurface3_0,
+      PCubeaiStandardSurface305: nodes.pCube310_aiStandardSurface3_0,
+      PCubeaiStandardSurface306: nodes.pCube311_aiStandardSurface3_0,
+      PCubeaiStandardSurface307: nodes.pCube312_aiStandardSurface3_0,
+      PCubeaiStandardSurface308: nodes.pCube313_aiStandardSurface3_0,
+      PCubeaiStandardSurface309: nodes.pCube314_aiStandardSurface3_0,
+      PCubeaiStandardSurface310: nodes.pCube315_aiStandardSurface3_0,
+      PCubeaiStandardSurface311: nodes.pCube316_aiStandardSurface3_0,
+      PCubeaiStandardSurface312: nodes.pCube317_aiStandardSurface3_0,
+      PCubeaiStandardSurface313: nodes.pCube318_aiStandardSurface3_0,
+      PCubeaiStandardSurface314: nodes.pCube319_aiStandardSurface3_0,
+      PCubeaiStandardSurface315: nodes.pCube320_aiStandardSurface3_0,
+      PCubeaiStandardSurface316: nodes.pCube321_aiStandardSurface3_0,
+      PCubeaiStandardSurface317: nodes.pCube322_aiStandardSurface3_0,
+      PCubeaiStandardSurface318: nodes.pCube323_aiStandardSurface3_0,
+      PCubeaiStandardSurface319: nodes.pCube324_aiStandardSurface3_0,
+      PCubeaiStandardSurface320: nodes.pCube325_aiStandardSurface3_0,
+      PCubeaiStandardSurface321: nodes.pCube326_aiStandardSurface3_0,
+      PCubeaiStandardSurface322: nodes.pCube327_aiStandardSurface3_0,
+      PCubeaiStandardSurface323: nodes.pCube328_aiStandardSurface3_0,
+      PCubeaiStandardSurface324: nodes.pCube329_aiStandardSurface3_0,
+    }),
+    [nodes]
+  )
   return (
-    // Assign the forwarded ref to the top-level group
-    <group {...props} dispose={null} ref={ref}>
-      <group rotation={[-0.0479, 0.0252, 0.1389]}>
-        <mesh
-          geometry={nodes.pCube3_aiStandardSurface1_0.geometry}
-          material={materials.aiStandardSurface1}
-          scale={[20.612, 5.842, 3.519]}
-        />
-        <mesh
-          geometry={nodes.pCube6_aiStandardSurface2_0.geometry}
-          material={materials.aiStandardSurface2}
-          position={[-11.263, 4.109, 0]}
-          rotation={[-1.574, 0.075, -0.003]}
-          scale={[0.536, 0.022, 0.034]}
-        />
-        <mesh
-          geometry={nodes.pCube329_aiStandardSurface3_0.geometry}
-          material={materials.aiStandardSurface3}
-          position={[11.795, 3.532, 0]}
-          rotation={[-1.566, 0.058, 0]}
-          scale={[0.71, 0.014, 0.034]}
-        />
-        {/* Add the rest of your model's meshes here if there are more */}
+    <Merged meshes={instances} {...props}>
+      {(instances) => <context.Provider value={instances} children={children} />}
+    </Merged>
+  )
+}
+
+export function Model(props: JSX.IntrinsicElements['group']) {
+  const instances = useContext(context)
+  return (
+    <group {...props} dispose={null}>
+      <group name="Sketchfab_Scene">
+        <group
+          name="Sketchfab_model"
+          rotation={[-Math.PI / 2, 0, 0]}
+          userData={{ name: 'Sketchfab_model' }}>
+          <group
+            name="2e7513e960664aedaff860fe2491e0b6fbx"
+            rotation={[Math.PI / 2, 0, 0]}
+            userData={{ name: '2e7513e960664aedaff860fe2491e0b6.fbx' }}>
+            <group name="RootNode" userData={{ name: 'RootNode' }}>
+              <group name="group5" userData={{ name: 'group5' }}>
+                <group
+                  name="group4"
+                  rotation={[-0.0479383, 0.0251902, 0.1388813]}
+                  userData={{ name: 'group4' }}>
+                  <group
+                    name="pCube3"
+                    scale={[20.6122513, 5.8417349, 3.5186796]}
+                    userData={{ name: 'pCube3' }}>
+                    <instances.PCubeaiStandardSurface
+                      name="pCube3_aiStandardSurface1_0"
+                      userData={{ name: 'pCube3_aiStandardSurface1_0' }}
+                    />
+                  </group>
+                  <group name="group2" userData={{ name: 'group2' }}>
+                    <group
+                      name="pCube6"
+                      position={[-11.2628765, 4.1092715, -0.0006527]}
+                      rotation={[-1.5738335, 0.0750538, -0.0030963]}
+                      scale={[0.5357696, 0.0215652, 0.0344057]}
+                      userData={{ name: 'pCube6' }}>
+                      <instances.PCubeaiStandardSurface1
+                        name="pCube6_aiStandardSurface2_0"
+                        userData={{ name: 'pCube6_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube7"
+                      position={[-11.2666874, 4.0254493, -0.0150969]}
+                      rotation={[2.9424335, -0.0781709, 0.0130191]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube7' }}>
+                      <instances.PCubeaiStandardSurface2
+                        name="pCube7_aiStandardSurface2_0"
+                        userData={{ name: 'pCube7_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube8"
+                      position={[-11.2559471, 3.947355, -0.0026016]}
+                      rotation={[2.9427405, -0.1016298, 0.0130467]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube8' }}>
+                      <instances.PCubeaiStandardSurface3
+                        name="pCube8_aiStandardSurface2_0"
+                        userData={{ name: 'pCube8_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube9"
+                      position={[-11.2618446, 3.8553391, 0.0127896]}
+                      rotation={[3.0327358, -0.1000545, 0.0221127]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube9' }}>
+                      <instances.PCubeaiStandardSurface4
+                        name="pCube9_aiStandardSurface2_0"
+                        userData={{ name: 'pCube9_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube10"
+                      position={[-11.2653694, 3.757504, 0.0200517]}
+                      rotation={[3.0327358, -0.1000545, 0.0221127]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube10' }}>
+                      <instances.PCubeaiStandardSurface5
+                        name="pCube10_aiStandardSurface2_0"
+                        userData={{ name: 'pCube10_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube11"
+                      position={[-11.2830467, 3.6686685, 0.0262083]}
+                      rotation={[3.0327358, -0.1000545, 0.0221127]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube11' }}>
+                      <instances.PCubeaiStandardSurface6
+                        name="pCube11_aiStandardSurface2_0"
+                        userData={{ name: 'pCube11_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube12"
+                      position={[-11.2874203, 3.5720792, 0.0315292]}
+                      rotation={[3.0327358, -0.1000545, 0.0221127]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube12' }}>
+                      <instances.PCubeaiStandardSurface7
+                        name="pCube12_aiStandardSurface2_0"
+                        userData={{ name: 'pCube12_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube13"
+                      position={[-11.2940302, 3.4756186, 0.0381755]}
+                      rotation={[3.0869375, -0.0954735, 0.0274921]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube13' }}>
+                      <instances.PCubeaiStandardSurface8
+                        name="pCube13_aiStandardSurface2_0"
+                        userData={{ name: 'pCube13_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube14"
+                      position={[-11.312602, 3.3766942, 0.0472119]}
+                      rotation={[3.0869375, -0.0954735, 0.0274921]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube14' }}>
+                      <instances.PCubeaiStandardSurface9
+                        name="pCube14_aiStandardSurface2_0"
+                        userData={{ name: 'pCube14_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube15"
+                      position={[-11.3206472, 3.2828743, 0.0498661]}
+                      rotation={[-3.1250357, -0.0932848, 0.0342059]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube15' }}>
+                      <instances.PCubeaiStandardSurface10
+                        name="pCube15_aiStandardSurface2_0"
+                        userData={{ name: 'pCube15_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube16"
+                      position={[-11.3279295, 3.1846004, 0.0471016]}
+                      rotation={[-3.1250357, -0.0932848, 0.0342059]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube16' }}>
+                      <instances.PCubeaiStandardSurface11
+                        name="pCube16_aiStandardSurface2_0"
+                        userData={{ name: 'pCube16_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube17"
+                      position={[-11.3385868, 3.082341, 0.0432256]}
+                      rotation={[-3.1250357, -0.0932848, 0.0342059]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube17' }}>
+                      <instances.PCubeaiStandardSurface12
+                        name="pCube17_aiStandardSurface2_0"
+                        userData={{ name: 'pCube17_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube18"
+                      position={[-11.3450718, 2.9815061, 0.0409532]}
+                      rotation={[-3.1250357, -0.0932848, 0.0342059]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube18' }}>
+                      <instances.PCubeaiStandardSurface13
+                        name="pCube18_aiStandardSurface2_0"
+                        userData={{ name: 'pCube18_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube19"
+                      position={[-11.3617229, 2.8789415, 0.0383811]}
+                      rotation={[-3.1250357, -0.0932848, 0.0342059]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube19' }}>
+                      <instances.PCubeaiStandardSurface14
+                        name="pCube19_aiStandardSurface2_0"
+                        userData={{ name: 'pCube19_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube20"
+                      position={[-11.3574839, 2.7778523, 0.0346597]}
+                      rotation={[-3.1250357, -0.0932848, 0.0342059]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube20' }}>
+                      <instances.PCubeaiStandardSurface15
+                        name="pCube20_aiStandardSurface2_0"
+                        userData={{ name: 'pCube20_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube21"
+                      position={[-11.360054, 2.6821601, 0.0310406]}
+                      rotation={[-3.1250357, -0.0932848, 0.0342059]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube21' }}>
+                      <instances.PCubeaiStandardSurface16
+                        name="pCube21_aiStandardSurface2_0"
+                        userData={{ name: 'pCube21_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube22"
+                      position={[-11.3606672, 2.5841169, 0.0268258]}
+                      rotation={[-3.0784054, -0.0805946, 0.0385134]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube22' }}>
+                      <instances.PCubeaiStandardSurface17
+                        name="pCube22_aiStandardSurface2_0"
+                        userData={{ name: 'pCube22_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube23"
+                      position={[-11.3476315, 2.4823279, 0.0189619]}
+                      rotation={[-3.0784054, -0.0805946, 0.0385134]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube23' }}>
+                      <instances.PCubeaiStandardSurface18
+                        name="pCube23_aiStandardSurface2_0"
+                        userData={{ name: 'pCube23_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube24"
+                      position={[-11.3466845, 2.3835747, 0.0146563]}
+                      rotation={[-3.0784054, -0.0805946, 0.0385134]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube24' }}>
+                      <instances.PCubeaiStandardSurface19
+                        name="pCube24_aiStandardSurface2_0"
+                        userData={{ name: 'pCube24_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube25"
+                      position={[-11.3363943, 2.2840493, 0.0070837]}
+                      rotation={[-3.0784054, -0.0805946, 0.0385134]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube25' }}>
+                      <instances.PCubeaiStandardSurface20
+                        name="pCube25_aiStandardSurface2_0"
+                        userData={{ name: 'pCube25_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube26"
+                      position={[-11.3284435, 2.1839843, 0.0010635]}
+                      rotation={[-3.0784054, -0.0805946, 0.0385134]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube26' }}>
+                      <instances.PCubeaiStandardSurface21
+                        name="pCube26_aiStandardSurface2_0"
+                        userData={{ name: 'pCube26_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube27"
+                      position={[-11.3307314, 2.0877163, -0.0040233]}
+                      rotation={[-3.0781668, -0.0867629, 0.0385333]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube27' }}>
+                      <instances.PCubeaiStandardSurface22
+                        name="pCube27_aiStandardSurface2_0"
+                        userData={{ name: 'pCube27_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube28"
+                      position={[-11.3242607, 1.9869288, -0.0111163]}
+                      rotation={[-3.0781668, -0.0867629, 0.0385333]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube28' }}>
+                      <instances.PCubeaiStandardSurface23
+                        name="pCube28_aiStandardSurface2_0"
+                        userData={{ name: 'pCube28_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube29"
+                      position={[-11.3151073, 1.8851684, -0.0173546]}
+                      rotation={[-3.0781668, -0.0867629, 0.0385333]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube29' }}>
+                      <instances.PCubeaiStandardSurface24
+                        name="pCube29_aiStandardSurface2_0"
+                        userData={{ name: 'pCube29_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube30"
+                      position={[-11.3096752, 1.7768749, -0.0225968]}
+                      rotation={[-3.0781668, -0.0867629, -0.0007885]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube30' }}>
+                      <instances.PCubeaiStandardSurface25
+                        name="pCube30_aiStandardSurface2_0"
+                        userData={{ name: 'pCube30_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube31"
+                      position={[-11.2999563, 1.6769969, -0.0281111]}
+                      rotation={[-3.0781668, -0.0867629, -0.0007885]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube31' }}>
+                      <instances.PCubeaiStandardSurface26
+                        name="pCube31_aiStandardSurface2_0"
+                        userData={{ name: 'pCube31_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube32"
+                      position={[-11.2888269, 1.5761162, -0.0339709]}
+                      rotation={[-3.0781668, -0.0867629, -0.0007885]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube32' }}>
+                      <instances.PCubeaiStandardSurface27
+                        name="pCube32_aiStandardSurface2_0"
+                        userData={{ name: 'pCube32_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube33"
+                      position={[-11.2816639, 1.4731492, -0.0375478]}
+                      rotation={[-3.0781668, -0.0867629, -0.0007885]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube33' }}>
+                      <instances.PCubeaiStandardSurface28
+                        name="pCube33_aiStandardSurface2_0"
+                        userData={{ name: 'pCube33_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube34"
+                      position={[-11.2700443, 1.3676378, -0.0420422]}
+                      rotation={[-3.0781668, -0.0867629, -0.0007885]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube34' }}>
+                      <instances.PCubeaiStandardSurface29
+                        name="pCube34_aiStandardSurface2_0"
+                        userData={{ name: 'pCube34_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube35"
+                      position={[-11.2630577, 1.2687542, -0.0488003]}
+                      rotation={[-3.0781668, -0.0867629, -0.0007885]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube35' }}>
+                      <instances.PCubeaiStandardSurface30
+                        name="pCube35_aiStandardSurface2_0"
+                        userData={{ name: 'pCube35_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube36"
+                      position={[-11.2417736, 1.1626512, -0.0570277]}
+                      rotation={[-3.0781668, -0.0867629, -0.042099]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube36' }}>
+                      <instances.PCubeaiStandardSurface31
+                        name="pCube36_aiStandardSurface2_0"
+                        userData={{ name: 'pCube36_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube37"
+                      position={[-11.2232027, 1.0612499, -0.0593778]}
+                      rotation={[-3.0781668, -0.0867629, -0.042099]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube37' }}>
+                      <instances.PCubeaiStandardSurface32
+                        name="pCube37_aiStandardSurface2_0"
+                        userData={{ name: 'pCube37_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube38"
+                      position={[-11.198411, 0.9622005, -0.0636802]}
+                      rotation={[-3.0781668, -0.0867629, -0.0732012]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube38' }}>
+                      <instances.PCubeaiStandardSurface33
+                        name="pCube38_aiStandardSurface2_0"
+                        userData={{ name: 'pCube38_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube39"
+                      position={[-11.1724091, 0.8659056, -0.0714642]}
+                      rotation={[-3.0781668, -0.0867629, -0.0547147]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube39' }}>
+                      <instances.PCubeaiStandardSurface34
+                        name="pCube39_aiStandardSurface2_0"
+                        userData={{ name: 'pCube39_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube40"
+                      position={[-11.1531029, 0.7649736, -0.0801796]}
+                      rotation={[-3.0781668, -0.0867629, -0.0547147]}
+                      scale={[0.5357696, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube40' }}>
+                      <instances.PCubeaiStandardSurface35
+                        name="pCube40_aiStandardSurface2_0"
+                        userData={{ name: 'pCube40_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube41"
+                      position={[-11.1347075, 0.6661486, -0.0860629]}
+                      rotation={[-3.0781668, -0.0867629, -0.0547147]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube41' }}>
+                      <instances.PCubeaiStandardSurface36
+                        name="pCube41_aiStandardSurface2_0"
+                        userData={{ name: 'pCube41_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube42"
+                      position={[-11.1023016, 0.5679318, -0.0925865]}
+                      rotation={[-3.0781668, -0.0867629, -0.0547147]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube42' }}>
+                      <instances.PCubeaiStandardSurface37
+                        name="pCube42_aiStandardSurface2_0"
+                        userData={{ name: 'pCube42_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube43"
+                      position={[-11.0757008, 0.4740009, -0.0941546]}
+                      rotation={[-3.0781668, -0.0867629, -0.0547147]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube43' }}>
+                      <instances.PCubeaiStandardSurface38
+                        name="pCube43_aiStandardSurface2_0"
+                        userData={{ name: 'pCube43_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube44"
+                      position={[-11.0481777, 0.3761577, -0.1008955]}
+                      rotation={[-3.0781668, -0.0867629, -0.0547147]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube44' }}>
+                      <instances.PCubeaiStandardSurface39
+                        name="pCube44_aiStandardSurface2_0"
+                        userData={{ name: 'pCube44_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube45"
+                      position={[-11.0252094, 0.2780607, -0.1045754]}
+                      rotation={[-3.078267, -0.088585, -0.0547234]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube45' }}>
+                      <instances.PCubeaiStandardSurface40
+                        name="pCube45_aiStandardSurface2_0"
+                        userData={{ name: 'pCube45_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube46"
+                      position={[-10.9995775, 0.182899, -0.1067484]}
+                      rotation={[-3.078267, -0.088585, -0.0547234]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube46' }}>
+                      <instances.PCubeaiStandardSurface41
+                        name="pCube46_aiStandardSurface2_0"
+                        userData={{ name: 'pCube46_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube47"
+                      position={[-10.9839306, 0.0864835, -0.1103256]}
+                      rotation={[-3.078267, -0.088585, -0.0547234]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube47' }}>
+                      <instances.PCubeaiStandardSurface42
+                        name="pCube47_aiStandardSurface2_0"
+                        userData={{ name: 'pCube47_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube48"
+                      position={[-10.9648981, -0.0130548, -0.1133355]}
+                      rotation={[-3.078267, -0.088585, -0.0547234]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube48' }}>
+                      <instances.PCubeaiStandardSurface43
+                        name="pCube48_aiStandardSurface2_0"
+                        userData={{ name: 'pCube48_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube49"
+                      position={[-10.95014, -0.1123273, -0.1164997]}
+                      rotation={[-3.078267, -0.088585, -0.0547234]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube49' }}>
+                      <instances.PCubeaiStandardSurface44
+                        name="pCube49_aiStandardSurface2_0"
+                        userData={{ name: 'pCube49_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube50"
+                      position={[-10.9346094, -0.2089439, -0.1193923]}
+                      rotation={[-3.078267, -0.088585, -0.0547234]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube50' }}>
+                      <instances.PCubeaiStandardSurface45
+                        name="pCube50_aiStandardSurface2_0"
+                        userData={{ name: 'pCube50_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube51"
+                      position={[-10.9183407, -0.3103905, -0.1201748]}
+                      rotation={[-3.078267, -0.088585, -0.0547234]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube51' }}>
+                      <instances.PCubeaiStandardSurface46
+                        name="pCube51_aiStandardSurface2_0"
+                        userData={{ name: 'pCube51_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube52"
+                      position={[-10.9189329, -0.4127137, -0.1197478]}
+                      rotation={[3.1243554, -0.0839062, -0.0616668]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube52' }}>
+                      <instances.PCubeaiStandardSurface47
+                        name="pCube52_aiStandardSurface2_0"
+                        userData={{ name: 'pCube52_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube53"
+                      position={[-10.9143915, -0.5118545, -0.1212216]}
+                      rotation={[3.1243554, -0.0839062, -0.0616668]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube53' }}>
+                      <instances.PCubeaiStandardSurface48
+                        name="pCube53_aiStandardSurface2_0"
+                        userData={{ name: 'pCube53_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube54"
+                      position={[-10.9085121, -0.6117954, -0.1182221]}
+                      rotation={[3.1243554, -0.0839062, -0.0616668]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube54' }}>
+                      <instances.PCubeaiStandardSurface49
+                        name="pCube54_aiStandardSurface2_0"
+                        userData={{ name: 'pCube54_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube55"
+                      position={[-10.9073992, -0.7103321, -0.1201541]}
+                      rotation={[3.1243554, -0.0839062, -0.0616668]}
+                      scale={[0.51168, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube55' }}>
+                      <instances.PCubeaiStandardSurface50
+                        name="pCube55_aiStandardSurface2_0"
+                        userData={{ name: 'pCube55_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube56"
+                      position={[-10.9070444, -0.8047858, -0.1196967]}
+                      rotation={[3.1243554, -0.0839062, -0.0319954]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube56' }}>
+                      <instances.PCubeaiStandardSurface51
+                        name="pCube56_aiStandardSurface2_0"
+                        userData={{ name: 'pCube56_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube57"
+                      position={[-10.9170008, -0.8988737, -0.1152696]}
+                      rotation={[3.1243554, -0.0839062, -0.0114969]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube57' }}>
+                      <instances.PCubeaiStandardSurface52
+                        name="pCube57_aiStandardSurface2_0"
+                        userData={{ name: 'pCube57_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube58"
+                      position={[-10.9255381, -1.0007823, -0.1131064]}
+                      rotation={[3.1243554, -0.0839062, -0.0114969]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube58' }}>
+                      <instances.PCubeaiStandardSurface53
+                        name="pCube58_aiStandardSurface2_0"
+                        userData={{ name: 'pCube58_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube59"
+                      position={[-10.9358416, -1.1001594, -0.1074161]}
+                      rotation={[3.1243554, -0.0839062, -0.0114969]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube59' }}>
+                      <instances.PCubeaiStandardSurface54
+                        name="pCube59_aiStandardSurface2_0"
+                        userData={{ name: 'pCube59_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube60"
+                      position={[-10.946619, -1.1999537, -0.1049885]}
+                      rotation={[3.1243554, -0.0839062, -0.0006145]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube60' }}>
+                      <instances.PCubeaiStandardSurface55
+                        name="pCube60_aiStandardSurface2_0"
+                        userData={{ name: 'pCube60_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube61"
+                      position={[-10.9568481, -1.2994429, -0.102165]}
+                      rotation={[3.1243554, -0.0839062, 0.016873]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube61' }}>
+                      <instances.PCubeaiStandardSurface56
+                        name="pCube61_aiStandardSurface2_0"
+                        userData={{ name: 'pCube61_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube62"
+                      position={[-10.9603662, -1.4000582, -0.0994052]}
+                      rotation={[3.1243554, -0.0839062, 0.0289422]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube62' }}>
+                      <instances.PCubeaiStandardSurface57
+                        name="pCube62_aiStandardSurface2_0"
+                        userData={{ name: 'pCube62_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube63"
+                      position={[-10.9763927, -1.5040016, -0.0944448]}
+                      rotation={[3.1243554, -0.0839062, 0.0408081]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube63' }}>
+                      <instances.PCubeaiStandardSurface58
+                        name="pCube63_aiStandardSurface2_0"
+                        userData={{ name: 'pCube63_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube64"
+                      position={[-10.9807148, -1.6010644, -0.0885931]}
+                      rotation={[3.1243554, -0.0839062, 0.051848]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube64' }}>
+                      <instances.PCubeaiStandardSurface59
+                        name="pCube64_aiStandardSurface2_0"
+                        userData={{ name: 'pCube64_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube65"
+                      position={[-10.9951458, -1.701013, -0.084352]}
+                      rotation={[3.1243554, -0.0839062, 0.051848]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube65' }}>
+                      <instances.PCubeaiStandardSurface60
+                        name="pCube65_aiStandardSurface2_0"
+                        userData={{ name: 'pCube65_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube66"
+                      position={[-11.0054064, -1.7992492, -0.0804549]}
+                      rotation={[3.1243554, -0.0839062, 0.051848]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube66' }}>
+                      <instances.PCubeaiStandardSurface61
+                        name="pCube66_aiStandardSurface2_0"
+                        userData={{ name: 'pCube66_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube67"
+                      position={[-11.0122852, -1.8968604, -0.0764658]}
+                      rotation={[3.1243554, -0.0839062, 0.051848]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube67' }}>
+                      <instances.PCubeaiStandardSurface62
+                        name="pCube67_aiStandardSurface2_0"
+                        userData={{ name: 'pCube67_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube68"
+                      position={[-11.0180368, -1.9907551, -0.0719625]}
+                      rotation={[3.1243554, -0.0839062, 0.051848]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube68' }}>
+                      <instances.PCubeaiStandardSurface63
+                        name="pCube68_aiStandardSurface2_0"
+                        userData={{ name: 'pCube68_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube69"
+                      position={[-11.0189009, -2.0955596, -0.0678105]}
+                      rotation={[3.1243554, -0.0839062, 0.0238292]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube69' }}>
+                      <instances.PCubeaiStandardSurface64
+                        name="pCube69_aiStandardSurface2_0"
+                        userData={{ name: 'pCube69_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube70"
+                      position={[-11.0125694, -2.2035093, -0.0669364]}
+                      rotation={[3.1243554, -0.0839062, 0.002969]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube70' }}>
+                      <instances.PCubeaiStandardSurface65
+                        name="pCube70_aiStandardSurface2_0"
+                        userData={{ name: 'pCube70_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube71"
+                      position={[-11.0120354, -2.3031123, -0.0632173]}
+                      rotation={[3.1243554, -0.0839062, 0.002969]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube71' }}>
+                      <instances.PCubeaiStandardSurface66
+                        name="pCube71_aiStandardSurface2_0"
+                        userData={{ name: 'pCube71_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube72"
+                      position={[-11.0116739, -2.4060853, -0.0591753]}
+                      rotation={[3.1243554, -0.0839062, 0.002969]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube72' }}>
+                      <instances.PCubeaiStandardSurface67
+                        name="pCube72_aiStandardSurface2_0"
+                        userData={{ name: 'pCube72_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube73"
+                      position={[-11.0103626, -2.5098913, -0.0560812]}
+                      rotation={[3.1243554, -0.0839062, -0.0093756]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube73' }}>
+                      <instances.PCubeaiStandardSurface68
+                        name="pCube73_aiStandardSurface2_0"
+                        userData={{ name: 'pCube73_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube74"
+                      position={[-11.0087795, -2.6203468, -0.0518242]}
+                      rotation={[3.1020599, -0.0776115, -0.0373253]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube74' }}>
+                      <instances.PCubeaiStandardSurface69
+                        name="pCube74_aiStandardSurface2_0"
+                        userData={{ name: 'pCube74_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube75"
+                      position={[-10.9997711, -2.7218747, -0.050662]}
+                      rotation={[3.1020599, -0.0776115, -0.0527634]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube75' }}>
+                      <instances.PCubeaiStandardSurface70
+                        name="pCube75_aiStandardSurface2_0"
+                        userData={{ name: 'pCube75_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube76"
+                      position={[-10.9944296, -2.8330328, -0.0467756]}
+                      rotation={[3.1020599, -0.0776115, -0.0660133]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube76' }}>
+                      <instances.PCubeaiStandardSurface71
+                        name="pCube76_aiStandardSurface2_0"
+                        userData={{ name: 'pCube76_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube77"
+                      position={[-10.9847355, -2.9325497, -0.0447245]}
+                      rotation={[3.1020599, -0.0776115, -0.0660133]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube77' }}>
+                      <instances.PCubeaiStandardSurface72
+                        name="pCube77_aiStandardSurface2_0"
+                        userData={{ name: 'pCube77_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube78"
+                      position={[-10.9722261, -3.0289054, -0.0449567]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube78' }}>
+                      <instances.PCubeaiStandardSurface73
+                        name="pCube78_aiStandardSurface2_0"
+                        userData={{ name: 'pCube78_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube79"
+                      position={[-10.9698067, -3.1269448, -0.0441839]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube79' }}>
+                      <instances.PCubeaiStandardSurface74
+                        name="pCube79_aiStandardSurface2_0"
+                        userData={{ name: 'pCube79_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube80"
+                      position={[-10.963932, -3.2328274, -0.0388254]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube80' }}>
+                      <instances.PCubeaiStandardSurface75
+                        name="pCube80_aiStandardSurface2_0"
+                        userData={{ name: 'pCube80_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube81"
+                      position={[-10.9518433, -3.333056, -0.039323]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube81' }}>
+                      <instances.PCubeaiStandardSurface76
+                        name="pCube81_aiStandardSurface2_0"
+                        userData={{ name: 'pCube81_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube82"
+                      position={[-10.9497747, -3.4296236, -0.0381653]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube82' }}>
+                      <instances.PCubeaiStandardSurface77
+                        name="pCube82_aiStandardSurface2_0"
+                        userData={{ name: 'pCube82_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube83"
+                      position={[-10.9407177, -3.5325317, -0.0363018]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube83' }}>
+                      <instances.PCubeaiStandardSurface78
+                        name="pCube83_aiStandardSurface2_0"
+                        userData={{ name: 'pCube83_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube84"
+                      position={[-10.9296169, -3.63381, -0.035374]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube84' }}>
+                      <instances.PCubeaiStandardSurface79
+                        name="pCube84_aiStandardSurface2_0"
+                        userData={{ name: 'pCube84_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube85"
+                      position={[-10.9246807, -3.7392299, -0.0348558]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube85' }}>
+                      <instances.PCubeaiStandardSurface80
+                        name="pCube85_aiStandardSurface2_0"
+                        userData={{ name: 'pCube85_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube86"
+                      position={[-10.9088478, -3.8450422, -0.0357922]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube86' }}>
+                      <instances.PCubeaiStandardSurface81
+                        name="pCube86_aiStandardSurface2_0"
+                        userData={{ name: 'pCube86_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube87"
+                      position={[-10.9134617, -3.9544151, -0.0280597]}
+                      rotation={[3.101348, -0.0883369, -0.0660723]}
+                      scale={[0.5231315, 0.0474428, 0.0344057]}
+                      userData={{ name: 'pCube87' }}>
+                      <instances.PCubeaiStandardSurface82
+                        name="pCube87_aiStandardSurface2_0"
+                        userData={{ name: 'pCube87_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube88"
+                      position={[-10.9267969, -4.0592318, -0.0035681]}
+                      rotation={[1.619675, 0.0582151, -0.0180814]}
+                      scale={[0.5056892, 0.0128161, 0.0344057]}
+                      userData={{ name: 'pCube88' }}>
+                      <instances.PCubeaiStandardSurface83
+                        name="pCube88_aiStandardSurface2_0"
+                        userData={{ name: 'pCube88_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube89"
+                      position={[-11.2641449, 4.0254493, 0.0299201]}
+                      rotation={[-0.2601946, -0.0440013, 3.0783938]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube89' }}>
+                      <instances.PCubeaiStandardSurface84
+                        name="pCube89_aiStandardSurface2_0"
+                        userData={{ name: 'pCube89_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube90"
+                      position={[-11.2645311, 3.947355, 0.0540563]}
+                      rotation={[-0.3054988, -0.0520941, 3.1230555]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube90' }}>
+                      <instances.PCubeaiStandardSurface85
+                        name="pCube90_aiStandardSurface2_0"
+                        userData={{ name: 'pCube90_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube91"
+                      position={[-11.2704287, 3.8553391, 0.0749208]}
+                      rotation={[-0.1850323, -0.0636622, 3.1155967]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube91' }}>
+                      <instances.PCubeaiStandardSurface86
+                        name="pCube91_aiStandardSurface2_0"
+                        userData={{ name: 'pCube91_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube92"
+                      position={[-11.2739544, 3.757504, 0.0912952]}
+                      rotation={[-0.1127652, -0.0770636, 3.1195251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube92' }}>
+                      <instances.PCubeaiStandardSurface87
+                        name="pCube92_aiStandardSurface2_0"
+                        userData={{ name: 'pCube92_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube93"
+                      position={[-11.2916317, 3.6686685, 0.0983112]}
+                      rotation={[-0.1127652, -0.0770636, 3.1195251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube93' }}>
+                      <instances.PCubeaiStandardSurface88
+                        name="pCube93_aiStandardSurface2_0"
+                        userData={{ name: 'pCube93_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube94"
+                      position={[-11.2960052, 3.5720792, 0.1054817]}
+                      rotation={[-0.1127652, -0.0770636, 3.1195251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube94' }}>
+                      <instances.PCubeaiStandardSurface89
+                        name="pCube94_aiStandardSurface2_0"
+                        userData={{ name: 'pCube94_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube95"
+                      position={[-11.3026152, 3.4756186, 0.1139979]}
+                      rotation={[-0.0595158, -0.0816212, 3.1141343]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube95' }}>
+                      <instances.PCubeaiStandardSurface90
+                        name="pCube95_aiStandardSurface2_0"
+                        userData={{ name: 'pCube95_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube96"
+                      position={[-11.3153124, 3.3766942, 0.1171292]}
+                      rotation={[-0.0595158, -0.0816212, 3.1141343]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube96' }}>
+                      <instances.PCubeaiStandardSurface91
+                        name="pCube96_aiStandardSurface2_0"
+                        userData={{ name: 'pCube96_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube97"
+                      position={[-11.319972, 3.2828743, 0.1199937]}
+                      rotation={[0.0105085, -0.0837734, 3.1074156]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube97' }}>
+                      <instances.PCubeaiStandardSurface92
+                        name="pCube97_aiStandardSurface2_0"
+                        userData={{ name: 'pCube97_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube98"
+                      position={[-11.3276892, 3.1846004, 0.1196719]}
+                      rotation={[0.0105085, -0.0837734, 3.1074156]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube98' }}>
+                      <instances.PCubeaiStandardSurface93
+                        name="pCube98_aiStandardSurface2_0"
+                        userData={{ name: 'pCube98_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube99"
+                      position={[-11.3361483, 3.082341, 0.1189034]}
+                      rotation={[0.0105085, -0.0837734, 3.1074156]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube99' }}>
+                      <instances.PCubeaiStandardSurface94
+                        name="pCube99_aiStandardSurface2_0"
+                        userData={{ name: 'pCube99_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube100"
+                      position={[-11.3424816, 2.9815061, 0.1137398]}
+                      rotation={[0.0105085, -0.0837734, 3.1074156]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube100' }}>
+                      <instances.PCubeaiStandardSurface95
+                        name="pCube100_aiStandardSurface2_0"
+                        userData={{ name: 'pCube100_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube101"
+                      position={[-11.3387136, 2.8789415, 0.1093681]}
+                      rotation={[0.0105085, -0.0837734, 3.1074156]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube101' }}>
+                      <instances.PCubeaiStandardSurface96
+                        name="pCube101_aiStandardSurface2_0"
+                        userData={{ name: 'pCube101_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube102"
+                      position={[-11.3414307, 2.7778523, 0.1038554]}
+                      rotation={[0.0105085, -0.0837734, 3.1074156]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube102' }}>
+                      <instances.PCubeaiStandardSurface97
+                        name="pCube102_aiStandardSurface2_0"
+                        userData={{ name: 'pCube102_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube103"
+                      position={[-11.3427267, 2.6821601, 0.0994074]}
+                      rotation={[0.0105085, -0.0837734, 3.1074156]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube103' }}>
+                      <instances.PCubeaiStandardSurface98
+                        name="pCube103_aiStandardSurface2_0"
+                        userData={{ name: 'pCube103_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube104"
+                      position={[-11.3528833, 2.5841169, 0.0933775]}
+                      rotation={[0.0563698, -0.0964357, 3.1030251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube104' }}>
+                      <instances.PCubeaiStandardSurface99
+                        name="pCube104_aiStandardSurface2_0"
+                        userData={{ name: 'pCube104_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube105"
+                      position={[-11.3404732, 2.4823279, 0.0891701]}
+                      rotation={[0.0563698, -0.0964357, 3.1030251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube105' }}>
+                      <instances.PCubeaiStandardSurface100
+                        name="pCube105_aiStandardSurface2_0"
+                        userData={{ name: 'pCube105_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube106"
+                      position={[-11.3389149, 2.3835747, 0.0811755]}
+                      rotation={[0.0563698, -0.0964357, 3.1030251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube106' }}>
+                      <instances.PCubeaiStandardSurface101
+                        name="pCube106_aiStandardSurface2_0"
+                        userData={{ name: 'pCube106_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube107"
+                      position={[-11.33706, 2.2840493, 0.0759352]}
+                      rotation={[0.0563698, -0.0964357, 3.1030251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube107' }}>
+                      <instances.PCubeaiStandardSurface102
+                        name="pCube107_aiStandardSurface2_0"
+                        userData={{ name: 'pCube107_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube108"
+                      position={[-11.3279343, 2.1839843, 0.0701776]}
+                      rotation={[0.0563698, -0.0964357, 3.1030251]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube108' }}>
+                      <instances.PCubeaiStandardSurface103
+                        name="pCube108_aiStandardSurface2_0"
+                        userData={{ name: 'pCube108_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube109"
+                      position={[-11.3276396, 2.0877163, 0.0610866]}
+                      rotation={[0.0566087, -0.0902674, 3.1030473]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube109' }}>
+                      <instances.PCubeaiStandardSurface104
+                        name="pCube109_aiStandardSurface2_0"
+                        userData={{ name: 'pCube109_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube110"
+                      position={[-11.3216639, 1.9869288, 0.0554818]}
+                      rotation={[0.0566087, -0.0902674, 3.1030473]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube110' }}>
+                      <instances.PCubeaiStandardSurface105
+                        name="pCube110_aiStandardSurface2_0"
+                        userData={{ name: 'pCube110_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube111"
+                      position={[-11.3114367, 1.8851684, 0.0486091]}
+                      rotation={[0.0566087, -0.0902674, 3.1030473]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube111' }}>
+                      <instances.PCubeaiStandardSurface106
+                        name="pCube111_aiStandardSurface2_0"
+                        userData={{ name: 'pCube111_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube112"
+                      position={[-11.3016882, 1.7768749, 0.0379427]}
+                      rotation={[0.0635654, -0.0903982, -3.1408039]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube112' }}>
+                      <instances.PCubeaiStandardSurface107
+                        name="pCube112_aiStandardSurface2_0"
+                        userData={{ name: 'pCube112_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube113"
+                      position={[-11.2917662, 1.6769969, 0.0356184]}
+                      rotation={[0.0635654, -0.0903982, -3.1408039]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube113' }}>
+                      <instances.PCubeaiStandardSurface108
+                        name="pCube113_aiStandardSurface2_0"
+                        userData={{ name: 'pCube113_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube114"
+                      position={[-11.2790289, 1.5761162, 0.0286313]}
+                      rotation={[0.0635654, -0.0903982, -3.1408039]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube114' }}>
+                      <instances.PCubeaiStandardSurface109
+                        name="pCube114_aiStandardSurface2_0"
+                        userData={{ name: 'pCube114_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube115"
+                      position={[-11.2692862, 1.4731492, 0.0240859]}
+                      rotation={[0.0635654, -0.0903982, -3.1408039]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube115' }}>
+                      <instances.PCubeaiStandardSurface110
+                        name="pCube115_aiStandardSurface2_0"
+                        userData={{ name: 'pCube115_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube116"
+                      position={[-11.2518396, 1.3676378, 0.0172972]}
+                      rotation={[0.0635654, -0.0903982, -3.1408039]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube116' }}>
+                      <instances.PCubeaiStandardSurface111
+                        name="pCube116_aiStandardSurface2_0"
+                        userData={{ name: 'pCube116_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube117"
+                      position={[-11.2481766, 1.2687542, 0.0098297]}
+                      rotation={[0.0635654, -0.0903982, -3.1408039]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube117' }}>
+                      <instances.PCubeaiStandardSurface112
+                        name="pCube117_aiStandardSurface2_0"
+                        userData={{ name: 'pCube117_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube118"
+                      position={[-11.2361364, 1.1626512, 0.0022104]}
+                      rotation={[0.0708734, -0.090242, -3.0994807]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube118' }}>
+                      <instances.PCubeaiStandardSurface113
+                        name="pCube118_aiStandardSurface2_0"
+                        userData={{ name: 'pCube118_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube119"
+                      position={[-11.2161818, 1.0612499, -0.0030047]}
+                      rotation={[0.0708734, -0.090242, -3.0994807]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube119' }}>
+                      <instances.PCubeaiStandardSurface114
+                        name="pCube119_aiStandardSurface2_0"
+                        userData={{ name: 'pCube119_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube120"
+                      position={[-11.1959372, 0.9622005, -0.0107543]}
+                      rotation={[0.0763676, -0.0899261, -3.0683709]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube120' }}>
+                      <instances.PCubeaiStandardSurface115
+                        name="pCube120_aiStandardSurface2_0"
+                        userData={{ name: 'pCube120_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube121"
+                      position={[-11.1723919, 0.8659056, -0.0151327]}
+                      rotation={[0.0731031, -0.0901344, -3.0868616]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube121' }}>
+                      <instances.PCubeaiStandardSurface116
+                        name="pCube121_aiStandardSurface2_0"
+                        userData={{ name: 'pCube121_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube122"
+                      position={[-11.1548882, 0.7649736, -0.0235003]}
+                      rotation={[0.0731031, -0.0901344, -3.0868616]}
+                      scale={[-0.5357696, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube122' }}>
+                      <instances.PCubeaiStandardSurface117
+                        name="pCube122_aiStandardSurface2_0"
+                        userData={{ name: 'pCube122_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube123"
+                      position={[-11.1283798, 0.6661486, -0.0292023]}
+                      rotation={[0.0731031, -0.0901344, -3.0868616]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube123' }}>
+                      <instances.PCubeaiStandardSurface118
+                        name="pCube123_aiStandardSurface2_0"
+                        userData={{ name: 'pCube123_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube124"
+                      position={[-11.1030569, 0.5679318, -0.0323943]}
+                      rotation={[0.0731031, -0.0901344, -3.0868616]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube124' }}>
+                      <instances.PCubeaiStandardSurface119
+                        name="pCube124_aiStandardSurface2_0"
+                        userData={{ name: 'pCube124_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube125"
+                      position={[-11.0799608, 0.4740009, -0.0368213]}
+                      rotation={[0.0725479, -0.0800313, -3.0869088]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube125' }}>
+                      <instances.PCubeaiStandardSurface120
+                        name="pCube125_aiStandardSurface2_0"
+                        userData={{ name: 'pCube125_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube126"
+                      position={[-11.0525675, 0.3761577, -0.0424617]}
+                      rotation={[0.0725576, -0.080209, -3.086908]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube126' }}>
+                      <instances.PCubeaiStandardSurface121
+                        name="pCube126_aiStandardSurface2_0"
+                        userData={{ name: 'pCube126_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube127"
+                      position={[-11.025569, 0.2780607, -0.0451118]}
+                      rotation={[0.0730029, -0.0883124, -3.0868705]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube127' }}>
+                      <instances.PCubeaiStandardSurface122
+                        name="pCube127_aiStandardSurface2_0"
+                        userData={{ name: 'pCube127_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube128"
+                      position={[-11.00284, 0.182899, -0.0510678]}
+                      rotation={[0.0724438, -0.0781368, -3.086917]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube128' }}>
+                      <instances.PCubeaiStandardSurface123
+                        name="pCube128_aiStandardSurface2_0"
+                        userData={{ name: 'pCube128_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube129"
+                      position={[-10.9829121, 0.0864835, -0.0535481]}
+                      rotation={[0.0724631, -0.0784884, -3.0869155]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube129' }}>
+                      <instances.PCubeaiStandardSurface124
+                        name="pCube129_aiStandardSurface2_0"
+                        userData={{ name: 'pCube129_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube130"
+                      position={[-10.9715405, -0.0130548, -0.0569072]}
+                      rotation={[0.0723944, -0.077236, -3.0869209]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube130' }}>
+                      <instances.PCubeaiStandardSurface125
+                        name="pCube130_aiStandardSurface2_0"
+                        userData={{ name: 'pCube130_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube131"
+                      position={[-10.9548674, -0.1123273, -0.0592152]}
+                      rotation={[0.072469, -0.0785943, -3.086915]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube131' }}>
+                      <instances.PCubeaiStandardSurface126
+                        name="pCube131_aiStandardSurface2_0"
+                        userData={{ name: 'pCube131_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube132"
+                      position={[-10.9392033, -0.2089439, -0.0621323]}
+                      rotation={[0.0724679, -0.0785751, -3.0869151]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube132' }}>
+                      <instances.PCubeaiStandardSurface127
+                        name="pCube132_aiStandardSurface2_0"
+                        userData={{ name: 'pCube132_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube133"
+                      position={[-10.9241133, -0.3103905, -0.0628621]}
+                      rotation={[0.0724227, -0.0777518, -3.0869187]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube133' }}>
+                      <instances.PCubeaiStandardSurface128
+                        name="pCube133_aiStandardSurface2_0"
+                        userData={{ name: 'pCube133_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube134"
+                      position={[-10.917573, -0.4127137, -0.0599446]}
+                      rotation={[-0.0069516, -0.0828776, -3.0799312]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube134' }}>
+                      <instances.PCubeaiStandardSurface129
+                        name="pCube134_aiStandardSurface2_0"
+                        userData={{ name: 'pCube134_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube135"
+                      position={[-10.9141445, -0.5118545, -0.0601568]}
+                      rotation={[-0.0068975, -0.0837516, -3.0799267]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube135' }}>
+                      <instances.PCubeaiStandardSurface130
+                        name="pCube135_aiStandardSurface2_0"
+                        userData={{ name: 'pCube135_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube136"
+                      position={[-10.9133644, -0.6117954, -0.0602619]}
+                      rotation={[-0.0069991, -0.082111, -3.0799351]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube136' }}>
+                      <instances.PCubeaiStandardSurface131
+                        name="pCube136_aiStandardSurface2_0"
+                        userData={{ name: 'pCube136_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube137"
+                      position={[-10.9105816, -0.7103321, -0.0611347]}
+                      rotation={[-0.0069911, -0.0822402, -3.0799344]}
+                      scale={[-0.51168, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube137' }}>
+                      <instances.PCubeaiStandardSurface132
+                        name="pCube137_aiStandardSurface2_0"
+                        userData={{ name: 'pCube137_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube138"
+                      position={[-10.911685, -0.8047858, -0.0583571]}
+                      rotation={[-0.0118878, -0.0834307, -3.1095985]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube138' }}>
+                      <instances.PCubeaiStandardSurface133
+                        name="pCube138_aiStandardSurface2_0"
+                        userData={{ name: 'pCube138_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube139"
+                      position={[-10.917448, -0.8988737, -0.0548693]}
+                      rotation={[-0.0153167, -0.0833305, -3.1300963]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube139' }}>
+                      <instances.PCubeaiStandardSurface134
+                        name="pCube139_aiStandardSurface2_0"
+                        userData={{ name: 'pCube139_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube140"
+                      position={[-10.929368, -1.0007823, -0.053056]}
+                      rotation={[-0.0153265, -0.0824801, -3.1300971]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube140' }}>
+                      <instances.PCubeaiStandardSurface135
+                        name="pCube140_aiStandardSurface2_0"
+                        userData={{ name: 'pCube140_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube141"
+                      position={[-10.9354801, -1.1001594, -0.0482929]}
+                      rotation={[-0.0153144, -0.083534, -3.1300961]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube141' }}>
+                      <instances.PCubeaiStandardSurface136
+                        name="pCube141_aiStandardSurface2_0"
+                        userData={{ name: 'pCube141_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube142"
+                      position={[-10.9478626, -1.1999537, -0.0433239]}
+                      rotation={[-0.0171347, -0.0831031, -3.1409782]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube142' }}>
+                      <instances.PCubeaiStandardSurface137
+                        name="pCube142_aiStandardSurface2_0"
+                        userData={{ name: 'pCube142_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube143"
+                      position={[-10.9571524, -1.2994429, -0.0381615]}
+                      rotation={[-0.0200545, -0.0832443, 3.1247206]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube143' }}>
+                      <instances.PCubeaiStandardSurface138
+                        name="pCube143_aiStandardSurface2_0"
+                        userData={{ name: 'pCube143_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube144"
+                      position={[-10.9665022, -1.4000582, -0.0337783]}
+                      rotation={[-0.022038, -0.0821255, 3.1126547]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube144' }}>
+                      <instances.PCubeaiStandardSurface139
+                        name="pCube144_aiStandardSurface2_0"
+                        userData={{ name: 'pCube144_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube145"
+                      position={[-10.9748898, -1.5040016, -0.029378]}
+                      rotation={[-0.0240277, -0.0826031, 3.100789]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube145' }}>
+                      <instances.PCubeaiStandardSurface140
+                        name="pCube145_aiStandardSurface2_0"
+                        userData={{ name: 'pCube145_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube146"
+                      position={[-10.9808645, -1.6010644, -0.0228024]}
+                      rotation={[-0.0258866, -0.0829677, 3.0897488]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube146' }}>
+                      <instances.PCubeaiStandardSurface141
+                        name="pCube146_aiStandardSurface2_0"
+                        userData={{ name: 'pCube146_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube147"
+                      position={[-10.9936056, -1.701013, -0.0192947]}
+                      rotation={[-0.0258806, -0.0828528, 3.0897493]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube147' }}>
+                      <instances.PCubeaiStandardSurface142
+                        name="pCube147_aiStandardSurface2_0"
+                        userData={{ name: 'pCube147_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube148"
+                      position={[-11.0012951, -1.7992492, -0.0155834]}
+                      rotation={[-0.0258774, -0.0827903, 3.0897495]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube148' }}>
+                      <instances.PCubeaiStandardSurface143
+                        name="pCube148_aiStandardSurface2_0"
+                        userData={{ name: 'pCube148_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube149"
+                      position={[-11.0115652, -1.8968604, -0.0101271]}
+                      rotation={[-0.0258952, -0.0831314, 3.0897481]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube149' }}>
+                      <instances.PCubeaiStandardSurface144
+                        name="pCube149_aiStandardSurface2_0"
+                        userData={{ name: 'pCube149_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube150"
+                      position={[-11.0207405, -1.9907551, -0.0059881]}
+                      rotation={[-0.0258643, -0.0825391, 3.0897506]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube150' }}>
+                      <instances.PCubeaiStandardSurface145
+                        name="pCube150_aiStandardSurface2_0"
+                        userData={{ name: 'pCube150_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube151"
+                      position={[-11.022522, -2.0955596, -0.0023623]}
+                      rotation={[-0.0212129, -0.0831005, 3.1177651]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube151' }}>
+                      <instances.PCubeaiStandardSurface146
+                        name="pCube151_aiStandardSurface2_0"
+                        userData={{ name: 'pCube151_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube152"
+                      position={[-11.0186005, -2.2035093, 0.0022822]}
+                      rotation={[-0.0177628, -0.0932542, 3.1386212]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube152' }}>
+                      <instances.PCubeaiStandardSurface147
+                        name="pCube152_aiStandardSurface2_0"
+                        userData={{ name: 'pCube152_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube153"
+                      position={[-11.0160666, -2.3031123, 0.0055298]}
+                      rotation={[-0.0177628, -0.0932542, 3.1386212]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube153' }}>
+                      <instances.PCubeaiStandardSurface148
+                        name="pCube153_aiStandardSurface2_0"
+                        userData={{ name: 'pCube153_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube154"
+                      position={[-11.0135555, -2.4060853, 0.0091559]}
+                      rotation={[-0.0177628, -0.0932542, 3.1386212]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube154' }}>
+                      <instances.PCubeaiStandardSurface149
+                        name="pCube154_aiStandardSurface2_0"
+                        userData={{ name: 'pCube154_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube155"
+                      position={[-11.0122004, -2.5098913, 0.0140332]}
+                      rotation={[-0.0155777, -0.0932472, -3.1322093]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube155' }}>
+                      <instances.PCubeaiStandardSurface150
+                        name="pCube155_aiStandardSurface2_0"
+                        userData={{ name: 'pCube155_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube156"
+                      position={[-11.0106926, -2.6203468, 0.0165036]}
+                      rotation={[-0.0329236, -0.0994267, -3.1041949]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube156' }}>
+                      <instances.PCubeaiStandardSurface151
+                        name="pCube156_aiStandardSurface2_0"
+                        userData={{ name: 'pCube156_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube157"
+                      position={[-11.0041304, -2.7218747, 0.0196095]}
+                      rotation={[-0.0301922, -0.0993039, -3.0887275]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube157' }}>
+                      <instances.PCubeaiStandardSurface152
+                        name="pCube157_aiStandardSurface2_0"
+                        userData={{ name: 'pCube157_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube158"
+                      position={[-10.9957495, -2.8330328, 0.0219512]}
+                      rotation={[-0.0278497, -0.0991651, -3.075453]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube158' }}>
+                      <instances.PCubeaiStandardSurface153
+                        name="pCube158_aiStandardSurface2_0"
+                        userData={{ name: 'pCube158_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube159"
+                      position={[-10.9883175, -2.9325497, 0.024306]}
+                      rotation={[-0.0284411, -0.0902718, -3.0755089]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube159' }}>
+                      <instances.PCubeaiStandardSurface154
+                        name="pCube159_aiStandardSurface2_0"
+                        userData={{ name: 'pCube159_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube160"
+                      position={[-10.9702082, -3.0289054, 0.0265901]}
+                      rotation={[-0.029148, -0.0796245, -3.0755689]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube160' }}>
+                      <instances.PCubeaiStandardSurface155
+                        name="pCube160_aiStandardSurface2_0"
+                        userData={{ name: 'pCube160_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube161"
+                      position={[-10.9691229, -3.1269448, 0.0292632]}
+                      rotation={[-0.0285629, -0.0884397, -3.0755198]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube161' }}>
+                      <instances.PCubeaiStandardSurface156
+                        name="pCube161_aiStandardSurface2_0"
+                        userData={{ name: 'pCube161_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube162"
+                      position={[-10.9625006, -3.2328274, 0.0316282]}
+                      rotation={[-0.0285629, -0.0884397, -3.0755198]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube162' }}>
+                      <instances.PCubeaiStandardSurface157
+                        name="pCube162_aiStandardSurface2_0"
+                        userData={{ name: 'pCube162_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube163"
+                      position={[-10.9520521, -3.333056, 0.0318327]}
+                      rotation={[-0.0285629, -0.0884397, -3.0755198]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube163' }}>
+                      <instances.PCubeaiStandardSurface158
+                        name="pCube163_aiStandardSurface2_0"
+                        userData={{ name: 'pCube163_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube164"
+                      position={[-10.9458065, -3.4296236, 0.0338858]}
+                      rotation={[-0.0285629, -0.0884397, -3.0755198]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube164' }}>
+                      <instances.PCubeaiStandardSurface159
+                        name="pCube164_aiStandardSurface2_0"
+                        userData={{ name: 'pCube164_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube165"
+                      position={[-10.9300499, -3.5325317, 0.0364807]}
+                      rotation={[-0.0285629, -0.0884397, -3.0755198]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube165' }}>
+                      <instances.PCubeaiStandardSurface160
+                        name="pCube165_aiStandardSurface2_0"
+                        userData={{ name: 'pCube165_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube166"
+                      position={[-10.9306698, -3.63381, 0.0352501]}
+                      rotation={[-0.0285629, -0.0884397, -3.0755198]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube166' }}>
+                      <instances.PCubeaiStandardSurface161
+                        name="pCube166_aiStandardSurface2_0"
+                        userData={{ name: 'pCube166_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube167"
+                      position={[-10.9179983, -3.7392299, 0.0351218]}
+                      rotation={[0.031791, -0.0843025, -3.0703118]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube167' }}>
+                      <instances.PCubeaiStandardSurface162
+                        name="pCube167_aiStandardSurface2_0"
+                        userData={{ name: 'pCube167_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube168"
+                      position={[-10.9140615, -3.8450422, 0.0339405]}
+                      rotation={[0.0166073, -0.0853729, -3.0715985]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube168' }}>
+                      <instances.PCubeaiStandardSurface163
+                        name="pCube168_aiStandardSurface2_0"
+                        userData={{ name: 'pCube168_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube169"
+                      position={[-10.9087534, -3.9544151, 0.0300402]}
+                      rotation={[0.0679551, -0.0844854, -3.0673135]}
+                      scale={[-0.5231315, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube169' }}>
+                      <instances.PCubeaiStandardSurface164
+                        name="pCube169_aiStandardSurface2_0"
+                        userData={{ name: 'pCube169_aiStandardSurface2_0' }}
+                      />
+                    </group>
+                  </group>
+                  <group name="group3" userData={{ name: 'group3' }}>
+                    <group
+                      name="pCube170"
+                      position={[11.7951622, 3.45785, 0.0331762]}
+                      rotation={[-0.1073011, 0.0748372, -3.1335393]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube170' }}>
+                      <instances.PCubeaiStandardSurface165
+                        name="pCube170_aiStandardSurface3_0"
+                        userData={{ name: 'pCube170_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube171"
+                      position={[11.8096247, 3.3820333, 0.0407735]}
+                      rotation={[-0.107382, 0.0848488, -3.1335328]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube171' }}>
+                      <instances.PCubeaiStandardSurface166
+                        name="pCube171_aiStandardSurface3_0"
+                        userData={{ name: 'pCube171_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube172"
+                      position={[11.8140821, 3.3007703, 0.0420182]}
+                      rotation={[-0.0093164, 0.0852293, 3.1413165]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube172' }}>
+                      <instances.PCubeaiStandardSurface167
+                        name="pCube172_aiStandardSurface3_0"
+                        userData={{ name: 'pCube172_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube173"
+                      position={[11.8253202, 3.2115955, 0.0404729]}
+                      rotation={[0.0189885, 0.0962329, 3.138596]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube173' }}>
+                      <instances.PCubeaiStandardSurface168
+                        name="pCube173_aiStandardSurface3_0"
+                        userData={{ name: 'pCube173_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube174"
+                      position={[11.8345585, 3.1083519, 0.0404729]}
+                      rotation={[0.0198349, 0.0960625, 3.1396899]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube174' }}>
+                      <instances.PCubeaiStandardSurface169
+                        name="pCube174_aiStandardSurface3_0"
+                        userData={{ name: 'pCube174_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube175"
+                      position={[11.8470163, 3.0052052, 0.0323064]}
+                      rotation={[0.0198349, 0.0960625, 3.1396899]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube175' }}>
+                      <instances.PCubeaiStandardSurface170
+                        name="pCube175_aiStandardSurface3_0"
+                        userData={{ name: 'pCube175_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube176"
+                      position={[11.858017, 2.9064741, 0.0303511]}
+                      rotation={[0.0198349, 0.0960625, 3.1396899]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube176' }}>
+                      <instances.PCubeaiStandardSurface171
+                        name="pCube176_aiStandardSurface3_0"
+                        userData={{ name: 'pCube176_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube177"
+                      position={[11.864852, 2.8083904, 0.0251671]}
+                      rotation={[0.0198349, 0.0960625, 3.1396899]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube177' }}>
+                      <instances.PCubeaiStandardSurface172
+                        name="pCube177_aiStandardSurface3_0"
+                        userData={{ name: 'pCube177_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube178"
+                      position={[11.8642426, 2.7103617, 0.019658]}
+                      rotation={[0.0198349, 0.0960625, 3.1396899]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube178' }}>
+                      <instances.PCubeaiStandardSurface173
+                        name="pCube178_aiStandardSurface3_0"
+                        userData={{ name: 'pCube178_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube179"
+                      position={[11.8810368, 2.6052201, 0.0101062]}
+                      rotation={[0.0198008, 0.078224, 3.1396929]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube179' }}>
+                      <instances.PCubeaiStandardSurface174
+                        name="pCube179_aiStandardSurface3_0"
+                        userData={{ name: 'pCube179_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube180"
+                      position={[11.8893576, 2.5135176, 0.0101062]}
+                      rotation={[0.0198221, 0.0893631, 3.1396911]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube180' }}>
+                      <instances.PCubeaiStandardSurface175
+                        name="pCube180_aiStandardSurface3_0"
+                        userData={{ name: 'pCube180_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube181"
+                      position={[11.8860359, 2.4189467, 0.0101062]}
+                      rotation={[0.0198221, 0.0893631, 3.1396911]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube181' }}>
+                      <instances.PCubeaiStandardSurface176
+                        name="pCube181_aiStandardSurface3_0"
+                        userData={{ name: 'pCube181_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube182"
+                      position={[11.8860359, 2.3214118, 0.0102757]}
+                      rotation={[0.0198221, 0.0893631, 3.1396911]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube182' }}>
+                      <instances.PCubeaiStandardSurface177
+                        name="pCube182_aiStandardSurface3_0"
+                        userData={{ name: 'pCube182_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube183"
+                      position={[11.8860359, 2.2270768, 0.0081427]}
+                      rotation={[0.0198221, 0.0893631, 3.1396911]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube183' }}>
+                      <instances.PCubeaiStandardSurface178
+                        name="pCube183_aiStandardSurface3_0"
+                        userData={{ name: 'pCube183_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube184"
+                      position={[11.8860359, 2.1223485, 0.0063852]}
+                      rotation={[0.0198221, 0.0893631, 3.1396911]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube184' }}>
+                      <instances.PCubeaiStandardSurface179
+                        name="pCube184_aiStandardSurface3_0"
+                        userData={{ name: 'pCube184_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube185"
+                      position={[11.884387, 2.0246537, 0.0082887]}
+                      rotation={[0.0197993, 0.077417, 3.139693]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube185' }}>
+                      <instances.PCubeaiStandardSurface180
+                        name="pCube185_aiStandardSurface3_0"
+                        userData={{ name: 'pCube185_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube186"
+                      position={[11.8779821, 1.9238298, 0.0083473]}
+                      rotation={[0.0197947, 0.0750023, 3.1396934]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube186' }}>
+                      <instances.PCubeaiStandardSurface181
+                        name="pCube186_aiStandardSurface3_0"
+                        userData={{ name: 'pCube186_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube187"
+                      position={[11.8716545, 1.8205918, 0.011404]}
+                      rotation={[-0.0620058, 0.0749072, -3.1373629]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube187' }}>
+                      <instances.PCubeaiStandardSurface182
+                        name="pCube187_aiStandardSurface3_0"
+                        userData={{ name: 'pCube187_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube188"
+                      position={[11.8662891, 1.7288314, 0.0151438]}
+                      rotation={[-0.0620058, 0.0749072, -3.1373629]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube188' }}>
+                      <instances.PCubeaiStandardSurface183
+                        name="pCube188_aiStandardSurface3_0"
+                        userData={{ name: 'pCube188_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube189"
+                      position={[11.8619146, 1.6272789, 0.0182268]}
+                      rotation={[0.0111253, 0.075016, 3.1403431]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube189' }}>
+                      <instances.PCubeaiStandardSurface184
+                        name="pCube189_aiStandardSurface3_0"
+                        userData={{ name: 'pCube189_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube190"
+                      position={[11.8556938, 1.5349622, 0.0195481]}
+                      rotation={[0.0111253, 0.075016, 3.1403431]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube190' }}>
+                      <instances.PCubeaiStandardSurface185
+                        name="pCube190_aiStandardSurface3_0"
+                        userData={{ name: 'pCube190_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube191"
+                      position={[11.848567, 1.4348449, 0.0238864]}
+                      rotation={[-0.0176457, 0.0750209, -3.1406858]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube191' }}>
+                      <instances.PCubeaiStandardSurface186
+                        name="pCube191_aiStandardSurface3_0"
+                        userData={{ name: 'pCube191_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube192"
+                      position={[11.8363256, 1.336727, 0.0265587]}
+                      rotation={[-0.017636, 0.0643104, -3.1406864]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube192' }}>
+                      <instances.PCubeaiStandardSurface187
+                        name="pCube192_aiStandardSurface3_0"
+                        userData={{ name: 'pCube192_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube193"
+                      position={[11.8363256, 1.2427641, 0.0282586]}
+                      rotation={[-0.017636, 0.0643104, -3.1406864]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube193' }}>
+                      <instances.PCubeaiStandardSurface188
+                        name="pCube193_aiStandardSurface3_0"
+                        userData={{ name: 'pCube193_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube194"
+                      position={[11.8172703, 1.1438788, 0.0361051]}
+                      rotation={[-0.0176452, 0.0745054, -3.1406858]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube194' }}>
+                      <instances.PCubeaiStandardSurface189
+                        name="pCube194_aiStandardSurface3_0"
+                        userData={{ name: 'pCube194_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube195"
+                      position={[11.8154993, 1.0446156, 0.0378576]}
+                      rotation={[-0.0176418, 0.0698051, -3.1405199]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube195' }}>
+                      <instances.PCubeaiStandardSurface190
+                        name="pCube195_aiStandardSurface3_0"
+                        userData={{ name: 'pCube195_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube196"
+                      position={[11.8154993, 0.9444359, 0.0395996]}
+                      rotation={[-0.0176418, 0.0698051, -3.1405199]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube196' }}>
+                      <instances.PCubeaiStandardSurface191
+                        name="pCube196_aiStandardSurface3_0"
+                        userData={{ name: 'pCube196_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube197"
+                      position={[11.8070488, 0.8511233, 0.0446283]}
+                      rotation={[-0.0176418, 0.0698051, -3.1405199]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube197' }}>
+                      <instances.PCubeaiStandardSurface192
+                        name="pCube197_aiStandardSurface3_0"
+                        userData={{ name: 'pCube197_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube198"
+                      position={[11.8026104, 0.7634005, 0.0450964]}
+                      rotation={[-0.0176331, 0.0610798, -3.1406741]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube198' }}>
+                      <instances.PCubeaiStandardSurface193
+                        name="pCube198_aiStandardSurface3_0"
+                        userData={{ name: 'pCube198_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube199"
+                      position={[11.8026104, 0.6723036, 0.0476998]}
+                      rotation={[-0.0176381, 0.066315, -3.1405816]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube199' }}>
+                      <instances.PCubeaiStandardSurface194
+                        name="pCube199_aiStandardSurface3_0"
+                        userData={{ name: 'pCube199_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube200"
+                      position={[11.7986174, 0.5803103, 0.0499337]}
+                      rotation={[-0.0176331, 0.0610798, -3.1406741]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube200' }}>
+                      <instances.PCubeaiStandardSurface195
+                        name="pCube200_aiStandardSurface3_0"
+                        userData={{ name: 'pCube200_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube201"
+                      position={[11.7899952, 0.4776348, 0.0512896]}
+                      rotation={[-0.0176285, 0.0558447, -3.1407666]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube201' }}>
+                      <instances.PCubeaiStandardSurface196
+                        name="pCube201_aiStandardSurface3_0"
+                        userData={{ name: 'pCube201_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube202"
+                      position={[11.7847872, 0.3690004, 0.0552898]}
+                      rotation={[-0.0305552, 0.0610629, -3.1398854]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube202' }}>
+                      <instances.PCubeaiStandardSurface197
+                        name="pCube202_aiStandardSurface3_0"
+                        userData={{ name: 'pCube202_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube203"
+                      position={[11.7825356, 0.256975, 0.0582587]}
+                      rotation={[-0.0305552, 0.0610629, -3.1398854]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube203' }}>
+                      <instances.PCubeaiStandardSurface198
+                        name="pCube203_aiStandardSurface3_0"
+                        userData={{ name: 'pCube203_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube204"
+                      position={[11.7750235, 0.1551919, 0.0611675]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube204' }}>
+                      <instances.PCubeaiStandardSurface199
+                        name="pCube204_aiStandardSurface3_0"
+                        userData={{ name: 'pCube204_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube205"
+                      position={[11.7750235, 0.057144, 0.0629799]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube205' }}>
+                      <instances.PCubeaiStandardSurface200
+                        name="pCube205_aiStandardSurface3_0"
+                        userData={{ name: 'pCube205_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube206"
+                      position={[11.7750235, -0.0430944, 0.0629799]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube206' }}>
+                      <instances.PCubeaiStandardSurface201
+                        name="pCube206_aiStandardSurface3_0"
+                        userData={{ name: 'pCube206_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube207"
+                      position={[11.7708845, -0.1481322, 0.064999]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube207' }}>
+                      <instances.PCubeaiStandardSurface202
+                        name="pCube207_aiStandardSurface3_0"
+                        userData={{ name: 'pCube207_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube208"
+                      position={[11.7679062, -0.2508295, 0.064999]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube208' }}>
+                      <instances.PCubeaiStandardSurface203
+                        name="pCube208_aiStandardSurface3_0"
+                        userData={{ name: 'pCube208_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube209"
+                      position={[11.7679062, -0.3447978, 0.064999]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube209' }}>
+                      <instances.PCubeaiStandardSurface204
+                        name="pCube209_aiStandardSurface3_0"
+                        userData={{ name: 'pCube209_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube210"
+                      position={[11.7633991, -0.4491577, 0.064999]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube210' }}>
+                      <instances.PCubeaiStandardSurface205
+                        name="pCube210_aiStandardSurface3_0"
+                        userData={{ name: 'pCube210_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube211"
+                      position={[11.7633991, -0.542915, 0.064999]}
+                      rotation={[-0.0546904, 0.061004, -3.1384132]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube211' }}>
+                      <instances.PCubeaiStandardSurface206
+                        name="pCube211_aiStandardSurface3_0"
+                        userData={{ name: 'pCube211_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube212"
+                      position={[11.7614365, -0.644309, 0.064999]}
+                      rotation={[-0.0546745, 0.0557759, -3.1386999]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube212' }}>
+                      <instances.PCubeaiStandardSurface207
+                        name="pCube212_aiStandardSurface3_0"
+                        userData={{ name: 'pCube212_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube213"
+                      position={[11.7614365, -0.7497845, 0.064999]}
+                      rotation={[-0.0546745, 0.0557759, -3.1386999]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube213' }}>
+                      <instances.PCubeaiStandardSurface208
+                        name="pCube213_aiStandardSurface3_0"
+                        userData={{ name: 'pCube213_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube214"
+                      position={[11.7614365, -0.8503364, 0.064999]}
+                      rotation={[-0.0091361, 0.0558497, -3.1412406]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube214' }}>
+                      <instances.PCubeaiStandardSurface209
+                        name="pCube214_aiStandardSurface3_0"
+                        userData={{ name: 'pCube214_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube215"
+                      position={[11.7614365, -0.9528876, 0.064999]}
+                      rotation={[-0.0340686, 0.0575679, -3.1397898]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube215' }}>
+                      <instances.PCubeaiStandardSurface210
+                        name="pCube215_aiStandardSurface3_0"
+                        userData={{ name: 'pCube215_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube216"
+                      position={[11.7614365, -1.0592769, 0.064999]}
+                      rotation={[0.0060639, 0.0575939, 3.1410857]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube216' }}>
+                      <instances.PCubeaiStandardSurface211
+                        name="pCube216_aiStandardSurface3_0"
+                        userData={{ name: 'pCube216_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube217"
+                      position={[11.7614365, -1.158227, 0.064999]}
+                      rotation={[0.030123, 0.057565, 3.139701]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube217' }}>
+                      <instances.PCubeaiStandardSurface212
+                        name="pCube217_aiStandardSurface3_0"
+                        userData={{ name: 'pCube217_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube218"
+                      position={[11.7614365, -1.2627082, 0.064999]}
+                      rotation={[0.0244576, 0.0575748, 3.140027]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube218' }}>
+                      <instances.PCubeaiStandardSurface213
+                        name="pCube218_aiStandardSurface3_0"
+                        userData={{ name: 'pCube218_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube219"
+                      position={[11.7614365, -1.3617218, 0.0651335]}
+                      rotation={[0.0244604, 0.0593196, 3.1399843]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube219' }}>
+                      <instances.PCubeaiStandardSurface214
+                        name="pCube219_aiStandardSurface3_0"
+                        userData={{ name: 'pCube219_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube220"
+                      position={[11.7614365, -1.4572005, 0.0651335]}
+                      rotation={[0.0244604, 0.0593196, 3.1399843]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube220' }}>
+                      <instances.PCubeaiStandardSurface215
+                        name="pCube220_aiStandardSurface3_0"
+                        userData={{ name: 'pCube220_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube221"
+                      position={[11.7614365, -1.5505183, 0.0651335]}
+                      rotation={[0.0244604, 0.0593196, 3.1399843]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube221' }}>
+                      <instances.PCubeaiStandardSurface216
+                        name="pCube221_aiStandardSurface3_0"
+                        userData={{ name: 'pCube221_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube222"
+                      position={[11.7614365, -1.6362965, 0.0651335]}
+                      rotation={[0.0244604, 0.0593196, 3.1399843]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube222' }}>
+                      <instances.PCubeaiStandardSurface217
+                        name="pCube222_aiStandardSurface3_0"
+                        userData={{ name: 'pCube222_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube223"
+                      position={[11.7614365, -1.7202839, 0.0651335]}
+                      rotation={[0.0244604, 0.0593196, 3.1399843]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube223' }}>
+                      <instances.PCubeaiStandardSurface218
+                        name="pCube223_aiStandardSurface3_0"
+                        userData={{ name: 'pCube223_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube224"
+                      position={[11.7614365, -1.8000453, 0.0625433]}
+                      rotation={[0.0244604, 0.0593196, 3.1399843]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube224' }}>
+                      <instances.PCubeaiStandardSurface219
+                        name="pCube224_aiStandardSurface3_0"
+                        userData={{ name: 'pCube224_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube225"
+                      position={[11.7614365, -1.8901803, 0.0625433]}
+                      rotation={[0.0244604, 0.0593196, 3.1399843]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube225' }}>
+                      <instances.PCubeaiStandardSurface220
+                        name="pCube225_aiStandardSurface3_0"
+                        userData={{ name: 'pCube225_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube226"
+                      position={[11.7766037, -1.9774779, 0.06153]}
+                      rotation={[0.0244788, 0.0707425, 3.1399831]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube226' }}>
+                      <instances.PCubeaiStandardSurface221
+                        name="pCube226_aiStandardSurface3_0"
+                        userData={{ name: 'pCube226_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube227"
+                      position={[11.772624, -2.0679765, 0.06153]}
+                      rotation={[0.0244788, 0.0707425, 3.1399831]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube227' }}>
+                      <instances.PCubeaiStandardSurface222
+                        name="pCube227_aiStandardSurface3_0"
+                        userData={{ name: 'pCube227_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube228"
+                      position={[11.7833357, -2.1606264, 0.0607931]}
+                      rotation={[0.0244921, 0.0785193, 3.1397921]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube228' }}>
+                      <instances.PCubeaiStandardSurface223
+                        name="pCube228_aiStandardSurface3_0"
+                        userData={{ name: 'pCube228_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube229"
+                      position={[11.7852068, -2.2531707, 0.0607931]}
+                      rotation={[0.0245019, 0.0837537, 3.1396634]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube229' }}>
+                      <instances.PCubeaiStandardSurface224
+                        name="pCube229_aiStandardSurface3_0"
+                        userData={{ name: 'pCube229_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube230"
+                      position={[11.7956991, -2.3533971, 0.0535836]}
+                      rotation={[0.0488665, 0.0906553, 3.1372861]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube230' }}>
+                      <instances.PCubeaiStandardSurface225
+                        name="pCube230_aiStandardSurface3_0"
+                        userData={{ name: 'pCube230_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube231"
+                      position={[11.801755, -2.4511979, 0.0447047]}
+                      rotation={[0.0488665, 0.0906553, 3.1372861]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube231' }}>
+                      <instances.PCubeaiStandardSurface226
+                        name="pCube231_aiStandardSurface3_0"
+                        userData={{ name: 'pCube231_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube232"
+                      position={[11.8209028, -2.5457726, 0.038781]}
+                      rotation={[0.0488665, 0.0906553, 3.1372861]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube232' }}>
+                      <instances.PCubeaiStandardSurface227
+                        name="pCube232_aiStandardSurface3_0"
+                        userData={{ name: 'pCube232_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube233"
+                      position={[11.8327074, -2.6467235, 0.031008]}
+                      rotation={[0.0488665, 0.0906553, 3.1372861]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube233' }}>
+                      <instances.PCubeaiStandardSurface228
+                        name="pCube233_aiStandardSurface3_0"
+                        userData={{ name: 'pCube233_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube234"
+                      position={[11.8432932, -2.7483251, 0.0243428]}
+                      rotation={[0.0488898, 0.095885, 3.1370292]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube234' }}>
+                      <instances.PCubeaiStandardSurface229
+                        name="pCube234_aiStandardSurface3_0"
+                        userData={{ name: 'pCube234_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube235"
+                      position={[11.859374, -2.8483562, 0.0142844]}
+                      rotation={[0.0488898, 0.095885, 3.1370292]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube235' }}>
+                      <instances.PCubeaiStandardSurface230
+                        name="pCube235_aiStandardSurface3_0"
+                        userData={{ name: 'pCube235_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube236"
+                      position={[11.8694773, -2.9446933, 0.0058217]}
+                      rotation={[0.0488898, 0.095885, 3.1370292]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube236' }}>
+                      <instances.PCubeaiStandardSurface231
+                        name="pCube236_aiStandardSurface3_0"
+                        userData={{ name: 'pCube236_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube237"
+                      position={[11.887763, -3.0435166, -0.0071365]}
+                      rotation={[0.0488898, 0.095885, 3.1370292]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube237' }}>
+                      <instances.PCubeaiStandardSurface232
+                        name="pCube237_aiStandardSurface3_0"
+                        userData={{ name: 'pCube237_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube238"
+                      position={[11.8982735, -3.1387832, -0.0147023]}
+                      rotation={[0.0488898, 0.095885, 3.1370292]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube238' }}>
+                      <instances.PCubeaiStandardSurface233
+                        name="pCube238_aiStandardSurface3_0"
+                        userData={{ name: 'pCube238_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube239"
+                      position={[11.9154806, -3.2446675, -0.0253493]}
+                      rotation={[0.0488898, 0.095885, 3.1370292]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube239' }}>
+                      <instances.PCubeaiStandardSurface234
+                        name="pCube239_aiStandardSurface3_0"
+                        userData={{ name: 'pCube239_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube240"
+                      position={[11.9300585, -3.3462167, -0.0336454]}
+                      rotation={[0.0489145, 0.1011147, 3.136772]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube240' }}>
+                      <instances.PCubeaiStandardSurface235
+                        name="pCube240_aiStandardSurface3_0"
+                        userData={{ name: 'pCube240_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube241"
+                      position={[11.9406624, -3.4422941, -0.0445344]}
+                      rotation={[0.0489145, 0.1011147, 3.136772]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube241' }}>
+                      <instances.PCubeaiStandardSurface236
+                        name="pCube241_aiStandardSurface3_0"
+                        userData={{ name: 'pCube241_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube242"
+                      position={[11.9564877, -3.533042, -0.0525545]}
+                      rotation={[0.0489317, 0.1046012, 3.1366004]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube242' }}>
+                      <instances.PCubeaiStandardSurface237
+                        name="pCube242_aiStandardSurface3_0"
+                        userData={{ name: 'pCube242_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube243"
+                      position={[11.9666119, -3.6219368, -0.059233]}
+                      rotation={[0.0489317, 0.1046012, 3.1366004]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube243' }}>
+                      <instances.PCubeaiStandardSurface238
+                        name="pCube243_aiStandardSurface3_0"
+                        userData={{ name: 'pCube243_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube244"
+                      position={[11.9823503, -3.7261791, -0.0682644]}
+                      rotation={[0.0489317, 0.1046012, 3.1366004]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube244' }}>
+                      <instances.PCubeaiStandardSurface239
+                        name="pCube244_aiStandardSurface3_0"
+                        userData={{ name: 'pCube244_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube245"
+                      position={[11.9946785, -3.8283639, -0.0769724]}
+                      rotation={[0.0489317, 0.1046012, 3.1366004]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube245' }}>
+                      <instances.PCubeaiStandardSurface240
+                        name="pCube245_aiStandardSurface3_0"
+                        userData={{ name: 'pCube245_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube246"
+                      position={[12.0126114, -3.9284942, -0.0900383]}
+                      rotation={[0.0489317, 0.1046012, 3.1366004]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube246' }}>
+                      <instances.PCubeaiStandardSurface241
+                        name="pCube246_aiStandardSurface3_0"
+                        userData={{ name: 'pCube246_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube247"
+                      position={[12.0249538, -4.0318818, -0.0969204]}
+                      rotation={[0.0488518, 0.0871688, 3.1374573]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube247' }}>
+                      <instances.PCubeaiStandardSurface242
+                        name="pCube247_aiStandardSurface3_0"
+                        userData={{ name: 'pCube247_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube248"
+                      position={[12.0249538, -4.1324067, -0.1082145]}
+                      rotation={[0.1766887, 0.0859357, 3.1263916]}
+                      scale={[-0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube248' }}>
+                      <instances.PCubeaiStandardSurface243
+                        name="pCube248_aiStandardSurface3_0"
+                        userData={{ name: 'pCube248_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube249"
+                      position={[11.7951622, 3.45785, -0.0358312]}
+                      rotation={[-3.0396272, 0.0877036, -0.0185173]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube249' }}>
+                      <instances.PCubeaiStandardSurface244
+                        name="pCube249_aiStandardSurface3_0"
+                        userData={{ name: 'pCube249_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube250"
+                      position={[11.8096247, 3.3820333, -0.0386734]}
+                      rotation={[-3.0811369, 0.0869688, -0.0227655]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube250' }}>
+                      <instances.PCubeaiStandardSurface245
+                        name="pCube250_aiStandardSurface3_0"
+                        userData={{ name: 'pCube250_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube251"
+                      position={[11.8140821, 3.3007703, -0.0430956]}
+                      rotation={[-3.1176766, 0.0891155, -0.0026866]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube251' }}>
+                      <instances.PCubeaiStandardSurface246
+                        name="pCube251_aiStandardSurface3_0"
+                        userData={{ name: 'pCube251_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube252"
+                      position={[11.8253202, 3.2115955, -0.0496313]}
+                      rotation={[-3.0950758, 0.0873786, 0.0003721]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube252' }}>
+                      <instances.PCubeaiStandardSurface247
+                        name="pCube252_aiStandardSurface3_0"
+                        userData={{ name: 'pCube252_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube253"
+                      position={[11.8345585, 3.1115096, -0.0569943]}
+                      rotation={[-3.0651464, 0.0923156, -0.0033522]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube253' }}>
+                      <instances.PCubeaiStandardSurface248
+                        name="pCube253_aiStandardSurface3_0"
+                        userData={{ name: 'pCube253_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube254"
+                      position={[11.8470163, 3.0211885, -0.0630984]}
+                      rotation={[-3.0851212, 0.1044659, -0.0019562]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube254' }}>
+                      <instances.PCubeaiStandardSurface249
+                        name="pCube254_aiStandardSurface3_0"
+                        userData={{ name: 'pCube254_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube255"
+                      position={[11.858017, 2.9209809, -0.0628861]}
+                      rotation={[-3.0798581, 0.0893084, -0.0014053]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube255' }}>
+                      <instances.PCubeaiStandardSurface250
+                        name="pCube255_aiStandardSurface3_0"
+                        userData={{ name: 'pCube255_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube256"
+                      position={[11.864852, 2.8244545, -0.0692485]}
+                      rotation={[-3.0872831, 0.0999067, -0.0015725]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube256' }}>
+                      <instances.PCubeaiStandardSurface251
+                        name="pCube256_aiStandardSurface3_0"
+                        userData={{ name: 'pCube256_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube257"
+                      position={[11.8642426, 2.7257116, -0.0696351]}
+                      rotation={[-3.0801155, 0.0783327, -0.001385]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube257' }}>
+                      <instances.PCubeaiStandardSurface252
+                        name="pCube257_aiStandardSurface3_0"
+                        userData={{ name: 'pCube257_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube258"
+                      position={[11.8810368, 2.6370199, -0.077257]}
+                      rotation={[-3.0959084, 0.0961773, -0.0006146]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube258' }}>
+                      <instances.PCubeaiStandardSurface253
+                        name="pCube258_aiStandardSurface3_0"
+                        userData={{ name: 'pCube258_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube259"
+                      position={[11.8893576, 2.5457091, -0.0759395]}
+                      rotation={[-3.1221017, 0.0850214, 0.0019008]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube259' }}>
+                      <instances.PCubeaiStandardSurface254
+                        name="pCube259_aiStandardSurface3_0"
+                        userData={{ name: 'pCube259_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube260"
+                      position={[11.8860359, 2.4475358, -0.0768379]}
+                      rotation={[-3.1221017, 0.0850214, 0.0019008]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube260' }}>
+                      <instances.PCubeaiStandardSurface255
+                        name="pCube260_aiStandardSurface3_0"
+                        userData={{ name: 'pCube260_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube261"
+                      position={[11.8860359, 2.3421984, -0.0742238]}
+                      rotation={[-3.1221017, 0.0850214, 0.0019008]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube261' }}>
+                      <instances.PCubeaiStandardSurface256
+                        name="pCube261_aiStandardSurface3_0"
+                        userData={{ name: 'pCube261_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube262"
+                      position={[11.8860359, 2.2441454, -0.072674]}
+                      rotation={[3.1307453, 0.084925, 0.0044758]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube262' }}>
+                      <instances.PCubeaiStandardSurface257
+                        name="pCube262_aiStandardSurface3_0"
+                        userData={{ name: 'pCube262_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube263"
+                      position={[11.8860359, 2.1462998, -0.0687174]}
+                      rotation={[3.0848587, 0.0846314, 0.008362]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube263' }}>
+                      <instances.PCubeaiStandardSurface258
+                        name="pCube263_aiStandardSurface3_0"
+                        userData={{ name: 'pCube263_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube264"
+                      position={[11.8811827, 2.0530241, -0.0616253]}
+                      rotation={[-3.1221245, 0.0969675, 0.0019029]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube264' }}>
+                      <instances.PCubeaiStandardSurface259
+                        name="pCube264_aiStandardSurface3_0"
+                        userData={{ name: 'pCube264_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube265"
+                      position={[11.8743763, 1.9649631, -0.0606601]}
+                      rotation={[3.1124609, 0.0991736, 0.0067208]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube265' }}>
+                      <instances.PCubeaiStandardSurface260
+                        name="pCube265_aiStandardSurface3_0"
+                        userData={{ name: 'pCube265_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube266"
+                      position={[11.8701553, 1.8593687, -0.0524592]}
+                      rotation={[3.0802825, 0.0896405, -0.0042349]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube266' }}>
+                      <instances.PCubeaiStandardSurface261
+                        name="pCube266_aiStandardSurface3_0"
+                        userData={{ name: 'pCube266_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube267"
+                      position={[11.8662891, 1.7589703, -0.051643]}
+                      rotation={[3.0802418, 0.080061, -0.0042314]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube267' }}>
+                      <instances.PCubeaiStandardSurface262
+                        name="pCube267_aiStandardSurface3_0"
+                        userData={{ name: 'pCube267_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube268"
+                      position={[11.8568602, 1.6563164, -0.0507806]}
+                      rotation={[-3.1306607, 0.0798599, 0.0012501]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube268' }}>
+                      <instances.PCubeaiStandardSurface263
+                        name="pCube268_aiStandardSurface3_0"
+                        userData={{ name: 'pCube268_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube269"
+                      position={[11.8556938, 1.5496103, -0.0429445]}
+                      rotation={[-3.1306492, 0.0706435, 0.0012492]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube269' }}>
+                      <instances.PCubeaiStandardSurface264
+                        name="pCube269_aiStandardSurface3_0"
+                        userData={{ name: 'pCube269_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube270"
+                      position={[11.848567, 1.4377452, -0.0369743]}
+                      rotation={[3.1240786, 0.0702941, -0.0009066]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube270' }}>
+                      <instances.PCubeaiStandardSurface265
+                        name="pCube270_aiStandardSurface3_0"
+                        userData={{ name: 'pCube270_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube271"
+                      position={[11.8363256, 1.336727, -0.0339007]}
+                      rotation={[3.1240786, 0.0702631, -0.0009066]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube271' }}>
+                      <instances.PCubeaiStandardSurface266
+                        name="pCube271_aiStandardSurface3_0"
+                        userData={{ name: 'pCube271_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube272"
+                      position={[11.8363256, 1.2427641, -0.028571]}
+                      rotation={[3.124077, 0.0685948, -0.0009065]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube272' }}>
+                      <instances.PCubeaiStandardSurface267
+                        name="pCube272_aiStandardSurface3_0"
+                        userData={{ name: 'pCube272_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube273"
+                      position={[11.8172703, 1.1438788, -0.0229678]}
+                      rotation={[3.1240785, 0.0701523, -0.0009066]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube273' }}>
+                      <instances.PCubeaiStandardSurface268
+                        name="pCube273_aiStandardSurface3_0"
+                        userData={{ name: 'pCube273_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube274"
+                      position={[11.8154993, 1.0446156, -0.0172197]}
+                      rotation={[3.1241133, 0.0816234, -0.0010737]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube274' }}>
+                      <instances.PCubeaiStandardSurface269
+                        name="pCube274_aiStandardSurface3_0"
+                        userData={{ name: 'pCube274_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube275"
+                      position={[11.8107052, 0.9444359, -0.0162457]}
+                      rotation={[3.1241053, 0.0742482, -0.0010731]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube275' }}>
+                      <instances.PCubeaiStandardSurface270
+                        name="pCube275_aiStandardSurface3_0"
+                        userData={{ name: 'pCube275_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube276"
+                      position={[11.8070488, 0.8511233, -0.0111291]}
+                      rotation={[3.0955471, 0.0632151, 0.0007311]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube276' }}>
+                      <instances.PCubeaiStandardSurface271
+                        name="pCube276_aiStandardSurface3_0"
+                        userData={{ name: 'pCube276_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube277"
+                      position={[11.8026104, 0.7634005, -0.0080715]}
+                      rotation={[3.1240738, 0.0632883, -0.0009187]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube277' }}>
+                      <instances.PCubeaiStandardSurface272
+                        name="pCube277_aiStandardSurface3_0"
+                        userData={{ name: 'pCube277_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube278"
+                      position={[11.7968187, 0.6723036, -0.0056803]}
+                      rotation={[3.1240884, 0.0661511, -0.001011]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube278' }}>
+                      <instances.PCubeaiStandardSurface273
+                        name="pCube278_aiStandardSurface3_0"
+                        userData={{ name: 'pCube278_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube279"
+                      position={[11.7920237, 0.5803103, -0.0018123]}
+                      rotation={[3.1240748, 0.0643927, -0.0009187]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube279' }}>
+                      <instances.PCubeaiStandardSurface274
+                        name="pCube279_aiStandardSurface3_0"
+                        userData={{ name: 'pCube279_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube280"
+                      position={[11.7899952, 0.4776348, 0.0005552]}
+                      rotation={[3.1240667, 0.0683552, -0.0008267]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube280' }}>
+                      <instances.PCubeaiStandardSurface275
+                        name="pCube280_aiStandardSurface3_0"
+                        userData={{ name: 'pCube280_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube281"
+                      position={[11.7806129, 0.3690004, 0.0033584]}
+                      rotation={[3.1112505, 0.0637965, -0.0017075]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube281' }}>
+                      <instances.PCubeaiStandardSurface276
+                        name="pCube281_aiStandardSurface3_0"
+                        userData={{ name: 'pCube281_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube282"
+                      position={[11.7825356, 0.256975, 0.0069622]}
+                      rotation={[3.1112506, 0.0638555, -0.0017075]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube282' }}>
+                      <instances.PCubeaiStandardSurface277
+                        name="pCube282_aiStandardSurface3_0"
+                        userData={{ name: 'pCube282_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube283"
+                      position={[11.7750235, 0.1551919, 0.0078349]}
+                      rotation={[3.0873033, 0.0651899, -0.0031803]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube283' }}>
+                      <instances.PCubeaiStandardSurface278
+                        name="pCube283_aiStandardSurface3_0"
+                        userData={{ name: 'pCube283_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube284"
+                      position={[11.7750235, 0.057144, 0.0123149]}
+                      rotation={[3.0873007, 0.0643979, -0.0031801]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube284' }}>
+                      <instances.PCubeaiStandardSurface279
+                        name="pCube284_aiStandardSurface3_0"
+                        userData={{ name: 'pCube284_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube285"
+                      position={[11.7750235, -0.0430944, 0.0154948]}
+                      rotation={[3.0872989, 0.0638071, -0.00318]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube285' }}>
+                      <instances.PCubeaiStandardSurface280
+                        name="pCube285_aiStandardSurface3_0"
+                        userData={{ name: 'pCube285_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube286"
+                      position={[11.7708845, -0.1481322, 0.0195489]}
+                      rotation={[3.0872673, 0.0539128, -0.0031781]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube286' }}>
+                      <instances.PCubeaiStandardSurface281
+                        name="pCube286_aiStandardSurface3_0"
+                        userData={{ name: 'pCube286_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube287"
+                      position={[11.7679062, -0.2508295, 0.0164242]}
+                      rotation={[3.0872996, 0.0640392, -0.00318]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube287' }}>
+                      <instances.PCubeaiStandardSurface282
+                        name="pCube287_aiStandardSurface3_0"
+                        userData={{ name: 'pCube287_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube288"
+                      position={[11.7679062, -0.3447978, 0.0164917]}
+                      rotation={[3.0872991, 0.0638984, -0.00318]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube288' }}>
+                      <instances.PCubeaiStandardSurface283
+                        name="pCube288_aiStandardSurface3_0"
+                        userData={{ name: 'pCube288_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube289"
+                      position={[11.7633991, -0.4491577, 0.0147194]}
+                      rotation={[-3.1189438, 0.06507, -0.0082024]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube289' }}>
+                      <instances.PCubeaiStandardSurface284
+                        name="pCube289_aiStandardSurface3_0"
+                        userData={{ name: 'pCube289_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube290"
+                      position={[11.7611341, -0.542915, 0.0149927]}
+                      rotation={[-3.1216116, 0.0659224, -0.0115758]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube290' }}>
+                      <instances.PCubeaiStandardSurface285
+                        name="pCube290_aiStandardSurface3_0"
+                        userData={{ name: 'pCube290_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube291"
+                      position={[11.7614365, -0.644309, 0.0179693]}
+                      rotation={[3.1310514, 0.0584821, -0.0054578]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube291' }}>
+                      <instances.PCubeaiStandardSurface286
+                        name="pCube291_aiStandardSurface3_0"
+                        userData={{ name: 'pCube291_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube292"
+                      position={[11.7614365, -0.7497845, 0.0190547]}
+                      rotation={[3.1389388, 0.0552208, -0.009016]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube292' }}>
+                      <instances.PCubeaiStandardSurface287
+                        name="pCube292_aiStandardSurface3_0"
+                        userData={{ name: 'pCube292_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube293"
+                      position={[11.7614365, -0.8503364, 0.0178828]}
+                      rotation={[3.1324956, 0.0551778, -0.000352]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube293' }}>
+                      <instances.PCubeaiStandardSurface288
+                        name="pCube293_aiStandardSurface3_0"
+                        userData={{ name: 'pCube293_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube294"
+                      position={[11.7614365, -0.9528876, 0.0159259]}
+                      rotation={[3.1077496, 0.0675428, -0.001804]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube294' }}>
+                      <instances.PCubeaiStandardSurface289
+                        name="pCube294_aiStandardSurface3_0"
+                        userData={{ name: 'pCube294_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube295"
+                      position={[11.7543802, -1.0592769, 0.0105712]}
+                      rotation={[-3.1355919, 0.0669942, 0.0005073]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube295' }}>
+                      <instances.PCubeaiStandardSurface290
+                        name="pCube295_aiStandardSurface3_0"
+                        userData={{ name: 'pCube295_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube296"
+                      position={[11.7573843, -1.158227, 0.0141792]}
+                      rotation={[-3.1116867, 0.0572458, 0.0018916]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube296' }}>
+                      <instances.PCubeaiStandardSurface291
+                        name="pCube296_aiStandardSurface3_0"
+                        userData={{ name: 'pCube296_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube297"
+                      position={[11.760685, -1.2627082, 0.0141656]}
+                      rotation={[-3.1173106, 0.0546312, 0.0015654]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube297' }}>
+                      <instances.PCubeaiStandardSurface292
+                        name="pCube297_aiStandardSurface3_0"
+                        userData={{ name: 'pCube297_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube298"
+                      position={[11.7587223, -1.3617218, 0.01175]}
+                      rotation={[-3.117329, 0.0630461, 0.0016088]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube298' }}>
+                      <instances.PCubeaiStandardSurface293
+                        name="pCube298_aiStandardSurface3_0"
+                        userData={{ name: 'pCube298_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube299"
+                      position={[11.7580967, -1.4572005, 0.0085608]}
+                      rotation={[-3.1173447, 0.0728045, 0.0016098]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube299' }}>
+                      <instances.PCubeaiStandardSurface294
+                        name="pCube299_aiStandardSurface3_0"
+                        userData={{ name: 'pCube299_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube300"
+                      position={[11.7614365, -1.5505183, 0.0081321]}
+                      rotation={[-3.1173398, 0.0697488, 0.0016095]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube300' }}>
+                      <instances.PCubeaiStandardSurface295
+                        name="pCube300_aiStandardSurface3_0"
+                        userData={{ name: 'pCube300_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube301"
+                      position={[11.7614365, -1.6362965, 0.0046351]}
+                      rotation={[-3.1173494, 0.0756953, 0.0016102]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube301' }}>
+                      <instances.PCubeaiStandardSurface296
+                        name="pCube301_aiStandardSurface3_0"
+                        userData={{ name: 'pCube301_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube302"
+                      position={[11.7614365, -1.7202839, 0.0033854]}
+                      rotation={[-3.1173476, 0.0745826, 0.00161]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube302' }}>
+                      <instances.PCubeaiStandardSurface297
+                        name="pCube302_aiStandardSurface3_0"
+                        userData={{ name: 'pCube302_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube303"
+                      position={[11.7614365, -1.8000453, -0.0008615]}
+                      rotation={[-3.1173445, 0.0726732, 0.0016098]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube303' }}>
+                      <instances.PCubeaiStandardSurface298
+                        name="pCube303_aiStandardSurface3_0"
+                        userData={{ name: 'pCube303_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube304"
+                      position={[11.7614365, -1.8901803, -0.0027316]}
+                      rotation={[-3.117365, 0.0853535, 0.0016114]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube304' }}>
+                      <instances.PCubeaiStandardSurface299
+                        name="pCube304_aiStandardSurface3_0"
+                        userData={{ name: 'pCube304_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube305"
+                      position={[11.7766037, -1.9774779, -0.0038383]}
+                      rotation={[-3.1173463, 0.0737704, 0.0016099]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube305' }}>
+                      <instances.PCubeaiStandardSurface300
+                        name="pCube305_aiStandardSurface3_0"
+                        userData={{ name: 'pCube305_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube306"
+                      position={[11.772624, -2.0679765, -0.0135144]}
+                      rotation={[-3.1173606, 0.0826217, 0.0016111]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube306' }}>
+                      <instances.PCubeaiStandardSurface301
+                        name="pCube306_aiStandardSurface3_0"
+                        userData={{ name: 'pCube306_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube307"
+                      position={[11.7833357, -2.1606264, -0.0151029]}
+                      rotation={[-3.1173786, 0.0760542, 0.0018002]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube307' }}>
+                      <instances.PCubeaiStandardSurface302
+                        name="pCube307_aiStandardSurface3_0"
+                        userData={{ name: 'pCube307_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube308"
+                      position={[11.7852068, -2.2531707, -0.0202026]}
+                      rotation={[-3.1174268, 0.0906307, 0.0019304]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube308' }}>
+                      <instances.PCubeaiStandardSurface303
+                        name="pCube308_aiStandardSurface3_0"
+                        userData={{ name: 'pCube308_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube309"
+                      position={[11.7956991, -2.3533971, -0.0304449]}
+                      rotation={[-3.0687772, 0.0838084, 0.0022373]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube309' }}>
+                      <instances.PCubeaiStandardSurface304
+                        name="pCube309_aiStandardSurface3_0"
+                        userData={{ name: 'pCube309_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube310"
+                      position={[11.8072472, -2.4511979, -0.0415842]}
+                      rotation={[-3.0327149, 0.0838346, -0.0007823]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube310' }}>
+                      <instances.PCubeaiStandardSurface305
+                        name="pCube310_aiStandardSurface3_0"
+                        userData={{ name: 'pCube310_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube311"
+                      position={[11.8209028, -2.5457726, -0.0487668]}
+                      rotation={[-2.9826485, 0.083691, -0.004972]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube311' }}>
+                      <instances.PCubeaiStandardSurface306
+                        name="pCube311_aiStandardSurface3_0"
+                        userData={{ name: 'pCube311_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube312"
+                      position={[11.8327074, -2.6467235, -0.0607746]}
+                      rotation={[-3.0146434, 0.0838068, -0.0022954]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube312' }}>
+                      <instances.PCubeaiStandardSurface307
+                        name="pCube312_aiStandardSurface3_0"
+                        userData={{ name: 'pCube312_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube313"
+                      position={[11.8432932, -2.7483251, -0.0651279]}
+                      rotation={[-3.049942, 0.0786216, 0.0011378]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube313' }}>
+                      <instances.PCubeaiStandardSurface308
+                        name="pCube313_aiStandardSurface3_0"
+                        userData={{ name: 'pCube313_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube314"
+                      position={[11.854435, -2.8483562, -0.0807562]}
+                      rotation={[-3.0420442, 0.0931374, 0.0005176]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube314' }}>
+                      <instances.PCubeaiStandardSurface309
+                        name="pCube314_aiStandardSurface3_0"
+                        userData={{ name: 'pCube314_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube315"
+                      position={[11.8694773, -2.9446933, -0.0898854]}
+                      rotation={[-3.0027609, 0.0893194, -0.0035409]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube315' }}>
+                      <instances.PCubeaiStandardSurface310
+                        name="pCube315_aiStandardSurface3_0"
+                        userData={{ name: 'pCube315_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube316"
+                      position={[11.8834429, -3.0435166, -0.0986534]}
+                      rotation={[-2.9997556, 0.0904868, -0.0039194]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube316' }}>
+                      <instances.PCubeaiStandardSurface311
+                        name="pCube316_aiStandardSurface3_0"
+                        userData={{ name: 'pCube316_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube317"
+                      position={[11.8982735, -3.1387832, -0.1118115]}
+                      rotation={[-2.9946867, 0.0915985, -0.0044892]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube317' }}>
+                      <instances.PCubeaiStandardSurface312
+                        name="pCube317_aiStandardSurface3_0"
+                        userData={{ name: 'pCube317_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube318"
+                      position={[11.9082394, -3.2446675, -0.1217086]}
+                      rotation={[-3.0271187, 0.1082125, -0.0006551]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube318' }}>
+                      <instances.PCubeaiStandardSurface313
+                        name="pCube318_aiStandardSurface3_0"
+                        userData={{ name: 'pCube318_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube319"
+                      position={[11.9270229, -3.3462167, -0.1380606]}
+                      rotation={[-2.9715531, 0.0930587, -0.0065458]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube319' }}>
+                      <instances.PCubeaiStandardSurface314
+                        name="pCube319_aiStandardSurface3_0"
+                        userData={{ name: 'pCube319_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube320"
+                      position={[11.9406624, -3.4422941, -0.1491941]}
+                      rotation={[-3.0397864, 0.0953029, -0.0003031]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube320' }}>
+                      <instances.PCubeaiStandardSurface315
+                        name="pCube320_aiStandardSurface3_0"
+                        userData={{ name: 'pCube320_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube321"
+                      position={[11.9564877, -3.533042, -0.1525708]}
+                      rotation={[-3.0566344, 0.090032, 0.0016607]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube321' }}>
+                      <instances.PCubeaiStandardSurface316
+                        name="pCube321_aiStandardSurface3_0"
+                        userData={{ name: 'pCube321_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube322"
+                      position={[11.9666119, -3.6219368, -0.160288]}
+                      rotation={[-3.0422367, 0.0802041, 0.0008703]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube322' }}>
+                      <instances.PCubeaiStandardSurface317
+                        name="pCube322_aiStandardSurface3_0"
+                        userData={{ name: 'pCube322_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube323"
+                      position={[11.9823503, -3.7261791, -0.1687908]}
+                      rotation={[-3.0206278, 0.0902143, -0.0001146]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube323' }}>
+                      <instances.PCubeaiStandardSurface318
+                        name="pCube323_aiStandardSurface3_0"
+                        userData={{ name: 'pCube323_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube324"
+                      position={[11.9946785, -3.8283639, -0.1765826]}
+                      rotation={[-3.0453234, 0.0919563, 0.0005516]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube324' }}>
+                      <instances.PCubeaiStandardSurface319
+                        name="pCube324_aiStandardSurface3_0"
+                        userData={{ name: 'pCube324_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube325"
+                      position={[12.0126114, -3.9284942, -0.1848285]}
+                      rotation={[-3.0722527, 0.092269, 0.0030163]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube325' }}>
+                      <instances.PCubeaiStandardSurface320
+                        name="pCube325_aiStandardSurface3_0"
+                        userData={{ name: 'pCube325_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube326"
+                      position={[12.0214567, -4.0318818, -0.1852943]}
+                      rotation={[-3.0934611, 0.0872145, 0.0041354]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube326' }}>
+                      <instances.PCubeaiStandardSurface321
+                        name="pCube326_aiStandardSurface3_0"
+                        userData={{ name: 'pCube326_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube327"
+                      position={[12.0249538, -4.1324067, -0.1772219]}
+                      rotation={[2.9526127, 0.077307, 0.0455854]}
+                      scale={[0.7098053, 0.0474428, 0.034]}
+                      userData={{ name: 'pCube327' }}>
+                      <instances.PCubeaiStandardSurface322
+                        name="pCube327_aiStandardSurface3_0"
+                        userData={{ name: 'pCube327_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube328"
+                      position={[12.0249538, -4.2140646, -0.1440112]}
+                      rotation={[1.6191304, 0.0455439, 0.0007814]}
+                      scale={[0.7098053, 0.0220183, 0.034]}
+                      userData={{ name: 'pCube328' }}>
+                      <instances.PCubeaiStandardSurface323
+                        name="pCube328_aiStandardSurface3_0"
+                        userData={{ name: 'pCube328_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                    <group
+                      name="pCube329"
+                      position={[11.7951622, 3.5321004, -0.0007819]}
+                      rotation={[-1.5664596, 0.058433, 0.0003602]}
+                      scale={[0.7098053, 0.0144907, 0.034]}
+                      userData={{ name: 'pCube329' }}>
+                      <instances.PCubeaiStandardSurface324
+                        name="pCube329_aiStandardSurface3_0"
+                        userData={{ name: 'pCube329_aiStandardSurface3_0' }}
+                      />
+                    </group>
+                  </group>
+                </group>
+              </group>
+            </group>
+          </group>
+        </group>
       </group>
     </group>
   )
-})
+}
 
 useGLTF.preload('/granola_bar_3d.glb')
