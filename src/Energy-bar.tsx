@@ -7,7 +7,8 @@ Title: Granola Bar
 */
 
 import * as THREE from 'three'
-import React, { useRef, useMemo, useContext, createContext } from 'react'
+import React, { useMemo, useContext, createContext, forwardRef } from 'react'
+import { GroupProps } from '@react-three/fiber';
 import { useGLTF, Merged } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
