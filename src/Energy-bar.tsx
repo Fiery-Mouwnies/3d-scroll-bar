@@ -687,7 +687,7 @@ export function Instances({ children, ...props }) {
   )
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export const Energybar = forwardRef<THREE.Group, GroupProps>((props, ref) => {
   const instances = useContext(context)
   return (
     <group {...props} dispose={null}>
