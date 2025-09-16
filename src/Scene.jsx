@@ -36,9 +36,9 @@ export default function Scene({ scrollProgress }) {
       <ambientLight intensity={1.5} />
       <directionalLight position={[10, 10, 5]} intensity={2} />
 
-      <Instances>
-        <Energybar scale={35} />
-      </Instances>
+<Instances>
+  <Energybar ref={modelRef} scale={1} position={[0, -2, 0]} />
+</Instances>
     </>
   );
 }
