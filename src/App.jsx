@@ -2,8 +2,8 @@ import { useRef, useState, useLayoutEffect, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Scene from "./Scene"; // We will create this component
-import "./App.css"; // We will create this CSS file
+import Scene from "./Scene";
+import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
