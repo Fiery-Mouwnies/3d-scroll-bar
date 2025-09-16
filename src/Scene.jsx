@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useFrame } from '@react-three/fiber'; // Corrected import
+import { useFrame } from '@react-three/fiber'; // CORRECTED IMPORT
 import { Environment, PerspectiveCamera } from '@react-three/drei';
 import { Energybar, Instances } from './Energy-bar';
 import { gsap } from 'gsap';
@@ -20,8 +20,10 @@ export default function Scene({ scrollProgress }) {
 
   useFrame(() => {
     if (!cameraRef.current) return;
+
     const segmentIndex = Math.min(Math.floor(scrollProgress * totalSegments), totalSegments - 1);
     const segmentProgress = (scrollProgress * totalSegments) % 1;
+
     const start = positions[segmentIndex];
     const end = positions[segmentIndex + 1];
 
@@ -40,7 +42,6 @@ export default function Scene({ scrollProgress }) {
       <ambientLight intensity={1.5} />
       <directionalLight position={[10, 10, 5]} intensity={2} />
       <Instances>
-        {/* Adjust scale and position here */}
         <Energybar scale={1.5} position={[0, -2, 0]} />
       </Instances>
     </>
