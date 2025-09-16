@@ -36,16 +36,9 @@ function App() {
             <Scene scrollProgress={scrollProgress} />
           </Canvas>
         </div>
-
-        <section className="section">
-          <h1>Your Regular Protein Bar</h1>
-        </section>
-        <section className="section">
-          <h2>Packed with 20g of protein.</h2>
-        </section>
-        <section className="section">
-          <h2>Made with simple ingredients.</h2>
-        </section>
+        <section className="section"><h1>Your Regular Protein Bar</h1></section>
+        <section className="section"><h2>Packed with 20g of protein.</h2></section>
+        <section className="section"><h2>Made with simple ingredients.</h2></section>
       </Suspense>
     </main>
   );
