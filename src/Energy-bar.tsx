@@ -690,7 +690,7 @@ export function Instances({ children, ...props }) {
 export const Energybar = forwardRef<THREE.Group, GroupProps>((props, ref) => {
   const instances = useContext(context)
   return (
-    <group {...props} dispose={null}>
+  <group {...props} dispose={null} ref={ref}>
       <group name="Sketchfab_Scene">
         <group
           name="Sketchfab_model"
@@ -707,9 +707,7 @@ export const Energybar = forwardRef<THREE.Group, GroupProps>((props, ref) => {
                   rotation={[-0.0479383, 0.0251902, 0.1388813]}
                   userData={{ name: 'group4' }}>
                   <group
-                    name="pCube3"
-                    scale={[20.6122513, 5.8417349, 3.5186796]}
-                    userData={{ name: 'pCube3' }}>
+                    <group name="pCube3" userData={{ name: 'pCube3' }}>
                     <instances.PCubeaiStandardSurface
                       name="pCube3_aiStandardSurface1_0"
                       userData={{ name: 'pCube3_aiStandardSurface1_0' }}
