@@ -1,31 +1,18 @@
-/* index.css or App.css */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 
-  --- REMOVE THE FOLLOWING RULES ---
-
-  You do not need to force overflow. The browser will create a scrollbar
-  naturally once the total height of your sections is greater than the
-  viewport height. Forcing it with !important can break ScrollTrigger's
-  pinning and measurement logic.
-*/
-
-/*
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  overflow: auto !important; 
-  overflow-x: hidden !important; 
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* vh instead of % */
+  z-index: 1;
 }
-*/
 
-/* 
-  If you absolutely need to ensure no horizontal scrollbar, 
-  you can keep just this one rule on the body.
-*/
-body {
-  overflow-x: hidden;
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Sections scroll over the canvas */
+  color: white;
 }
